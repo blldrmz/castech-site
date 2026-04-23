@@ -6,11 +6,7 @@ import { useEffect, useState } from "react";
 
 const navLinks = [
   { href: "/#home", label: "Home" },
-  { href: "/#solutions", label: "Solutions" },
-  { href: "/#products", label: "Products" },
-  { href: "/inventory", label: "Inventory" },
-  { href: "/slot-machines", label: "Slots" },
-  { href: "/#about", label: "About" },
+  { href: "/#inventory-catalog-heading", label: "Inventory" },
   { href: "/#contact", label: "Contact" },
 ] as const;
 
@@ -71,7 +67,7 @@ export function Header() {
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <Link href="/#contact" className="castech-btn-header hidden sm:inline-flex">
-            Request Demo
+            Get a quote
           </Link>
 
           <button
@@ -140,7 +136,7 @@ export function Header() {
             className="castech-btn-header mt-3 justify-center py-3"
             onClick={() => setOpen(false)}
           >
-            Request Demo
+            Get a quote
           </Link>
         </nav>
       </div>

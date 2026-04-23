@@ -39,19 +39,19 @@ export const inventoryTypeFilters = [
 export type InventoryTypeFilterId = (typeof inventoryTypeFilters)[number];
 
 export const inventoryPageHero = {
-  title: "Slot Machines",
+  title: "Casino equipment inventory",
   intro:
-    "CasTech provides premium slot machines and electronic gaming solutions from internationally recognized brands. Our range includes upright cabinets, slant top units, dual-screen machines, multigame systems, and electronic roulette options designed for modern casino operations.",
+    "CasTech supplies premium slot machines and electronic gaming equipment from internationally recognized brands. Our range includes upright cabinets, slant top units, dual-screen machines, multigame systems, and electronic roulette for modern casino operations.",
 } as const;
 
 export const inventoryPageCta = {
-  title: "Looking for the right machine for your casino?",
-  text: "Contact CasTech for model availability, consultation, and tailored casino equipment solutions.",
-  contactLabel: "Contact Us",
-  demoLabel: "Request Demo",
+  title: "Need the right equipment for your floor?",
+  text: "Contact CasTech for availability, specifications, and tailored options for your venue.",
+  contactLabel: "Contact us",
+  quoteLabel: "Request a quote",
 } as const;
 
-/** Full catalog — single source of truth for inventory and slot-machines pages */
+/** Full catalog */
 export const inventorySlotMachines: InventorySlotMachine[] = [
   {
     brand: "EGT",
