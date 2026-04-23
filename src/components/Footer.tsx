@@ -1,4 +1,6 @@
+import { mainNav } from "@/content/navigation";
 import { footerContent } from "@/content/site";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -15,6 +17,22 @@ export function Footer() {
             {footerContent.tagline}
           </div>
         </div>
+        <nav
+          className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 border-t border-white/[0.06] pt-6 text-[13px] font-medium text-zinc-400 sm:justify-start"
+          aria-label="Footer"
+        >
+          <Link href="/" className="transition hover:text-zinc-200">
+            Home
+          </Link>
+          {mainNav.map(({ href, label }) => (
+            <Link key={href} href={href} className="transition hover:text-zinc-200">
+              {label}
+            </Link>
+          ))}
+          <Link href="/about" className="transition hover:text-zinc-200">
+            About
+          </Link>
+        </nav>
         <div className="border-t border-white/[0.06] pt-8 text-center font-sans text-xs font-medium uppercase tracking-wide text-zinc-500 sm:text-left">
           {footerContent.poweredBy}
         </div>

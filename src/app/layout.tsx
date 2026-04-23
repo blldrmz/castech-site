@@ -18,16 +18,16 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   title: {
-    default: "CasTech — Casino equipment",
+    default: "CasTech — Casino equipment supplier",
     template: "%s | CasTech",
   },
   description:
-    "Browse CasTech’s inventory of slot machines and electronic gaming equipment from EGT, Novomatic, IGT, and other leading brands.",
+    "Casino equipment: live table games, slot machines, floor accessories, and CCTV. Georgia-based. Pelco, Dallmeier, Hikvision, and major slot brands.",
   metadataBase: new URL("https://castech.ge"),
   openGraph: {
-    title: "CasTech — Casino equipment",
+    title: "CasTech — Casino equipment supplier",
     description:
-      "Premium slot machines and electronic gaming equipment for casino operators. Filter by brand and cabinet format.",
+      "Table hardware, slot cabinets, accessories and professional surveillance for casino operators. Browse by category and contact our team.",
     locale: "en_US",
     type: "website",
     url: "https://castech.ge",

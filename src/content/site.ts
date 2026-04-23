@@ -26,7 +26,7 @@ export const contactContent = {
 
 export const footerContent = {
   copyright: "© 2026 CasTech. All rights reserved.",
-  tagline: "Slot machines & electronic gaming equipment",
-  brandLine: "CasTech — premium casino equipment",
+  tagline: "Live games · Slots · Accessories · Surveillance",
+  brandLine: "CasTech — casino equipment supplier",
   poweredBy: "Powered by Virexa",
 };

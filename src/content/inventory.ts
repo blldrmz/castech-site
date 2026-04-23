@@ -7,9 +7,11 @@ export type InventorySlotMachine = {
   image: string;
 };
 
-/** Primary brand tabs: `brandKey` matches `item.brand` in data; `null` = All */
+/**
+ * Brand tabs — "All" is last so the default view opens on a single manufacturer.
+ * `brandKey` matches `item.brand` in data; `null` = All.
+ */
 export const inventoryBrandTabs = [
-  { id: "all", label: "All", brandKey: null as string | null },
   { id: "egt", label: "EGT", brandKey: "EGT" },
   { id: "novomatic", label: "Novomatic", brandKey: "NOVOMATIC" },
   { id: "igt", label: "IGT", brandKey: "IGT" },
@@ -23,6 +25,7 @@ export const inventoryBrandTabs = [
   { id: "konami", label: "Konami", brandKey: "KONAMI" },
   { id: "apex", label: "Apex", brandKey: "APEX" },
   { id: "spintec", label: "Spintec", brandKey: "SPINTEC" },
+  { id: "all", label: "All", brandKey: null as string | null },
 ] as const;
 
 export type InventoryBrandTabId = (typeof inventoryBrandTabs)[number]["id"];
@@ -38,17 +41,12 @@ export const inventoryTypeFilters = [
 
 export type InventoryTypeFilterId = (typeof inventoryTypeFilters)[number];
 
-export const inventoryPageHero = {
-  title: "Casino equipment inventory",
-  intro:
-    "CasTech supplies premium slot machines and electronic gaming equipment from internationally recognized brands. Our range includes upright cabinets, slant top units, dual-screen machines, multigame systems, and electronic roulette for modern casino operations.",
-} as const;
-
-export const inventoryPageCta = {
-  title: "Need the right equipment for your floor?",
-  text: "Contact CasTech for availability, specifications, and tailored options for your venue.",
-  contactLabel: "Contact us",
-  quoteLabel: "Request a quote",
+/** Slot machines page — hero + crosslink to contact */
+export const slotMachinesPageHero = {
+  eyebrow: "Slot machines & electronic gaming",
+  title: "Browse our slot and e-gaming catalog",
+  lead:
+    "Filter by manufacturer and cabinet format. Every model is available for specification and availability requests through our team—stock and lead times depend on region and configuration.",
 } as const;
 
 /** Full catalog */
