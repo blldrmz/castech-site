@@ -10,12 +10,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "picsum.photos",
+        hostname: "ui-avatars.com",
         pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "fastly.picsum.photos",
+        hostname: "upload.wikimedia.org",
         pathname: "/**",
       },
     ],

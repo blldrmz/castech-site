@@ -74,9 +74,11 @@ export function InventoryCatalog() {
             Slot machines
           </h2>
           <p className="castech-body mt-5 text-zinc-400 sm:mt-6">
-            Pick a manufacturer to browse models. Thumbnails open a 256×256 preview.
-            Use <strong className="text-zinc-200">All</strong> at the end of the row
-            only when you want every brand at once.
+            Each row shows the <strong className="text-zinc-200">manufacturer logo</strong>{" "}
+            (Wikimedia where we have a stable file, otherwise a clean initials badge).
+            Click opens a 256×256 preview. Use{" "}
+            <strong className="text-zinc-200">All</strong> at the end of the brand row only
+            when you want every manufacturer at once.
           </p>
         </div>
 
@@ -166,15 +168,15 @@ export function InventoryCatalog() {
                     >
                       <button
                         type="button"
-                        className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-lg border border-white/[0.08] bg-zinc-950 outline-none ring-emerald-500/40 focus-visible:ring-2"
+                        className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-lg border border-white/[0.08] bg-zinc-950 p-1.5 outline-none ring-emerald-500/40 focus-visible:ring-2"
                         onClick={() => setLightbox(item)}
-                        aria-label={`Enlarge image for ${item.brand} ${item.model}`}
+                        aria-label={`Enlarge brand image for ${item.brand} ${item.model}`}
                       >
                         <Image
                           src={thumbSrc}
-                          alt=""
+                          alt={`${item.brand} logo`}
                           fill
-                          className="object-cover"
+                          className="object-contain"
                           sizes="104px"
                           unoptimized
                         />
@@ -238,19 +240,22 @@ export function InventoryCatalog() {
             >
               Close
             </button>
-            <div className="relative h-[256px] w-[256px] max-w-[85vw] overflow-hidden rounded-xl border border-white/[0.12] bg-zinc-950 shadow-2xl">
+            <div className="relative h-[256px] w-[256px] max-w-[85vw] overflow-hidden rounded-xl border border-white/[0.12] bg-zinc-900 p-4 shadow-2xl">
               <Image
                 src={slotCatalogImageUrl(lightbox, "modal")}
-                alt={`${lightbox.brand} ${lightbox.model}`}
+                alt={`${lightbox.brand} logo`}
                 width={256}
                 height={256}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
                 unoptimized
               />
             </div>
             <p className="mt-3 text-center font-heading text-sm font-semibold text-zinc-200">
               {lightbox.brand}{" "}
               <span className="text-zinc-400">·</span> {lightbox.model}
+            </p>
+            <p className="mt-1 text-center text-xs text-zinc-500">
+              Cabinet photo on request — shown here is brand identity.
             </p>
           </div>
         </div>
