@@ -1,32 +1,35 @@
 export const brand = {
   name: "CASTECH",
-  tagline: "Casino Equipment",
+  tagline: "Casino Equipment & Hardware",
 } as const;
 
 export const contactContent = {
-  eyebrow: "Contact",
-  title: "Request an equipment offer",
+  eyebrow: "Business inquiries",
+  title: "Specify your equipment requirements.",
   description:
-    "Tell us which cabinets, brands or formats you need — we will get back to you with availability and next steps.",
-  email: "info@castech.ge",
-  websiteLabel: "www.castech.ge",
-  websiteHref: "https://castech.ge",
-  location: "Georgia",
-  formTitle: "Your inquiry",
+    "Tell us what your casino floor needs — from live table equipment and slot cabinets to floor accessories and surveillance. We can discuss specifications, availability and project requirements.",
+  email: "info@castecheq.com",
+  websiteLabel: "castecheq.com",
+  websiteHref: "https://castecheq.com",
+  location: "Prague, Czech Republic · Batumi, Georgia",
+  pragueAddress: "Cihlářská 782/10a, Prosek, 190 00 Praha 9, Czech Republic",
+  batumiAddress: "Khakhuli Street No. 3, Batumi, Georgia",
+  georgiaPhone: "+995 555 48 19 75",
+  formTitle: "Equipment inquiry",
   formNote:
-    "Form is for sales inquiries only. No submission backend yet — connect when ready.",
+    "This form prepares an email in your mail app. The request is only sent after you confirm it there.",
   fields: {
     name: "Name",
     company: "Company",
     email: "Email",
-    message: "Equipment needs",
+    message: "Equipment and project requirements",
   },
-  submit: "Send request",
+  submit: "Prepare email inquiry",
 };
 
 export const footerContent = {
   copyright: "© 2026 CasTech. All rights reserved.",
-  tagline: "Live games · Slots · Accessories · Surveillance",
-  brandLine: "CasTech — casino equipment supplier",
-  poweredBy: "Powered by Virexa",
+  tagline: "Live tables · Slot machines · Accessories · CCTV",
+  brandLine: "CasTech — Professional casino equipment",
+  poweredBy: "A Virexa AI Technologies division",
 };
