@@ -18,19 +18,19 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   title: {
-    default: "CasTech — Casino equipment supplier",
+    default: "CasTech — Professional Casino Equipment",
     template: "%s | CasTech",
   },
   description:
-    "Casino equipment: live table games, slot machines, floor accessories, and CCTV. Georgia-based. Pelco, Dallmeier, Hikvision, and major slot brands.",
-  metadataBase: new URL("https://castech.ge"),
+    "Casino equipment and hardware: live tables, slot machines, floor accessories and CCTV. A Virexa AI Technologies division.",
+  metadataBase: new URL("https://castecheq.com"),
   openGraph: {
-    title: "CasTech — Casino equipment supplier",
+    title: "CasTech — Professional Casino Equipment",
     description:
-      "Table hardware, slot cabinets, accessories and professional surveillance for casino operators. Browse by category and contact our team.",
+      "Explore casino tables, slot cabinets, accessories and surveillance equipment with CasTech, a Virexa AI Technologies division.",
     locale: "en_US",
     type: "website",
-    url: "https://castech.ge",
+    url: "https://castecheq.com",
   },
 };
 
@@ -41,9 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${inter.variable} ${sora.variable} font-sans antialiased`}
-      >
+      <body className={`${inter.variable} ${sora.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
