@@ -1,33 +1,16 @@
 import type { NextConfig } from "next";
 
+// Static export for GitHub Pages. No Node.js server is required.
 const nextConfig: NextConfig = {
+  output: "export",
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "ui-avatars.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "upload.wikimedia.org",
-        pathname: "/**",
-      },
+      { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
+      { protocol: "https", hostname: "ui-avatars.com", pathname: "/**" },
+      { protocol: "https", hostname: "upload.wikimedia.org", pathname: "/**" },
     ],
-  },
-  async redirects() {
-    return [
-      {
-        source: "/inventory",
-        destination: "/slot-machines",
-        permanent: true,
-      },
-    ];
   },
 };
 
