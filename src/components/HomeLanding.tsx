@@ -95,7 +95,7 @@ export function HomeLanding() {
           <div>
             <p className="castech-eyebrow">A Virexa AI Technologies division</p>
             <h2 className="mt-5 font-heading text-3xl font-bold tracking-[-0.045em] text-white sm:text-4xl">Specialist hardware.<br/>Connected expertise.</h2>
-            <p className="mt-6 max-w-xl text-[15px] leading-8 text-slate-300">CasTech concentrates on physical casino equipment and professional supply inquiries. Virexa brings the wider group's technology and engineering focus.</p>
+            <p className="mt-6 max-w-xl text-[15px] leading-8 text-slate-300">CasTech concentrates on physical casino equipment and professional supply inquiries. Virexa brings the technology and engineering focus of the wider group.</p>
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">
             <Link href="/about" className="castech-btn-secondary">About CasTech</Link>
