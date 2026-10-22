@@ -1,34 +1,34 @@
 export const homeHero = {
-  eyebrow: "Casino equipment & systems",
-  title: "Everything your floor needs, from",
-  titleLine2: "live games to slots and security.",
+  eyebrow: "CASTECH EQ / CASINO EQUIPMENT",
+  title: "Equipment for the",
+  titleLine2: "modern casino floor.",
   lead:
-    "CasTech supplies table equipment, slot cabinets, floor accessories, and professional surveillance. Browse each range and get in touch for availability and project fit.",
+    "From professional table-game equipment to slot cabinets, surveillance and floor essentials — purpose-focused sourcing and specification support for casino operators.",
 } as const;
 
 export const homeCategoryCards = [
   {
     href: "/live-games",
-    title: "Live Game",
+    title: "Live Table Equipment",
     description:
-      "Tables, seating, chips, cards, felts, shufflers, dice and every pit consumable—organized for real operations.",
+      "Roulette, blackjack, poker and baccarat tables, seating, chips, layouts, wheels and table hardware.",
   },
   {
     href: "/slot-machines",
     title: "Slot Machines",
     description:
-      "Cabinets by manufacturer, multigame, upright, slant top and electronic roulette—default view opens on a single brand.",
+      "Explore cabinet formats and manufacturers. Specific models and availability are confirmed on request.",
   },
   {
     href: "/cctv",
-    title: "CCTV",
+    title: "CCTV & Surveillance",
     description:
-      "Pelco, Dallmeier, Hikvision, Panasonic and more—camera lines and integration notes for gaming floors.",
+      "Camera and surveillance product categories for professional casino environments.",
   },
   {
     href: "/accessories",
-    title: "Accessories",
+    title: "Casino Accessories",
     description:
-      "TITO, service carts, keys, signage, smallwares and the items that keep shifts running smoothly.",
+      "Operational supplies, table accessories and supporting equipment for gaming floors.",
   },
 ] as const;
