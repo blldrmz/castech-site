@@ -1,71 +1,49 @@
 import type { LiveGameGroup } from "@/content/liveGames";
-import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   groups: LiveGameGroup[];
   coverById?: Record<string, string>;
 };
 
-export function EquipmentGroupList({ groups, coverById }: Props) {
+export function EquipmentGroupList({ groups }: Props) {
   return (
-    <div className="space-y-20 sm:space-y-24">
-      {groups.map((group) => {
-        const cover = coverById?.[group.id];
-        return (
-          <section
-            key={group.id}
-            id={group.id}
-            className="scroll-mt-28 border-b border-white/[0.04] pb-20 last:border-0 sm:pb-24"
-          >
-            {cover ? (
-              <div className="relative mb-10 overflow-hidden rounded-2xl border border-white/[0.08]">
-                <div className="relative aspect-[21/9] w-full min-h-[140px] sm:aspect-[24/9]">
-                  <Image
-                    src={cover}
-                    alt={group.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 1280px"
-                    priority={false}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/55 to-transparent" />
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 lg:p-10">
-                    <h2 className="font-heading max-w-xl text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-                      {group.title}
-                    </h2>
-                    <p className="castech-body mt-3 max-w-xl line-clamp-3 text-sm text-zinc-200 sm:text-base">
-                      {group.intro}
-                    </p>
-                  </div>
+    <div>
+      <div className="mb-14 rounded-xl border border-slate-700/55 bg-[#112031] px-6 py-6 sm:mb-20 sm:px-8">
+        <p className="castech-eyebrow">Explore this category</p>
+        <div className="mt-4 flex flex-wrap gap-2.5">
+          {groups.map((g) => (
+            <a key={g.id} href={`#${g.id}`} className="rounded-lg border border-white/15 px-4 py-2.5 text-[12px] font-semibold text-slate-200 transition hover:border-emerald-400/50 hover:text-emerald-300">{g.title} ↘</a>
+          ))}
+        </div>
+      </div>
+      <div className="space-y-20 sm:space-y-24">
+        {groups.map((group,groupIndex) => (
+          <section key={group.id} id={group.id} className="scroll-mt-28 border-b border-slate-700/50 pb-20 last:border-0 sm:pb-24">
+            <div className="grid gap-5 lg:grid-cols-[80px_1fr] lg:gap-8">
+              <div className="font-heading text-[12px] font-bold tracking-[.16em] text-emerald-300">{String(groupIndex+1).padStart(2,"0")} /</div>
+              <div>
+                <h2 className="max-w-4xl font-heading text-[clamp(1.8rem,3.2vw,2.7rem)] font-bold leading-[1.2] tracking-[-.045em] text-white">{group.title}</h2>
+                <p className="mt-5 max-w-3xl text-[15px] leading-8 text-slate-300">{group.intro}</p>
+                <div className="mt-9 grid gap-4 sm:grid-cols-2">
+                  {group.items.map((item,index)=>(
+                    <article key={item.title} className="flex min-h-[210px] flex-col rounded-xl border border-slate-600/40 bg-[#111e2d] p-6 transition hover:border-emerald-400/30 sm:p-7">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="font-heading text-[11px] font-bold tracking-[.13em] text-emerald-300">ITEM {String(index+1).padStart(2,"0")}</span>
+                        <span className="h-px w-10 bg-emerald-400/30" aria-hidden="true"/>
+                      </div>
+                      <h3 className="mt-6 font-heading text-[17px] font-semibold leading-7 text-white">{item.title}</h3>
+                      <p className="mt-3 flex-1 text-sm leading-[1.85] text-slate-300">{item.description}</p>
+                      <Link className="mt-5 w-fit text-[12px] font-semibold text-emerald-300 hover:text-emerald-200" href="/contact">Ask about this item ↗</Link>
+                    </article>
+                  ))}
                 </div>
               </div>
-            ) : (
-              <div className="max-w-3xl">
-                <h2 className="font-heading text-2xl font-bold tracking-tight text-zinc-50 sm:text-3xl">
-                  {group.title}
-                </h2>
-                <p className="castech-body mt-4 text-zinc-300">{group.intro}</p>
-              </div>
-            )}
-
-            <div className={`grid gap-5 sm:grid-cols-2 ${cover ? "mt-8" : "mt-10"}`}>
-              {group.items.map((item) => (
-                <article
-                  key={item.title}
-                  className="castech-card-product flex min-h-0 flex-col p-6 sm:p-7"
-                >
-                  <h3 className="castech-card-title text-base sm:text-lg">
-                    {item.title}
-                  </h3>
-                  <p className="castech-body mt-3 text-sm leading-7 text-zinc-200 sm:mt-4 sm:text-base sm:leading-8">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
             </div>
           </section>
-        );
-      })}
+        ))}
+      </div>
+      <p className="mt-6 max-w-4xl text-xs leading-6 text-slate-400">Product images, confirmed specifications and item-level catalog entries will be added from the verified CasTech e-catalog. The descriptions above outline equipment categories only.</p>
     </div>
   );
 }
