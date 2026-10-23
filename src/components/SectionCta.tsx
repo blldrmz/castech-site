@@ -6,32 +6,22 @@ type Props = {
 };
 
 export function SectionCta({
-  title = "Ready to specify your project?",
-  text = "Share your floor plan, brand preferences, and timeline—we will respond with options and next steps.",
+  title = "Planning a casino equipment project?",
+  text = "Tell us about your project scope and requirements. We can discuss product formats, specifications and sourcing options.",
 }: Props) {
   return (
-    <section className="relative overflow-hidden border-b border-white/[0.06] bg-gradient-to-b from-zinc-950 to-black">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.06),transparent_58%)]" />
-      <div className="relative z-10 castech-container castech-section-y">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-white/[0.08] bg-gradient-to-br from-zinc-900/90 to-zinc-950 p-8 shadow-2xl shadow-black/50 sm:p-10 lg:p-12">
-          <div className="mx-auto h-px w-16 rounded-full bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
-          <h2 className="castech-h2 mt-8 text-center">{title}</h2>
-          <p className="font-sans mt-6 text-center text-base font-medium leading-8 text-zinc-400 sm:text-lg sm:leading-8">
-            {text}
-          </p>
-          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
-            <Link
-              href="/contact"
-              className="castech-btn-primary min-h-[3rem] justify-center sm:min-h-[2.875rem]"
-            >
-              Contact us
-            </Link>
-            <Link
-              href="/contact"
-              className="castech-btn-secondary min-h-[3rem] justify-center sm:min-h-[2.875rem]"
-            >
-              Request a quote
-            </Link>
+    <section className="relative overflow-hidden border-t border-white/10 bg-[#0a1522] py-20 sm:py-24">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_110%_at_50%_130%,rgba(16,185,129,.15),transparent)]"/>
+      <div className="relative castech-container">
+        <div className="flex flex-col gap-9 rounded-2xl border border-slate-600/40 bg-[#101e2f] px-7 py-10 shadow-2xl shadow-black/20 sm:px-12 sm:py-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+          <div>
+            <p className="castech-eyebrow">Project inquiries</p>
+            <h2 className="mt-4 max-w-2xl font-heading text-3xl font-bold tracking-[-.045em] text-white sm:text-4xl">{title}</h2>
+            <p className="mt-5 max-w-2xl text-[15px] leading-8 text-slate-300">{text}</p>
+          </div>
+          <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+            <Link href="/contact" className="castech-btn-primary whitespace-nowrap">Request a quote <span aria-hidden="true" className="ml-2">↗</span></Link>
+            <a href="mailto:info@castecheq.com" className="castech-btn-secondary whitespace-nowrap">Email CasTech</a>
           </div>
         </div>
       </div>
