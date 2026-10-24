@@ -1,109 +1,19 @@
-import { homeCategoryCards, homeHero } from "@/content/home";
 import Link from "next/link";
-
-const categoryDetails = [
-  { id: "01", short: "TABLE GAMES", icon: "◈" },
-  { id: "02", short: "SLOT SYSTEMS", icon: "▣" },
-  { id: "03", short: "SURVEILLANCE", icon: "◎" },
-  { id: "04", short: "FLOOR ESSENTIALS", icon: "⌘" },
-] as const;
-
-export function HomeLanding() {
-  return (
-    <>
-      <section id="home" className="relative overflow-hidden border-b border-white/10 bg-[#080e18]">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_75%_at_90%_30%,rgba(59,130,246,0.12),transparent_70%),radial-gradient(ellipse_35%_45%_at_10%_85%,rgba(16,185,129,0.08),transparent_70%)]" />
-        <div className="relative castech-container grid items-center gap-14 py-24 sm:py-28 lg:min-h-[660px] lg:grid-cols-[1.1fr_.9fr] lg:gap-20 lg:py-28">
-          <div>
-            <div className="inline-flex items-center gap-3 border-b border-emerald-400/25 pb-3 font-heading text-[11px] font-semibold uppercase tracking-[0.19em] text-emerald-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              {homeHero.eyebrow}
-            </div>
-            <h1 className="mt-9 max-w-[790px] font-heading text-[clamp(2.85rem,5.2vw,5.6rem)] font-bold leading-[1.07] tracking-[-0.06em] text-white">
-              {homeHero.title} <span className="text-emerald-300">{homeHero.titleLine2}</span>
-            </h1>
-            <p className="mt-9 max-w-xl text-[15px] font-medium leading-[1.95] text-slate-300 sm:text-[17px]">
-              {homeHero.lead}
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link href="/live-games" className="castech-btn-primary">Explore equipment <span className="ml-3" aria-hidden>↗</span></Link>
-              <Link href="/contact" className="castech-btn-secondary">Request an offer <span className="ml-3" aria-hidden>↗</span></Link>
-            </div>
-            <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/10 pt-6 text-[11px] font-semibold uppercase tracking-[0.1em] text-slate-400">
-              <span>Physical equipment</span><span>Product specification</span><span>Project inquiries</span>
-            </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-[520px]" aria-label="CasTech equipment categories">
-            <div aria-hidden="true" className="absolute -inset-8 rounded-full bg-emerald-500/[0.035] blur-3xl" />
-            <div className="relative overflow-hidden rounded-[20px] border border-white/15 bg-[#101a2a] shadow-[0_35px_85px_rgba(0,0,0,.55)]">
-              <div className="flex items-center justify-between border-b border-white/10 px-7 py-5">
-                <span className="font-heading text-[10px] font-bold uppercase tracking-[0.2em] text-slate-300">CasTech / Equipment portfolio</span>
-                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,.7)]" />
-              </div>
-              <div className="grid grid-cols-2 gap-px bg-white/10">
-                {categoryDetails.map((item, i) => (
-                  <Link key={item.id} href={homeCategoryCards[i].href} className="group min-h-[155px] bg-[#0c1422] p-6 transition hover:bg-[#152535] sm:min-h-[190px] sm:p-8">
-                    <div className="flex items-start justify-between">
-                      <span className="font-heading text-[10px] font-semibold tracking-widest text-emerald-300">{item.id}</span>
-                      <span className="text-3xl font-light text-emerald-300/70" aria-hidden>{item.icon}</span>
-                    </div>
-                    <div className="mt-9 font-heading text-sm font-semibold uppercase tracking-[0.06em] text-slate-100 sm:mt-12 sm:text-[15px]">{item.short}</div>
-                  </Link>
-                ))}
-              </div>
-              <div className="flex justify-between gap-4 border-t border-white/10 px-7 py-4 text-[11px] text-slate-400">
-                <span>Professional casino environments</span>
-                <span className="text-emerald-300">EQ / 2026</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-white/10 bg-[#070c14]" aria-labelledby="home-categories-heading">
-        <div className="castech-container castech-section-y">
-          <div className="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
-            <div>
-              <p className="castech-eyebrow">The CasTech catalog / 01</p>
-              <h2 id="home-categories-heading" className="mt-5 max-w-3xl font-heading text-4xl font-bold leading-tight tracking-[-0.045em] text-white sm:text-5xl">Built for the gaming floor.</h2>
-            </div>
-            <p className="max-w-md text-[15px] leading-8 text-slate-300">
-              Discover equipment by application. Product specifications and availability are confirmed individually — this is a catalog, not a live stock list.
-            </p>
-          </div>
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:gap-5">
-            {homeCategoryCards.map((card, i) => (
-              <Link key={card.href} href={card.href} className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-xl border border-slate-700/70 bg-gradient-to-br from-[#142233] to-[#0b1421] p-8 transition duration-200 hover:-translate-y-0.5 hover:border-emerald-400/40 sm:p-9">
-                <div className="flex items-start justify-between">
-                  <span className="font-heading text-[11px] font-semibold tracking-[0.2em] text-emerald-300">0{i + 1} / EQUIPMENT</span>
-                  <span className="text-2xl font-light text-slate-400 transition group-hover:text-emerald-300" aria-hidden>↗</span>
-                </div>
-                <div>
-                  <h3 className="font-heading text-[23px] font-bold tracking-[-0.04em] text-white sm:text-[27px]">{card.title}</h3>
-                  <p className="mt-4 max-w-md text-sm leading-[1.95] text-slate-300 sm:text-[15px]">{card.description}</p>
-                  <span className="mt-7 inline-block border-b border-emerald-400/50 pb-1 font-heading text-[12px] font-semibold text-emerald-300">Explore category</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-white/10 bg-[#0b121e]">
-        <div className="castech-container grid gap-10 py-20 sm:py-24 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
-          <div>
-            <p className="castech-eyebrow">A Virexa AI Technologies division</p>
-            <h2 className="mt-5 font-heading text-3xl font-bold tracking-[-0.045em] text-white sm:text-4xl">Specialist hardware.<br/>Connected expertise.</h2>
-            <p className="mt-6 max-w-xl text-[15px] leading-8 text-slate-300">CasTech concentrates on physical casino equipment and professional supply inquiries. Virexa brings the technology and engineering focus of the wider group.</p>
-          </div>
-          <div className="flex flex-wrap gap-3 lg:justify-end">
-            <Link href="/about" className="castech-btn-secondary">About CasTech</Link>
-            <Link href="/contact" className="castech-btn-primary">Contact sales</Link>
-            <a href="https://virexa-tech.com" target="_blank" rel="noopener noreferrer" className="castech-btn-secondary">Virexa ↗</a>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
+import { catalogueCategories } from "@/content/catalogueData";
+const focus=["led","machines","tables","chairs"];
+export function HomeLanding(){const lead=focus.map(x=>catalogueCategories.find(c=>c.slug===x)!);return <div className="bg-[#080e16]">
+<section className="relative overflow-hidden border-b border-white/10">
+<div className="pointer-events-none absolute right-[-15%] top-[-40%] h-[650px] w-[650px] rounded-full bg-[#c4a66e]/[.065] blur-[90px]"/>
+<div className="relative castech-container grid items-center gap-14 py-24 sm:py-32 lg:grid-cols-[1.15fr_.85fr] lg:py-40">
+<div><p className="text-[11px] font-bold uppercase tracking-[.27em] text-[#e2bb7a]">CASTECH / EQUIPMENT COLLECTION</p>
+<h1 className="mt-8 max-w-4xl font-heading text-[clamp(3.2rem,6vw,6.2rem)] font-bold leading-[1.06] tracking-[-.07em] text-white">Designed for<br/><span className="text-[#e3bc7b]">the casino floor.</span></h1>
+<p className="mt-8 max-w-xl text-base leading-[1.95] text-slate-300">A curated selection of professional casino equipment, gaming furniture and LED display systems. Explore the collection by category.</p>
+<div className="mt-10 flex flex-wrap gap-3"><Link href="/catalog" className="inline-flex min-h-12 items-center rounded-md bg-[#e3bc7b] px-7 text-sm font-bold text-[#0b1420] hover:bg-[#f3d59e]">Explore catalogue ↗</Link><Link href="/contact" className="inline-flex min-h-12 items-center rounded-md border border-white/25 px-7 text-sm font-semibold text-white hover:border-[#e3bc7b]">Contact sales</Link></div>
+</div>
+<div className="relative mx-auto hidden w-full max-w-[450px] lg:block"><div className="border border-[#e3bc7b]/25 p-5"><div className="border border-white/10 bg-[#101b28] p-9"><p className="text-[11px] uppercase tracking-[.25em] text-[#e3bc7b]">CATALOGUE / 2026</p><div className="mt-10 text-[104px] font-extralight leading-none tracking-[-.1em] text-white">11<span className="text-[#e3bc7b]">.</span></div><p className="mt-4 border-t border-white/15 pt-5 text-sm tracking-[.06em] text-slate-300">Product categories</p><div className="mt-12 text-[76px] font-extralight leading-none text-white">117<span className="text-[#e3bc7b]">+</span></div><p className="mt-4 border-t border-white/15 pt-5 text-sm tracking-[.06em] text-slate-300">Catalogue entries</p></div></div></div>
+</div></section>
+<section className="castech-container py-24 sm:py-28"><div className="flex flex-wrap items-end justify-between gap-8"><div><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#e3bc7b]">SELECTED DEPARTMENTS</p><h2 className="mt-4 font-heading text-3xl font-bold tracking-[-.05em] text-white sm:text-5xl">Find your equipment.</h2></div><Link href="/catalog" className="border-b border-[#e3bc7b]/70 pb-2 text-sm font-semibold text-[#e3bc7b]">All 11 categories ↗</Link></div>
+<div className="mt-12 grid gap-4 sm:grid-cols-2">{lead.map((c,i)=><Link href={`/catalog?category=${c.slug}`} key={c.slug} className="group flex min-h-[225px] flex-col justify-between border border-white/10 bg-[#111b29] p-8 transition hover:border-[#e3bc7b]/60 sm:p-10"><div className="flex items-center justify-between text-[11px] tracking-[.15em] text-[#e3bc7b]"><span>0{i+1} / COLLECTION</span><span className="text-xl">↗</span></div><div><h3 className="font-heading text-[25px] font-semibold tracking-[-.04em] text-white">{c.title}</h3><p className="mt-2 text-sm text-slate-400">{c.items.length} catalogue entries</p></div></Link>)}</div>
+</section>
+<section className="border-t border-white/10 bg-[#101a27]"><div className="castech-container flex flex-col justify-between gap-7 py-20 sm:flex-row sm:items-center"><div><p className="text-xs font-bold uppercase tracking-[.16em] text-[#e3bc7b]">PROFESSIONAL INQUIRIES</p><h2 className="mt-4 font-heading text-3xl font-bold tracking-[-.04em] text-white">Let’s discuss your project.</h2><p className="mt-3 text-sm leading-7 text-slate-300">Product details, availability and specifications on request.</p></div><Link href="/contact" className="w-fit rounded-md bg-[#e3bc7b] px-8 py-4 text-sm font-bold text-[#09131c]">Request information ↗</Link></div></section>
+</div>}
