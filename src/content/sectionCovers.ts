@@ -3,7 +3,7 @@ import { media } from "./mediaUrls";
 /** Hero strip images for live-game section IDs */
 export const liveGroupCoverById: Record<string, string> = {
   seating: media.seating,
-  "kart-kagit": media.cards,
+  "cards": media.cards,
   roulette: media.roulette,
   blackjack: media.blackjack,
   baccarat: media.blackjack,

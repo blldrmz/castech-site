@@ -1,15 +1,15 @@
+import { pageMeta } from "@/lib/seo";
 import { CctvShowcase } from "@/components/CctvShowcase";
 import { PageHero } from "@/components/PageHero";
 import { SectionCta } from "@/components/SectionCta";
 import { SiteShell } from "@/components/SiteShell";
 import { cctvOtherNotes, cctvPageHero, cctvShowcaseBrands } from "@/content/cctvContent";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "CCTV & surveillance",
-  description:
-    "Casino surveillance with Pelco, Dallmeier, Hikvision, Panasonic and more. Cameras, VMS, retention. CasTech.",
-};
+export const metadata = pageMeta(
+  "CCTV & surveillance",
+  "Casino surveillance with Pelco, Dallmeier, Hikvision, Panasonic and more. Cameras, VMS, retention. Brand names are references, not authorized-dealer claims.",
+  "/cctv/",
+);
 
 export default function CctvPage() {
   return (

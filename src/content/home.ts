@@ -3,7 +3,7 @@ export const homeHero = {
   title: "Equipment for the",
   titleLine2: "modern casino floor.",
   lead:
-    "From professional table-game equipment to slot cabinets, surveillance and floor essentials — purpose-focused sourcing and specification support for casino operators.",
+    "From our own-production LED jackpot screens to pre-owned slot machines, refurbished shufflers and table equipment sourced direct from manufacturers — specification and sourcing support for casino operators.",
 } as const;
 
 export const homeCategoryCards = [
@@ -17,7 +17,7 @@ export const homeCategoryCards = [
     href: "/slot-machines",
     title: "Slot Machines",
     description:
-      "Explore cabinet formats and manufacturers. Specific models and availability are confirmed on request.",
+      "Pre-owned slot machines by cabinet format and manufacturer. Condition and availability are confirmed per unit.",
   },
   {
     href: "/cctv",

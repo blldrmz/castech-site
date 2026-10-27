@@ -8,8 +8,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
-      { protocol: "https", hostname: "ui-avatars.com", pathname: "/**" },
-      { protocol: "https", hostname: "upload.wikimedia.org", pathname: "/**" },
     ],
   },
 };

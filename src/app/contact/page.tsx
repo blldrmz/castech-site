@@ -1,11 +1,12 @@
+import { pageMeta } from "@/lib/seo";
 import { Contact } from "@/components/Contact";
 import { SiteShell } from "@/components/SiteShell";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Request a casino equipment offer from CasTech. Georgia-based supplier for live games, slots, accessories and CCTV.",
-};
+export const metadata = pageMeta(
+  "Contact",
+  "Request a casino equipment offer from CasTech EQ. Offices in Prague, Czech Republic and Batumi, Georgia: live games, slots, jackpot screens, accessories and CCTV.",
+  "/contact/",
+);
 
 export default function ContactPage() {
   return (

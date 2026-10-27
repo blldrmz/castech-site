@@ -1,26 +1,52 @@
 "use client";
 
-import { contactContent } from "@/content/site";
+import { companyContent, contactContent } from "@/content/site";
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
+
+type Status = "idle" | "sending" | "sent" | "fallback";
 
 export function Contact() {
   const { fields } = contactContent;
-  const [prepared, setPrepared] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
-  function prepareEmail(e: FormEvent<HTMLFormElement>) {
+  async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    if (String(fd.get("website") || "")) return; // honeypot
     const name = String(fd.get("name") || "").trim();
     const company = String(fd.get("company") || "").trim();
     const email = String(fd.get("email") || "").trim();
+    const phone = String(fd.get("phone") || "").trim();
     const message = String(fd.get("message") || "").trim();
     if (!name || !email || !message) return;
-    const subject = encodeURIComponent("CasTech EQ equipment inquiry" + (company ? " — " + company : ""));
-    const body = encodeURIComponent(
-      ["CasTech EQ equipment inquiry", "", "Name: " + name, "Company: " + (company || "Not specified"), "Email: " + email, "", "Equipment requirements:", message].join("\n")
-    );
-    setPrepared(true);
-    window.location.href = "mailto:" + contactContent.email + "?subject=" + subject + "&body=" + body;
+    const subject = "CasTech EQ equipment inquiry" + (company ? " — " + company : "");
+    const text = [
+      "Name: " + name,
+      "Company: " + (company || "Not specified"),
+      "Email: " + email,
+      "Phone / WhatsApp: " + (phone || "Not specified"),
+      "",
+      "Equipment requirements:",
+      message,
+    ].join("\n");
+
+    setStatus("sending");
+    try {
+      const res = await fetch(contactContent.formEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ name, company, email, phone, message, _subject: subject, _template: "table", _replyto: email }),
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("fallback");
+      window.location.href =
+        "mailto:" + contactContent.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
+    }
   }
 
   return (
@@ -40,13 +66,20 @@ export function Contact() {
                 </a>
               </div>
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Czech Republic · Prague</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Czech Republic · Prague (registered office)</span>
                 <span>{contactContent.pragueAddress}</span>
+                <a href={`tel:${contactContent.praguePhoneTel}`} className="mt-1 block font-semibold text-white hover:text-emerald-300">{contactContent.praguePhone}</a>
               </div>
               <div>
                 <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Georgia · Batumi</span>
                 <span>{contactContent.batumiAddress}</span>
-                <a href="tel:+995555481975" className="mt-1 block font-semibold text-white hover:text-emerald-300">{contactContent.georgiaPhone}</a>
+                <a href={`tel:${contactContent.georgiaPhoneTel}`} className="mt-1 block font-semibold text-white hover:text-emerald-300">{contactContent.georgiaPhone}</a>
+              </div>
+              <div>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Company details</span>
+                <span className="block">{companyContent.legalName}</span>
+                <span className="block">IČO {companyContent.ico}</span>
+                <span className="block text-sm leading-7 text-slate-400">{companyContent.register}</span>
               </div>
               <div>
                 <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Website</span>
@@ -57,7 +90,7 @@ export function Contact() {
           <div className="rounded-[20px] border border-slate-600/50 bg-[#101c2d] p-7 shadow-xl shadow-black/30 sm:p-9">
             <div className="font-heading text-xl font-bold tracking-tight text-white">{contactContent.formTitle}</div>
             <p className="mt-3 text-sm font-medium leading-7 text-slate-300">{contactContent.formNote}</p>
-            <form onSubmit={prepareEmail} className="mt-8 grid gap-5">
+            <form onSubmit={submit} className="mt-8 grid gap-5">
               <div className="grid gap-2">
                 <label htmlFor="contact-name" className="castech-field-label">{fields.name} *</label>
                 <input id="contact-name" name="name" autoComplete="name" required className="castech-input" />
@@ -71,11 +104,31 @@ export function Contact() {
                 <input id="contact-email" name="email" type="email" autoComplete="email" inputMode="email" required className="castech-input" />
               </div>
               <div className="grid gap-2">
+                <label htmlFor="contact-phone" className="castech-field-label">{fields.phone}</label>
+                <input id="contact-phone" name="phone" type="tel" autoComplete="tel" className="castech-input" />
+              </div>
+              <div className="grid gap-2">
                 <label htmlFor="contact-message" className="castech-field-label">{fields.message} *</label>
                 <textarea id="contact-message" name="message" required className="castech-input min-h-[140px] resize-y py-3.5 leading-relaxed" />
               </div>
-              <button type="submit" className="castech-btn-primary mt-1 w-full sm:w-auto">{contactContent.submit} ↗</button>
-              {prepared ? <p role="status" className="text-sm leading-7 text-slate-300">Your email application should open with the request. Review and send it there; this website does not send messages directly.</p> : null}
+              <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+                <label htmlFor="contact-website">Leave this field empty</label>
+                <input id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
+              <label className="flex items-start gap-3 text-[13px] leading-6 text-slate-300">
+                <input type="checkbox" name="consent" required className="mt-1.5 shrink-0" />
+                <span>
+                  I agree that CasTech EQ may use these details to reply to my inquiry. See the{" "}
+                  <Link href="/privacy" className="text-emerald-300 underline underline-offset-4">Privacy Policy</Link>. *
+                </span>
+              </label>
+              <button type="submit" disabled={status === "sending"} className="castech-btn-primary mt-1 w-full sm:w-auto">
+                {status === "sending" ? "Sending…" : contactContent.submit} <span aria-hidden="true">↗</span>
+              </button>
+              <p role="status" aria-live="polite" className="text-sm leading-7 text-slate-300">
+                {status === "sent" ? "Thank you. Your inquiry was sent and we will reply by email." : null}
+                {status === "fallback" ? "Sending failed. Your email application should open with the request, please send it from there." : null}
+              </p>
             </form>
           </div>
         </div>

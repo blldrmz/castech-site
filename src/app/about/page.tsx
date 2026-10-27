@@ -1,14 +1,14 @@
+import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { SectionCta } from "@/components/SectionCta";
 import { SiteShell } from "@/components/SiteShell";
 import { aboutPageContent } from "@/content/aboutPage";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "CasTech supplies casino table equipment, slot cabinets, floor accessories, and professional surveillance. Based in Georgia.",
-};
+export const metadata = pageMeta(
+  "About",
+  "CasTech EQ by Virexa AI Technologies s.r.o.: own-production LED jackpot screens, used slot machines, refurbished shufflers and casino equipment sourced direct from manufacturers.",
+  "/about/",
+);
 
 export default function AboutPage() {
   return (

@@ -1,15 +1,15 @@
+import { pageMeta } from "@/lib/seo";
 import { InventoryCatalog } from "@/components/inventory/InventoryCatalog";
 import { PageHero } from "@/components/PageHero";
 import { SectionCta } from "@/components/SectionCta";
 import { SiteShell } from "@/components/SiteShell";
 import { slotMachinesPageHero } from "@/content/inventory";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Slot machines & electronic gaming",
-  description:
-    "Browse slot cabinets from EGT, Novomatic, IGT, and more. Upright, slant top, multigame and electronic roulette. CasTech.",
-};
+export const metadata = pageMeta(
+  "Used slot machines & electronic gaming",
+  "Pre-owned slot machines: upright, slant top, multigame and electronic roulette cabinets from EGT, Novomatic, IGT, Aristocrat and more. Condition and availability confirmed per unit. CasTech EQ is not an authorized dealer.",
+  "/slot-machines/",
+);
 
 export default function SlotMachinesPage() {
   return (
@@ -23,7 +23,7 @@ export default function SlotMachinesPage() {
       <InventoryCatalog />
       <SectionCta
         title="Found the right format?"
-        text="We confirm availability, power requirements, and delivery windows for your market—reach out with your shortlist."
+        text="We confirm condition, availability, power requirements and delivery windows for your market. Reach out with your shortlist."
       />
     </SiteShell>
   );

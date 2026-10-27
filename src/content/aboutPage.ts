@@ -1,15 +1,16 @@
 export const aboutPageContent = {
-  eyebrow: "About CasTech",
+  eyebrow: "About CasTech EQ",
   title: "Professional equipment for casino environments.",
   lead:
-    "CasTech focuses on physical casino equipment and hardware, including live table games, slot machines, floor accessories and surveillance categories. We work within the Virexa AI Technologies group and welcome equipment and project inquiries from professional operators.",
+    "CasTech EQ is the casino equipment brand of Virexa AI Technologies s.r.o., registered in Prague. We manufacture LED jackpot screens and supply pre-owned slot machines, refurbished shufflers and table equipment for professional operators.",
   paragraphs: [
-    "Whether you are planning a new gaming floor, upgrading existing equipment or comparing product formats, our goal is to make technical requirements and procurement discussions clear.",
-    "Our website presents equipment categories and models for inquiry. Exact specifications, availability, compliance requirements and commercial terms are subject to individual confirmation.",
+    "Our own production is LED jackpot screens: built to the sizes you request and compatible with jackpot servers of any brand and model, then delivered and set up for your floor.",
+    "Slot machines are supplied pre-owned and shufflers refurbished. Other equipment that has to be manufactured is sourced to order through our direct relationships with manufacturers. CasTech EQ is not an authorized dealer or distributor of any brand; brand names on this website only identify equipment.",
+    "Exact specifications, availability, compliance requirements and commercial terms are confirmed individually for every inquiry. Virexa AI Technologies s.r.o., IČO 29716055, Cihlářská 782/10a, Prosek, 190 00 Praha 9.",
   ],
   highlights: [
-    { title: "Defined product focus", text: "Live table hardware, slot equipment, accessories and surveillance." },
-    { title: "Practical specifications", text: "Discuss compatibility, formats and operational requirements before selection." },
-    { title: "Virexa group", text: "A specialized physical-equipment brand under Virexa AI Technologies." },
+    { title: "Own LED production", text: "Jackpot screens made to your sizes, compatible with any jackpot server brand and model." },
+    { title: "Used and refurbished", text: "Pre-owned slot machines and refurbished shufflers, with condition confirmed per unit." },
+    { title: "Direct manufacturer sourcing", text: "Made-to-order equipment sourced through our own manufacturer relationships." },
   ],
 } as const;

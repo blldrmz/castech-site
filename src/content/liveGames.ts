@@ -47,7 +47,7 @@ export const liveGameGroups: LiveGameGroup[] = [
     ],
   },
   {
-    id: "kart-kagit",
+    id: "cards",
     title: "Cards, cut cards & paper",
     intro:
       "Playing media, cut-card discipline and pit paperwork are small items that stop a game when they run out—plan them like any other critical supply.",
@@ -116,7 +116,7 @@ export const liveGameGroups: LiveGameGroup[] = [
       {
         title: "Continuous shufflers",
         description:
-          "Multi-deck and specialty shuffler formats that match your game speed and back-of-house policy.",
+          "Refurbished multi-deck and specialty shuffler formats that match your game speed and back-of-house policy.",
       },
       {
         title: "Dealing shoes & cut-card procedures",
@@ -172,7 +172,7 @@ export const liveGameGroups: LiveGameGroup[] = [
       {
         title: "Poker shufflers & spares",
         description:
-          "On-table shufflers, card decks in bulk, and the consumables a busy room consumes.",
+          "Refurbished on-table shufflers, plus card decks in bulk and the consumables a busy room consumes.",
       },
     ],
   },

@@ -43,10 +43,10 @@ export type InventoryTypeFilterId = (typeof inventoryTypeFilters)[number];
 
 /** Slot machines page — hero + crosslink to contact */
 export const slotMachinesPageHero = {
-  eyebrow: "Slot machines & electronic gaming",
-  title: "Browse our slot and e-gaming catalog",
+  eyebrow: "Used slot machines & electronic gaming",
+  title: "Browse our pre-owned slot and e-gaming catalog",
   lead:
-    "Filter by manufacturer and cabinet format. Every model is available for specification and availability requests through our team—stock and lead times depend on region and configuration.",
+    "Filter by manufacturer and cabinet format. All machines are pre-owned; request condition, year, stock and delivery details for any model through our team.",
 } as const;
 
 /** Full catalog */

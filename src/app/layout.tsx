@@ -31,7 +31,29 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
     url: "https://castecheq.com",
+    siteName: "CasTech EQ",
   },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "CasTech EQ",
+  legalName: "Virexa AI Technologies s.r.o.",
+  url: "https://castecheq.com",
+  email: "info@castecheq.com",
+  identifier: "IČO 29716055",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Cihlářská 782/10a, Prosek",
+    postalCode: "190 00",
+    addressLocality: "Praha 9",
+    addressCountry: "CZ",
+  },
+  contactPoint: [
+    { "@type": "ContactPoint", telephone: "+420605784248", areaServed: "CZ", contactType: "sales" },
+    { "@type": "ContactPoint", telephone: "+995555481975", areaServed: "GE", contactType: "sales" },
+  ],
 };
 
 export default function RootLayout({
@@ -42,6 +64,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${sora.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {children}
       </body>
     </html>

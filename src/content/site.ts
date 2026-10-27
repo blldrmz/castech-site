@@ -15,20 +15,33 @@ export const contactContent = {
   pragueAddress: "Cihlářská 782/10a, Prosek, 190 00 Praha 9, Czech Republic",
   batumiAddress: "Khakhuli Street No. 3, Batumi, Georgia",
   georgiaPhone: "+995 555 48 19 75",
+  praguePhone: "+420 605 784 248",
+  praguePhoneTel: "+420605784248",
+  georgiaPhoneTel: "+995555481975",
+  formEndpoint: "https://formsubmit.co/ajax/info@castecheq.com",
   formTitle: "Equipment inquiry",
   formNote:
-    "This form prepares an email in your mail app. The request is only sent after you confirm it there.",
+    "Tell us what you need. We reply by email, usually with follow-up questions on quantities, sizes and delivery country.",
   fields: {
     name: "Name",
     company: "Company",
     email: "Email",
+    phone: "Phone / WhatsApp",
     message: "Equipment and project requirements",
   },
-  submit: "Prepare email inquiry",
+  submit: "Send inquiry",
 };
 
+export const companyContent = {
+  legalName: "Virexa AI Technologies s.r.o.",
+  registeredOffice: "Cihlářská 782/10a, Prosek, 190 00 Praha 9, Czech Republic",
+  ico: "29716055",
+  register:
+    "Registered in the Commercial Register kept by the Municipal Court in Prague, section C, file 451241",
+} as const;
+
 export const footerContent = {
-  copyright: "© 2026 CasTech. All rights reserved.",
+  copyright: "© 2026 CasTech EQ, a brand of Virexa AI Technologies s.r.o., IČO 29716055. All rights reserved.",
   tagline: "Live tables · Slot machines · Accessories · CCTV",
   brandLine: "CasTech — Professional casino equipment",
   poweredBy: "A Virexa AI Technologies division",

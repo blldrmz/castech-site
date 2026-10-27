@@ -1,16 +1,16 @@
+import { pageMeta } from "@/lib/seo";
 import { EquipmentGroupList } from "@/components/EquipmentGroupList";
 import { PageHero } from "@/components/PageHero";
 import { SectionCta } from "@/components/SectionCta";
 import { SiteShell } from "@/components/SiteShell";
 import { accessoryGroups, accessoriesPageHero } from "@/content/accessoriesContent";
 import { accessoryGroupCoverById } from "@/content/sectionCovers";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Casino floor accessories",
-  description:
-    "TITO, seating, service carts, table smallwares, key control, signage, and operations accessories for casino floors. CasTech.",
-};
+export const metadata = pageMeta(
+  "Casino floor accessories",
+  "TITO, seating, service carts, table smallwares, key control, signage and operations accessories for casino floors. CasTech EQ.",
+  "/accessories/",
+);
 
 export default function AccessoriesPage() {
   return (

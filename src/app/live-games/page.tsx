@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo";
 import { EquipmentGroupList } from "@/components/EquipmentGroupList";
 import { LiveGameSpotlight } from "@/components/live-games/LiveGameSpotlight";
 import { PageHero } from "@/components/PageHero";
@@ -5,13 +6,12 @@ import { SectionCta } from "@/components/SectionCta";
 import { SiteShell } from "@/components/SiteShell";
 import { liveGroupCoverById } from "@/content/sectionCovers";
 import { liveGameGroups, liveGamesPageHero } from "@/content/liveGames";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Live games & table equipment",
-  description:
-    "Roulette, blackjack, baccarat, poker, dice and full pit hardware—wheels, shufflers, felts, chips and more. CasTech casino equipment.",
-};
+export const metadata = pageMeta(
+  "Live games & table equipment",
+  "Roulette, blackjack, baccarat, poker and craps equipment: tables, felts, chips, wheels and refurbished shufflers. Other items produced to order through direct manufacturer partners.",
+  "/live-games/",
+);
 
 export default function LiveGamesPage() {
   return (

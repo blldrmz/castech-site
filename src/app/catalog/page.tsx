@@ -1,3 +1,4 @@
-import { Suspense } from "react";import type {Metadata} from "next";import {SiteShell} from "@/components/SiteShell";import {CatalogueBrowser} from "@/components/CatalogueBrowser";
-export const metadata:Metadata={title:"Equipment Catalogue",description:"CasTech EQ catalogue: 117 product entries in 11 equipment departments."};
+import { pageMeta } from "@/lib/seo";
+import { Suspense } from "react";import {SiteShell} from "@/components/SiteShell";import {CatalogueBrowser} from "@/components/CatalogueBrowser";
+export const metadata=pageMeta("Equipment Catalogue","CasTech EQ catalogue: 117 product entries in 11 equipment departments, from own-production LED jackpot screens to used slot machines and table equipment.","/catalog/");
 export default function CataloguePage(){return <SiteShell><Suspense fallback={<div className="castech-container py-28 text-slate-300">Loading catalogue…</div>}><CatalogueBrowser/></Suspense></SiteShell>}

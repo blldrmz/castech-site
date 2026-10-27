@@ -74,11 +74,10 @@ export function InventoryCatalog() {
             Slot machines
           </h2>
           <p className="castech-body mt-5 text-zinc-400 sm:mt-6">
-            Each row shows the <strong className="text-zinc-200">manufacturer logo</strong>{" "}
-            (Wikimedia where we have a stable file, otherwise a clean initials badge).
-            Click opens a 256×256 preview. Use{" "}
-            <strong className="text-zinc-200">All</strong> at the end of the brand row only
-            when you want every manufacturer at once.
+            All slot machines listed here are <strong className="text-zinc-200">pre-owned units</strong>.
+            Condition, year, stock and lead times are confirmed per unit on request. CasTech EQ is not
+            an authorized dealer or distributor of any brand shown; manufacturer names are used only to
+            identify cabinet models.
           </p>
         </div>
 

@@ -22,7 +22,7 @@ const tiles = [
     image: media.chips,
   },
   {
-    href: "#kart-kagit",
+    href: "#cards",
     title: "Cards & paper",
     subtitle: "Decks, cut cards, forms",
     image: media.cards,

@@ -43,7 +43,7 @@ export function EquipmentGroupList({ groups }: Props) {
           </section>
         ))}
       </div>
-      <p className="mt-6 max-w-4xl text-xs leading-6 text-slate-400">Product images, confirmed specifications and item-level catalog entries will be added from the verified CasTech e-catalog. The descriptions above outline equipment categories only.</p>
+      <p className="mt-6 max-w-4xl text-xs leading-6 text-slate-400">Specifications, photography and lead times are confirmed per inquiry. Shufflers are supplied refurbished; other equipment is produced to order through our direct manufacturer relationships. CasTech EQ is not an authorized dealer or distributor of any brand.</p>
     </div>
   );
 }
