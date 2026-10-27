@@ -32,7 +32,7 @@ export function SearchResults() {
           onChange={(e) => setValue(e.target.value)}
           aria-label="Search the site"
           placeholder="Roulette, jackpot screen, shuffler, chairs…"
-          className="castech-input flex-1"
+          className="castech-input min-w-0 flex-1"
         />
         <button type="submit" className="castech-btn-primary">Search</button>
       </form>
