@@ -15,6 +15,10 @@ export const jackpotHighlights = [
     text: "Our screens are compatible with jackpot servers of any brand and model, so you keep the system you already run.",
   },
   {
+    title: "Jackpot or any other content",
+    text: "Connected to your jackpot server, the screen shows live jackpot values. When you prefer, it can also show other content, such as a sports broadcast or promotions.",
+  },
+  {
     title: "Produced and delivered by us",
     text: "This is our own manufacturing. We build the screen, ship it and support the setup on your floor.",
   },
@@ -47,8 +51,10 @@ export const jackpotGallery = [
   { src: "/images/hero/egt-three-machines.webp", alt: "LED jackpot display above a three-machine slot bank", caption: "Overhead jackpot display above a slot bank" },
   { src: "/images/hero/overhead-grand.webp", alt: "Multi-level LED jackpot display over slot machines", caption: "Multi-level jackpot display" },
   { src: "/images/hero/wall-screen.webp", alt: "Large wall-mounted LED jackpot screen above slot machines", caption: "Wall-mounted jackpot screen" },
+  { src: "/images/hero/egt-cube.webp", alt: "Cube-style LED jackpot display above a slot bank", caption: "Cube jackpot display" },
+  { src: "/images/hero/three-level-fireworks.webp", alt: "Three-level LED jackpot display with Super, Middle and Mini values", caption: "Three-level jackpot display" },
   { src: "/images/hero/entrance-led.webp", alt: "LED jackpot values displayed at a casino entrance", caption: "Entrance jackpot screen" },
-  { src: "/images/hero/tv-wall.webp", alt: "Slot bank under a large LED screen in a lounge", caption: "Large LED screen above a slot lounge" },
+  { src: "/images/hero/tv-wall.webp", alt: "Slot bank under a large LED screen in a lounge", caption: "Large screen above a slot lounge: jackpot or live broadcast" },
   { src: "/images/hero/dark-room.webp", alt: "Vertical LED columns between slot machines in a dark gaming room", caption: "LED columns between machines" },
   { src: "/images/hero/boost-closeup.webp", alt: "Integrated LED display between neighbouring slot machines", caption: "LED divider between machines" },
   { src: "/images/hero/apex-clover-wave.webp", alt: "Slim LED column between two curved slot machines", caption: "Slim LED column between curved cabinets" },

@@ -26,6 +26,8 @@ const heroSlides = [
   { src: "/images/hero/wall-screen.webp", position: "center" },
   { src: "/images/hero/entrance-led.webp", position: "center" },
   { src: "/images/hero/tv-wall.webp", position: "center" },
+  { src: "/images/hero/egt-cube.webp", position: "center" },
+  { src: "/images/hero/three-level-fireworks.webp", position: "center" },
   { src: "/images/hero/dark-room.webp", position: "center" },
   { src: "/images/hero/boost-closeup.webp", position: "center" },
   { src: "/images/hero/apex-clover-wave.webp", position: "center" },
@@ -41,7 +43,7 @@ export default function JackpotScreensPage() {
 
       <div className="bg-[#070d15]">
         <div className="castech-container castech-section-y">
-          <div className="grid gap-5 sm:grid-cols-3 sm:gap-6">
+          <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {jackpotHighlights.map((h) => (
               <div key={h.title} className="castech-card-product flex flex-col p-6 sm:p-7">
                 <h2 className="castech-card-title">{h.title}</h2>
@@ -85,7 +87,7 @@ export default function JackpotScreensPage() {
               ))}
             </div>
             <p className="mt-6 max-w-3xl text-xs leading-6 text-slate-400">
-              Photographs show installed jackpot displays. Slot machine brands visible in the photographs belong to their
+              Photographs show installed jackpot displays. The same screens can show jackpot values from your server or any other content you choose, such as a live sports broadcast. Slot machine brands visible in the photographs belong to their
               manufacturers and are not affiliated with CasTech EQ.
             </p>
           </div>
