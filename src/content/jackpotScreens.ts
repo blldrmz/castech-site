@@ -43,12 +43,16 @@ export const jackpotBrief = [
 ] as const;
 
 export const jackpotGallery = [
-  { src: "/images/jackpot/overhead-bank.webp", alt: "LED jackpot display above a bank of slot machines on a casino floor", caption: "Overhead jackpot display above a slot bank" },
-  { src: "/images/jackpot/wide-header.webp", alt: "Wide LED jackpot header installed over slot machines", caption: "Wide overhead jackpot display" },
-  { src: "/images/jackpot/entrance-sign.webp", alt: "LED jackpot values displayed at a casino entrance", caption: "Entrance jackpot screen" },
-  { src: "/images/jackpot/multi-level.webp", alt: "Multi-level LED jackpot display over slot machines", caption: "Multi-level jackpot display" },
-  { src: "/images/jackpot/overhead-three-cabinet.webp", alt: "Three-cabinet overhead LED jackpot display", caption: "Three-cabinet overhead display" },
-  { src: "/images/jackpot/led-divider.webp", alt: "Integrated LED display between neighbouring slot machines", caption: "LED divider between machines" },
+  { src: "/images/hero/six-bank.webp", alt: "Row of six slot machines under a wide LED jackpot display", caption: "Wide jackpot display over a six-machine bank" },
+  { src: "/images/hero/egt-three-machines.webp", alt: "LED jackpot display above a three-machine slot bank", caption: "Overhead jackpot display above a slot bank" },
+  { src: "/images/hero/overhead-grand.webp", alt: "Multi-level LED jackpot display over slot machines", caption: "Multi-level jackpot display" },
+  { src: "/images/hero/wall-screen.webp", alt: "Large wall-mounted LED jackpot screen above slot machines", caption: "Wall-mounted jackpot screen" },
+  { src: "/images/hero/entrance-led.webp", alt: "LED jackpot values displayed at a casino entrance", caption: "Entrance jackpot screen" },
+  { src: "/images/hero/tv-wall.webp", alt: "Slot bank under a large LED screen in a lounge", caption: "Large LED screen above a slot lounge" },
+  { src: "/images/hero/dark-room.webp", alt: "Vertical LED columns between slot machines in a dark gaming room", caption: "LED columns between machines" },
+  { src: "/images/hero/boost-closeup.webp", alt: "Integrated LED display between neighbouring slot machines", caption: "LED divider between machines" },
+  { src: "/images/hero/apex-clover-wave.webp", alt: "Slim LED column between two curved slot machines", caption: "Slim LED column between curved cabinets" },
+  { src: "/images/hero/apex-clover-twist.webp", alt: "Slim illuminated LED column between two slot machines", caption: "Slim illuminated LED column" },
   { src: "/images/jackpot/information-column.webp", alt: "Vertical LED information column separating gaming rows", caption: "Central LED information column" },
-  { src: "/images/jackpot/slim-column.webp", alt: "Slim illuminated LED column between two slot machines", caption: "Slim LED column" },
+  { src: "/images/hero/slim-column.webp", alt: "Red LED side panel between two slot banks", caption: "LED side panel between slot banks" },
 ] as const;

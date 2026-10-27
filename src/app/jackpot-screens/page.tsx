@@ -21,24 +21,17 @@ export const metadata = pageMeta(
 
 const heroSlides = [
   { src: "/images/hero/six-bank.webp", position: "center" },
-  { src: "/images/jackpot/overhead-bank.webp", position: "center" },
-  { src: "/images/hero/overhead-grand.webp", position: "center" },
-  { src: "/images/jackpot/wide-header.webp", position: "center" },
-  { src: "/images/hero/wall-screen.webp", position: "center" },
-  { src: "/images/jackpot/multi-level.webp", position: "center" },
-  { src: "/images/hero/tv-wall.webp", position: "center" },
-  { src: "/images/hero/entrance-led.webp", position: "center" },
-  { src: "/images/hero/dark-room.webp", position: "center" },
-  { src: "/images/jackpot/overhead-three-cabinet.webp", position: "center" },
-  { src: "/images/hero/boost-closeup.webp", position: "center" },
-  { src: "/images/jackpot/led-divider.webp", position: "center" },
-  { src: "/images/hero/apex-clover-wave.webp", position: "center" },
-  { src: "/images/hero/slim-column.webp", position: "center" },
   { src: "/images/hero/egt-three-machines.webp", position: "center" },
+  { src: "/images/hero/overhead-grand.webp", position: "center" },
+  { src: "/images/hero/wall-screen.webp", position: "center" },
+  { src: "/images/hero/entrance-led.webp", position: "center" },
+  { src: "/images/hero/tv-wall.webp", position: "center" },
+  { src: "/images/hero/dark-room.webp", position: "center" },
+  { src: "/images/hero/boost-closeup.webp", position: "center" },
+  { src: "/images/hero/apex-clover-wave.webp", position: "center" },
   { src: "/images/hero/apex-clover-twist.webp", position: "center" },
   { src: "/images/jackpot/information-column.webp", position: "center" },
-  { src: "/images/jackpot/entrance-sign.webp", position: "center" },
-  { src: "/images/jackpot/slim-column.webp", position: "center" },
+  { src: "/images/hero/slim-column.webp", position: "center" },
 ];
 
 export default function JackpotScreensPage() {
