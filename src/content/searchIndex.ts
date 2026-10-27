@@ -51,7 +51,7 @@ export const searchIndex: SearchEntry[] = [
     })),
   ),
   ...catalogueCategories.flatMap((c) =>
-    c.items.map((name) => ({
+    c.items.map(({ title: name }) => ({
       title: name,
       detail: c.title,
       type: `Catalogue · ${c.title}`,

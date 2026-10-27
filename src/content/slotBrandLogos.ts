@@ -4,7 +4,7 @@
  * in inventory data exactly.
  */
 export const slotCasinoFloorFallback =
-  "https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=1200&q=85";
+  "/images/catalog/machines/08-amatic-multi-game-slot-machine.webp";
 
 const SLOT_BRAND_LABEL: Record<string, string> = {
   EGT: "EGT",
