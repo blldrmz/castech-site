@@ -71,7 +71,7 @@ export const catalogueCategories:CatalogueCategory[]=[
    {
     "title": "Novomatic FV624",
     "image": "/images/catalog/machines/06-novomatic-fv624.webp",
-    "note": "Novomatic Slot"
+    "note": ""
    },
    {
     "title": "Novomatic Vip Lounge",
