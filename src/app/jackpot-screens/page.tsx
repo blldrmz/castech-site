@@ -19,10 +19,27 @@ export const metadata = pageMeta(
   "/jackpot-screens/",
 );
 
+const heroSlides = [
+  { src: "/images/hero/six-bank.webp", position: "center 35%" },
+  { src: "/images/jackpot/overhead-bank.webp", position: "center 40%" },
+  { src: "/images/hero/overhead-grand.webp", position: "center 18%" },
+  { src: "/images/jackpot/wide-header.webp", position: "center 40%" },
+  { src: "/images/hero/wall-screen.webp", position: "center 22%" },
+  { src: "/images/jackpot/multi-level.webp", position: "center 40%" },
+  { src: "/images/hero/dark-room.webp", position: "center 55%" },
+  { src: "/images/jackpot/overhead-three-cabinet.webp", position: "center 35%" },
+  { src: "/images/hero/boost-closeup.webp", position: "center 30%" },
+  { src: "/images/jackpot/led-divider.webp", position: "center 45%" },
+  { src: "/images/hero/slim-column.webp", position: "center 45%" },
+  { src: "/images/jackpot/information-column.webp", position: "center 40%" },
+  { src: "/images/jackpot/entrance-sign.webp", position: "center 40%" },
+  { src: "/images/jackpot/slim-column.webp", position: "center 45%" },
+];
+
 export default function JackpotScreensPage() {
   return (
     <SiteShell>
-      <PageHero id="top" eyebrow={jackpotHero.eyebrow} title={jackpotHero.title} lead={jackpotHero.lead} />
+      <PageHero id="top" slides={heroSlides} eyebrow={jackpotHero.eyebrow} title={jackpotHero.title} lead={jackpotHero.lead} />
 
       <div className="bg-[#070d15]">
         <div className="castech-container castech-section-y">
