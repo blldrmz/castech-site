@@ -1,5 +1,5 @@
 /**
- * Decorative stock images (Unsplash). Used for section headers and CCTV cards.
+ * Decorative stock images (Unsplash). Used for section headers.
  * Parameters: auto=format, fit=crop, reasonable width.
  */
 export const media = {
@@ -16,10 +16,6 @@ export const media = {
   dice: "https://images.unsplash.com/photo-1601557625932-392f76adb1c6?auto=format&fit=crop&w=900&q=80",
   poker:
     "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=900&q=80",
-  cctvPelco: "https://images.unsplash.com/photo-1557597764-cddd9976b2d6?auto=format&fit=crop&w=1200&q=80",
-  cctvDallmeier: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
-  cctvHikvision: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1200&q=80",
-  cctvPanasonic: "https://images.unsplash.com/photo-1504384308090-c54be3855836?auto=format&fit=crop&w=1200&q=80",
   accessoryTito: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
   accessoryCart: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80",
   accessoryKeys: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=80",

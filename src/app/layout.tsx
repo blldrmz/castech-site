@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     template: "%s | CasTech",
   },
   description:
-    "Casino equipment and hardware: live tables, slot machines, floor accessories and CCTV. A Virexa AI Technologies division.",
+    "Casino equipment and hardware: LED jackpot screens, used slot machines, live tables and floor accessories. A Virexa AI Technologies division.",
   metadataBase: new URL("https://castecheq.com"),
   openGraph: {
     title: "CasTech — Professional Casino Equipment",
     description:
-      "Explore casino tables, slot cabinets, accessories and surveillance equipment with CasTech, a Virexa AI Technologies division.",
+      "Own-production LED jackpot screens, used slot machines, refurbished shufflers and casino equipment from CasTech EQ, a Virexa AI Technologies division.",
     locale: "en_US",
     type: "website",
     url: "https://castecheq.com",

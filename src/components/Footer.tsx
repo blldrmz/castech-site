@@ -20,6 +20,8 @@ export function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-6 text-sm text-slate-300">
+            <Link href="/jackpot-screens" className="hover:text-[#e3bc7b]">Jackpot Screens</Link>
+            <Link href="/slot-machines" className="hover:text-[#e3bc7b]">Slot Machines</Link>
             <Link href="/catalog" className="hover:text-[#e3bc7b]">Catalogue</Link>
             <Link href="/about" className="hover:text-[#e3bc7b]">About</Link>
             <Link href="/contact" className="hover:text-[#e3bc7b]">Contact</Link>

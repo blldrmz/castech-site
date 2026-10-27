@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/SiteShell";
 
 export const metadata = pageMeta(
   "Contact",
-  "Request a casino equipment offer from CasTech EQ. Offices in Prague, Czech Republic and Batumi, Georgia: live games, slots, jackpot screens, accessories and CCTV.",
+  "Request a casino equipment offer from CasTech EQ. Offices in Prague, Czech Republic and Batumi, Georgia: live games, slots, jackpot screens and accessories.",
   "/contact/",
 );
 

@@ -7,7 +7,7 @@ export const contactContent = {
   eyebrow: "Business inquiries",
   title: "Specify your equipment requirements.",
   description:
-    "Tell us what your casino floor needs — from live table equipment and slot cabinets to floor accessories and surveillance. We can discuss specifications, availability and project requirements.",
+    "Tell us what your casino floor needs — from LED jackpot screens, live table equipment and slot cabinets to floor accessories. We can discuss specifications, availability and project requirements.",
   email: "info@castecheq.com",
   websiteLabel: "castecheq.com",
   websiteHref: "https://castecheq.com",
@@ -18,6 +18,7 @@ export const contactContent = {
   praguePhone: "+420 605 784 248",
   praguePhoneTel: "+420605784248",
   georgiaPhoneTel: "+995555481975",
+  inquiryEmail: "info@castecheq.com", // where website inquiries are delivered (FormSubmit)
   formEndpoint: "https://formsubmit.co/ajax/info@castecheq.com",
   formTitle: "Equipment inquiry",
   formNote:
@@ -42,7 +43,7 @@ export const companyContent = {
 
 export const footerContent = {
   copyright: "© 2026 CasTech EQ, a brand of Virexa AI Technologies s.r.o., IČO 29716055. All rights reserved.",
-  tagline: "Live tables · Slot machines · Accessories · CCTV",
+  tagline: "Jackpot screens · Slot machines · Live tables · Accessories",
   brandLine: "CasTech — Professional casino equipment",
   poweredBy: "A Virexa AI Technologies division",
 };

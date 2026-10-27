@@ -77,6 +77,24 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <form action="/search/" method="get" role="search" className="hidden xl:block">
+            <input
+              type="search"
+              name="q"
+              aria-label="Search the site"
+              placeholder="Search…"
+              className="w-40 rounded-lg border border-white/[0.1] bg-zinc-900/70 px-3 py-2 text-[13px] text-zinc-100 outline-none placeholder:text-zinc-400 focus:border-[#e3bc7b]"
+            />
+          </form>
+          <Link
+            href="/search/"
+            aria-label="Search"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-zinc-300 transition hover:bg-white/[0.05] xl:hidden"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+            </svg>
+          </Link>
           <Link href="/contact" className="castech-btn-header hidden sm:inline-flex">
             Get a quote
           </Link>

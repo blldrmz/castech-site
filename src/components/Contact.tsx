@@ -2,13 +2,22 @@
 
 import { companyContent, contactContent } from "@/content/site";
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 type Status = "idle" | "sending" | "sent" | "fallback";
 
 export function Contact() {
   const { fields } = contactContent;
   const [status, setStatus] = useState<Status>("idle");
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  // Prefill the message when arriving from a product / search link (?item=...)
+  useEffect(() => {
+    const item = new URLSearchParams(window.location.search).get("item");
+    if (item && messageRef.current && !messageRef.current.value) {
+      messageRef.current.value = "Inquiry about: " + item.slice(0, 200) + "\n\n";
+    }
+  }, []);
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -109,7 +118,7 @@ export function Contact() {
               </div>
               <div className="grid gap-2">
                 <label htmlFor="contact-message" className="castech-field-label">{fields.message} *</label>
-                <textarea id="contact-message" name="message" required className="castech-input min-h-[140px] resize-y py-3.5 leading-relaxed" />
+                <textarea id="contact-message" ref={messageRef} name="message" required className="castech-input min-h-[140px] resize-y py-3.5 leading-relaxed" />
               </div>
               <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
                 <label htmlFor="contact-website">Leave this field empty</label>

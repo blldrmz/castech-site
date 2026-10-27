@@ -8,6 +8,12 @@ export const homeHero = {
 
 export const homeCategoryCards = [
   {
+    href: "/jackpot-screens",
+    title: "LED Jackpot Screens",
+    description:
+      "Our own production: made to your size and compatible with jackpot servers of any brand and model.",
+  },
+  {
     href: "/live-games",
     title: "Live Table Equipment",
     description:
@@ -18,12 +24,6 @@ export const homeCategoryCards = [
     title: "Slot Machines",
     description:
       "Pre-owned slot machines by cabinet format and manufacturer. Condition and availability are confirmed per unit.",
-  },
-  {
-    href: "/cctv",
-    title: "CCTV & Surveillance",
-    description:
-      "Camera and surveillance product categories for professional casino environments.",
   },
   {
     href: "/accessories",
