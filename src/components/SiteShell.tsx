@@ -7,7 +7,7 @@ type Props = {
 
 export function SiteShell({ children }: Props) {
   return (
-    <div className="min-h-screen bg-[#050507] text-white">
+    <div className="min-h-screen bg-[#070d15] text-white">
       <Header />
       <main>{children}</main>
       <Footer />

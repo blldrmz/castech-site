@@ -65,7 +65,7 @@ export function InventoryCatalog() {
 
   return (
     <section
-      className="border-b border-white/[0.06] bg-[#050507]"
+      className="border-b border-white/[0.06] bg-[#070d15]"
       aria-labelledby="slot-machine-catalog-heading"
     >
       <div className="castech-container castech-section-y">
@@ -102,7 +102,7 @@ export function InventoryCatalog() {
                     onClick={() => setBrandTab(tab.id)}
                     className={
                       active
-                        ? "font-heading rounded-xl border border-emerald-500/45 bg-emerald-500/[0.12] px-3.5 py-2 text-[12px] font-semibold tracking-wide text-emerald-100 shadow-sm shadow-emerald-500/10 transition hover:bg-emerald-500/[0.16]"
+                        ? "font-heading rounded-xl border border-[#c4a66e]/45 bg-[#c4a66e]/[0.12] px-3.5 py-2 text-[12px] font-semibold tracking-wide text-emerald-100 shadow-sm shadow-[#c4a66e]/10 transition hover:bg-[#c4a66e]/[0.16]"
                         : "font-heading rounded-xl border border-white/[0.08] bg-zinc-900/50 px-3.5 py-2 text-[12px] font-semibold tracking-wide text-zinc-300 transition hover:border-white/15 hover:bg-zinc-800/60 hover:text-zinc-100"
                     }
                   >
@@ -154,7 +154,7 @@ export function InventoryCatalog() {
         <div className="mt-10 space-y-16 sm:space-y-20">
           {brandSections.map(([brand, models]) => (
             <div key={brand}>
-              <h3 className="font-heading border-b border-emerald-500/25 pb-3 text-2xl font-bold tracking-tight text-zinc-50 sm:text-3xl">
+              <h3 className="font-heading border-b border-[#c4a66e]/25 pb-3 text-2xl font-bold tracking-tight text-zinc-50 sm:text-3xl">
                 {brand}
               </h3>
               <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -163,11 +163,11 @@ export function InventoryCatalog() {
                   return (
                     <div
                       key={`${item.brand}-${item.model}`}
-                      className="flex gap-3 rounded-2xl border border-white/[0.07] bg-zinc-900/40 p-3 transition hover:border-emerald-500/25"
+                      className="flex gap-3 rounded-2xl border border-white/[0.07] bg-zinc-900/40 p-3 transition hover:border-[#c4a66e]/25"
                     >
                       <button
                         type="button"
-                        className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-lg border border-white/[0.08] bg-zinc-950 p-1.5 outline-none ring-emerald-500/40 focus-visible:ring-2"
+                        className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-lg border border-white/[0.08] bg-zinc-950 p-1.5 outline-none ring-[#c4a66e]/40 focus-visible:ring-2"
                         onClick={() => setLightbox(item)}
                         aria-label={`Enlarge brand image for ${item.brand} ${item.model}`}
                       >
@@ -181,7 +181,7 @@ export function InventoryCatalog() {
                         />
                       </button>
                       <div className="min-w-0 flex-1">
-                        <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-emerald-400/90">
+                        <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-[#e3bc7b]/90">
                           {item.type}
                         </p>
                         <p className="font-heading mt-1 text-sm font-bold leading-snug tracking-tight text-zinc-100">
@@ -192,7 +192,7 @@ export function InventoryCatalog() {
                         </p>
                         <Link
                           href="/contact"
-                          className="mt-2 inline-block text-xs font-semibold text-emerald-400/95 hover:text-emerald-300"
+                          className="mt-2 inline-block text-xs font-semibold text-[#e3bc7b]/95 hover:text-[#e3bc7b]"
                         >
                           Request details →
                         </Link>
@@ -210,7 +210,7 @@ export function InventoryCatalog() {
             No models match these filters. Open{" "}
             <button
               type="button"
-              className="text-emerald-400 underline-offset-2 hover:underline"
+              className="text-[#e3bc7b] underline-offset-2 hover:underline"
               onClick={() => setBrandTab("all")}
             >
               All

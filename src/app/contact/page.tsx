@@ -13,7 +13,7 @@ export default function ContactPage() {
     <SiteShell>
       <div className="bg-zinc-950/80">
         <div className="castech-container pt-20 sm:pt-24">
-          <div className="h-px w-14 rounded-full bg-gradient-to-r from-emerald-400/70 to-transparent" />
+          <div className="h-px w-14 rounded-full bg-gradient-to-r from-[#e3bc7b]/70 to-transparent" />
         </div>
       </div>
       <Contact />

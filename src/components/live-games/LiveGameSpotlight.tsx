@@ -45,7 +45,7 @@ export function LiveGameSpotlight() {
             <Link
               key={tile.href}
               href={tile.href}
-              className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-zinc-900 shadow-lg shadow-black/40 transition hover:border-emerald-500/35"
+              className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-zinc-900 shadow-lg shadow-black/40 transition hover:border-[#c4a66e]/35"
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
@@ -63,7 +63,7 @@ export function LiveGameSpotlight() {
                   <div className="mt-1 text-sm font-medium text-zinc-300">
                     {tile.subtitle}
                   </div>
-                  <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-emerald-300/95">
+                  <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-[#e3bc7b]/95">
                     View section ↓
                   </div>
                 </div>

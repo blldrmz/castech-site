@@ -4,7 +4,7 @@ import { HomeLanding } from "@/components/HomeLanding";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#050507] text-white">
+    <div className="min-h-screen bg-[#070d15] text-white">
       <Header />
       <main>
         <HomeLanding />

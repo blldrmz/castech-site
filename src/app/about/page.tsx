@@ -19,7 +19,7 @@ export default function AboutPage() {
         title={aboutPageContent.title}
         lead={aboutPageContent.lead}
       />
-      <div className="bg-[#050507]">
+      <div className="bg-[#070d15]">
         <div className="castech-container castech-section-y">
           <div className="mx-auto max-w-3xl space-y-8">
             {aboutPageContent.paragraphs.map((p, i) => (

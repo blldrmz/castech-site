@@ -11,7 +11,7 @@ export const metadata = {
 export default function SearchPage() {
   return (
     <SiteShell>
-      <div className="min-h-[60vh] bg-[#050507]">
+      <div className="min-h-[60vh] bg-[#070d15]">
         <Suspense fallback={<div className="castech-container py-28 text-slate-300">Loading…</div>}>
           <SearchResults />
         </Suspense>

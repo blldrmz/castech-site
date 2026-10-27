@@ -23,7 +23,7 @@ export default function LiveGamesPage() {
         lead={liveGamesPageHero.lead}
       />
       <LiveGameSpotlight />
-      <div className="bg-[#050507]">
+      <div className="bg-[#070d15]">
         <div className="castech-container castech-section-y pt-16 sm:pt-20">
           <EquipmentGroupList
             groups={liveGameGroups}

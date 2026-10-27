@@ -24,7 +24,7 @@ export default function JackpotScreensPage() {
     <SiteShell>
       <PageHero id="top" eyebrow={jackpotHero.eyebrow} title={jackpotHero.title} lead={jackpotHero.lead} />
 
-      <div className="bg-[#050507]">
+      <div className="bg-[#070d15]">
         <div className="castech-container castech-section-y">
           <div className="grid gap-5 sm:grid-cols-3 sm:gap-6">
             {jackpotHighlights.map((h) => (

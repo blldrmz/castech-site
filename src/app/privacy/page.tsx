@@ -52,7 +52,7 @@ export default function PrivacyPage() {
   return (
     <SiteShell>
       <PageHero id="top" eyebrow="Legal" title="Privacy Policy" lead="How we handle personal data sent through this website and by email. Last updated: October 2026." />
-      <div className="bg-[#050507]">
+      <div className="bg-[#070d15]">
         <div className="castech-container castech-section-y">
           <div className="mx-auto max-w-3xl space-y-10">
             {sections.map((s) => (

@@ -69,30 +69,30 @@ export function Contact() {
 
             <div className="mt-9 space-y-5 border-t border-white/10 pt-7 text-[15px] leading-8 text-slate-300">
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Business email</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Business email</span>
                 <a href={`mailto:${contactContent.email}`} className="font-semibold text-white underline-offset-4 hover:underline">
                   {contactContent.email} ↗
                 </a>
               </div>
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Czech Republic · Prague (registered office)</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Czech Republic · Prague (registered office)</span>
                 <span>{contactContent.pragueAddress}</span>
-                <a href={`tel:${contactContent.praguePhoneTel}`} className="mt-1 block font-semibold text-white hover:text-emerald-300">{contactContent.praguePhone}</a>
+                <a href={`tel:${contactContent.praguePhoneTel}`} className="mt-1 block font-semibold text-white hover:text-[#e3bc7b]">{contactContent.praguePhone}</a>
               </div>
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Georgia · Batumi</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Georgia · Batumi</span>
                 <span>{contactContent.batumiAddress}</span>
-                <a href={`tel:${contactContent.georgiaPhoneTel}`} className="mt-1 block font-semibold text-white hover:text-emerald-300">{contactContent.georgiaPhone}</a>
+                <a href={`tel:${contactContent.georgiaPhoneTel}`} className="mt-1 block font-semibold text-white hover:text-[#e3bc7b]">{contactContent.georgiaPhone}</a>
               </div>
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Company details</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Company details</span>
                 <span className="block">{companyContent.legalName}</span>
                 <span className="block">IČO {companyContent.ico}</span>
                 <span className="block text-sm leading-7 text-slate-400">{companyContent.register}</span>
               </div>
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-emerald-300">Website</span>
-                <a href={contactContent.websiteHref} className="font-semibold text-white hover:text-emerald-300">{contactContent.websiteLabel} ↗</a>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Website</span>
+                <a href={contactContent.websiteHref} className="font-semibold text-white hover:text-[#e3bc7b]">{contactContent.websiteLabel} ↗</a>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@ export function Contact() {
                 <input type="checkbox" name="consent" required className="mt-1.5 shrink-0" />
                 <span>
                   I agree that CasTech EQ may use these details to reply to my inquiry. See the{" "}
-                  <Link href="/privacy" className="text-emerald-300 underline underline-offset-4">Privacy Policy</Link>. *
+                  <Link href="/privacy" className="text-[#e3bc7b] underline underline-offset-4">Privacy Policy</Link>. *
                 </span>
               </label>
               <button type="submit" disabled={status === "sending"} className="castech-btn-primary mt-1 w-full sm:w-auto">
