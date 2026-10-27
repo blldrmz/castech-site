@@ -17,22 +17,31 @@ export const aboutPageContent = {
 
 export const aboutBackground = {
   eyebrow: "Who we are",
-  title: "Built by people who have worked on the casino floor.",
+  title: "22 years on the casino floor.",
+  yearsLabel: "22",
+  yearsText: "years in the casino industry",
   paragraphs: [
-    "CasTech EQ is led by founder Bilal Durmaz, who has spent his career in the casino industry. He has worked inside casinos in many countries across Africa, Europe and Asia, and on cruise ship casinos.",
-    "That includes hands-on work on casino openings, from the first equipment decisions to opening day, as well as LED signage and display installations on live gaming floors.",
-    "We know how a floor runs, what an operator needs on the day a casino opens, and what breaks the routine afterwards. That is why we talk in floor terms: layouts, sightlines, lead times, spares and service, not just product lists.",
+    "CasTech EQ is led by founder Bilal Durmaz, who has worked in the casino industry for 22 years across Europe, Africa and Asia, on land and on cruise ships.",
+    "That includes running casino operations, opening casinos, and installing gaming floors, cruise ship casinos and camera systems. Since 2021 we have worked under our own name: we sell equipment, install casinos and manufacture LED jackpot screens.",
+    "We know how a floor runs and what an operator needs on opening day, so we talk in floor terms: layouts, sightlines, lead times, spares and service, not just product lists.",
   ],
-  regions: [
-    { title: "Africa", text: "Casino work across the continent." },
-    { title: "Europe", text: "Land-based casinos and gaming floors." },
-    { title: "Asia", text: "Casino experience in many countries." },
-    { title: "Cruise ships", text: "Casino operations at sea." },
+  timeline: [
+    { place: "Northern Cyprus", text: "Casino work." },
+    { place: "Greece", text: "Camera system for a cruise ship." },
+    { place: "Cruise ship", text: "Casino project on board a cruise ship." },
+    { place: "Cameroon", text: "Casino work." },
+    { place: "Northern Cyprus", text: "Further casino work." },
+    { place: "Kosovo, Romania and Djibouti", text: "Casino work in three countries." },
+    { place: "Tanzania, Malawi and Ghana", text: "Responsible for five casinos, including the opening of a casino in Accra, Ghana." },
+    { place: "Cruise ship, from Turkey", text: "Cruise ship installation project carried out from Turkey." },
+    { place: "Montenegro, Budva", text: "Casino work." },
+    { place: "Georgia", text: "Casino work." },
+    { place: "2021 to today", text: "CasTech under our own name: equipment sales, casino installation and LED jackpot screen production." },
   ],
   highlights: [
     "Casino openings",
-    "Gaming floor operations",
-    "LED signage and jackpot display installations",
+    "Running casino operations",
+    "LED jackpot screen production",
     "Equipment sourcing for new venues and refits",
   ],
 } as const;

@@ -6,7 +6,7 @@ import { aboutBackground, aboutPageContent } from "@/content/aboutPage";
 
 export const metadata = pageMeta(
   "About",
-  "CasTech EQ by Virexa AI Technologies s.r.o.: casino industry experience in Africa, Europe, Asia and on cruise ships, own-production LED jackpot screens, used slot machines and refurbished shufflers.",
+  "CasTech EQ by Virexa AI Technologies s.r.o.: 22 years of casino industry experience across Europe, Africa, Asia and cruise ships, own-production LED jackpot screens, used slot machines and refurbished shufflers.",
   "/about/",
 );
 
@@ -63,13 +63,23 @@ export default function AboutPage() {
                 ))}
               </ul>
             </div>
-            <div className="grid gap-4 self-start sm:grid-cols-2">
-              {aboutBackground.regions.map((r) => (
-                <div key={r.title} className="castech-card-product p-6">
-                  <h3 className="castech-card-title">{r.title}</h3>
-                  <p className="castech-body mt-3 text-sm text-zinc-300">{r.text}</p>
-                </div>
-              ))}
+            <div className="self-start">
+              <div className="flex items-end gap-4 border-b border-white/15 pb-6">
+                <span className="font-heading text-7xl font-extralight leading-none tracking-[-.06em] text-white sm:text-8xl">
+                  {aboutBackground.yearsLabel}
+                  <span className="text-[#e3bc7b]">.</span>
+                </span>
+                <span className="pb-2 text-sm tracking-[.06em] text-slate-300">{aboutBackground.yearsText}</span>
+              </div>
+              <ol className="mt-8 space-y-5 border-l border-[#e3bc7b]/30 pl-6">
+                {aboutBackground.timeline.map((t, i) => (
+                  <li key={i} className="relative">
+                    <span aria-hidden="true" className="absolute -left-[30px] top-2 h-2 w-2 rounded-full bg-[#e3bc7b]" />
+                    <p className="font-heading text-base font-semibold text-white">{t.place}</p>
+                    <p className="castech-body mt-1 text-sm text-zinc-300">{t.text}</p>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
         </div>
