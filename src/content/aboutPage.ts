@@ -22,8 +22,17 @@ export const aboutBackground = {
   yearsText: "years in the casino industry",
   paragraphs: [
     "CasTech EQ is led by founder Bilal Durmaz, who has worked in the casino industry for 22 years across Europe, Africa and Asia, on land and on cruise ships.",
-    "That includes running casino operations, opening casinos, and installing gaming floors, cruise ship casinos and camera systems. Since 2021 we have worked under our own name: we sell equipment, install casinos and manufacture LED jackpot screens.",
+    "He started as a slot attendant, then worked as a slot technician and slot manager, and has also served as surveillance manager, IT manager and technical manager. That includes opening casinos and installing gaming floors, cruise ship casinos and camera systems. Since 2021 we have worked under our own name: we sell equipment, install casinos and manufacture LED jackpot screens.",
     "We know how a floor runs and what an operator needs on opening day, so we talk in floor terms: layouts, sightlines, lead times, spares and service, not just product lists.",
+  ],
+  rolesTitle: "Roles held",
+  roles: [
+    "Slot attendant",
+    "Slot technician",
+    "Slot manager",
+    "Surveillance (camera) manager",
+    "IT manager",
+    "Technical manager",
   ],
   timeline: [
     { place: "Northern Cyprus", text: "Casino work." },

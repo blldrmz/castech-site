@@ -54,6 +54,14 @@ export default function AboutPage() {
                   <p key={i} className="castech-body text-zinc-200">{t}</p>
                 ))}
               </div>
+              <div className="mt-8">
+                <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.rolesTitle}</p>
+                <ul className="mt-4 flex flex-wrap gap-2.5">
+                  {aboutBackground.roles.map((r) => (
+                    <li key={r} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{r}</li>
+                  ))}
+                </ul>
+              </div>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {aboutBackground.highlights.map((h) => (
                   <li key={h} className="castech-body flex gap-3 text-sm text-zinc-200">
