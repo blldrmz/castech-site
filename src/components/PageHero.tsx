@@ -22,6 +22,17 @@ export function PageHero({ eyebrow, title, lead, id, slides }: Props) {
           <span aria-hidden="true" className="text-slate-500">/</span>
           <span className="text-[#e3bc7b]">{eyebrow}</span>
         </nav>
+        {slides ? (
+          <div className="max-w-xl lg:max-w-[44%]">
+            <p className="inline-flex items-center gap-3 font-heading text-xs font-bold uppercase tracking-[.16em] text-[#e3bc7b]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#e3bc7b]" aria-hidden="true" /> {eyebrow}
+            </p>
+            <h1 className="mt-6 font-heading text-[clamp(2.4rem,4.2vw,4.4rem)] font-bold leading-[1.08] tracking-[-.06em] text-white">{title}</h1>
+            <div className="mt-8 border-l-2 border-[#e3bc7b]/55 pl-6">
+              <p className="text-[15px] font-medium leading-[1.9] text-slate-100 [text-shadow:0_1px_12px_rgba(0,0,0,.85)] sm:text-[17px]">{lead}</p>
+            </div>
+          </div>
+        ) : (
         <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_.8fr] lg:gap-16">
           <div>
             <p className="inline-flex items-center gap-3 font-heading text-xs font-bold uppercase tracking-[.16em] text-[#e3bc7b]">
@@ -34,6 +45,7 @@ export function PageHero({ eyebrow, title, lead, id, slides }: Props) {
             <p className="mt-7 text-[11px] font-semibold uppercase tracking-[.1em] text-slate-400">Equipment selection · specification · inquiry</p>
           </div>
         </div>
+        )}
       </div>
     </section>
   );
