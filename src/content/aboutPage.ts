@@ -14,3 +14,25 @@ export const aboutPageContent = {
     { title: "Direct manufacturer sourcing", text: "Made-to-order equipment sourced through our own manufacturer relationships." },
   ],
 } as const;
+
+export const aboutBackground = {
+  eyebrow: "Who we are",
+  title: "Built by people who have worked on the casino floor.",
+  paragraphs: [
+    "CasTech EQ is led by founder Bilal Durmaz, who has spent his career in the casino industry. He has worked inside casinos in many countries across Africa, Europe and Asia, and on cruise ship casinos.",
+    "That includes hands-on work on casino openings, from the first equipment decisions to opening day, as well as LED signage and display installations on live gaming floors.",
+    "We know how a floor runs, what an operator needs on the day a casino opens, and what breaks the routine afterwards. That is why we talk in floor terms: layouts, sightlines, lead times, spares and service, not just product lists.",
+  ],
+  regions: [
+    { title: "Africa", text: "Casino work across the continent." },
+    { title: "Europe", text: "Land-based casinos and gaming floors." },
+    { title: "Asia", text: "Casino experience in many countries." },
+    { title: "Cruise ships", text: "Casino operations at sea." },
+  ],
+  highlights: [
+    "Casino openings",
+    "Gaming floor operations",
+    "LED signage and jackpot display installations",
+    "Equipment sourcing for new venues and refits",
+  ],
+} as const;

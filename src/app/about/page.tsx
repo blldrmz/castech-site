@@ -2,11 +2,11 @@ import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { SectionCta } from "@/components/SectionCta";
 import { SiteShell } from "@/components/SiteShell";
-import { aboutPageContent } from "@/content/aboutPage";
+import { aboutBackground, aboutPageContent } from "@/content/aboutPage";
 
 export const metadata = pageMeta(
   "About",
-  "CasTech EQ by Virexa AI Technologies s.r.o.: own-production LED jackpot screens, used slot machines, refurbished shufflers and casino equipment sourced direct from manufacturers.",
+  "CasTech EQ by Virexa AI Technologies s.r.o.: casino industry experience in Africa, Europe, Asia and on cruise ships, own-production LED jackpot screens, used slot machines and refurbished shufflers.",
   "/about/",
 );
 
@@ -40,6 +40,37 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-white/10 bg-[#0a1522]">
+        <div className="castech-container castech-section-y">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <div>
+              <p className="castech-eyebrow">{aboutBackground.eyebrow}</p>
+              <h2 className="castech-h2 castech-h2-gap max-w-2xl">{aboutBackground.title}</h2>
+              <div className="mt-8 space-y-6">
+                {aboutBackground.paragraphs.map((t, i) => (
+                  <p key={i} className="castech-body text-zinc-200">{t}</p>
+                ))}
+              </div>
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                {aboutBackground.highlights.map((h) => (
+                  <li key={h} className="castech-body flex gap-3 text-sm text-zinc-200">
+                    <span aria-hidden="true" className="mt-0.5 text-[#e3bc7b]">•</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="grid gap-4 self-start sm:grid-cols-2">
+              {aboutBackground.regions.map((r) => (
+                <div key={r.title} className="castech-card-product p-6">
+                  <h3 className="castech-card-title">{r.title}</h3>
+                  <p className="castech-body mt-3 text-sm text-zinc-300">{r.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
