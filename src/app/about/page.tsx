@@ -6,7 +6,7 @@ import { aboutBackground, aboutPageContent } from "@/content/aboutPage";
 
 export const metadata = pageMeta(
   "About",
-  "CasTech EQ by Virexa AI Technologies s.r.o.: 22 years of casino industry experience across Europe, Africa, Asia and cruise ships, own-production LED jackpot screens, used slot machines and refurbished shufflers.",
+  "CasTech EQ by Virexa AI Technologies s.r.o.: 22 years of international casino management and setup experience, own-production LED jackpot screens, used slot machines and refurbished shufflers.",
   "/about/",
 );
 
@@ -54,14 +54,6 @@ export default function AboutPage() {
                   <p key={i} className="castech-body text-zinc-200">{t}</p>
                 ))}
               </div>
-              <div className="mt-8">
-                <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.rolesTitle}</p>
-                <ul className="mt-4 flex flex-wrap gap-2.5">
-                  {aboutBackground.roles.map((r) => (
-                    <li key={r} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{r}</li>
-                  ))}
-                </ul>
-              </div>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {aboutBackground.highlights.map((h) => (
                   <li key={h} className="castech-body flex gap-3 text-sm text-zinc-200">
@@ -79,15 +71,12 @@ export default function AboutPage() {
                 </span>
                 <span className="pb-2 text-sm tracking-[.06em] text-slate-300">{aboutBackground.yearsText}</span>
               </div>
-              <ol className="mt-8 space-y-5 border-l border-[#e3bc7b]/30 pl-6">
-                {aboutBackground.timeline.map((t, i) => (
-                  <li key={i} className="relative">
-                    <span aria-hidden="true" className="absolute -left-[30px] top-2 h-2 w-2 rounded-full bg-[#e3bc7b]" />
-                    <p className="font-heading text-base font-semibold text-white">{t.place}</p>
-                    <p className="castech-body mt-1 text-sm text-zinc-300">{t.text}</p>
-                  </li>
+              <p className="mt-8 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.placesTitle}</p>
+              <ul className="mt-4 flex flex-wrap gap-2.5">
+                {aboutBackground.places.map((c) => (
+                  <li key={c} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>
                 ))}
-              </ol>
+              </ul>
             </div>
           </div>
         </div>
