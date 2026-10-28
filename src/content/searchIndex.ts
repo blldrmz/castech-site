@@ -17,6 +17,13 @@ const pages: SearchEntry[] = [
     type: "Page",
     href: "/jackpot-screens/",
   },
+  {
+    title: "Installations",
+    detail: "Jackpot cube displays, wide bank screens, wall and entrance screens, slim LED pillars, wireless charging for gaming tables, site videos",
+    type: "Page",
+    href: "/installations/",
+  },
+  { title: "Wireless table charger", detail: "Wireless phone charging built into poker, card and roulette table rails", type: "Page", href: "/installations/#wireless-charging" },
   { title: "Used slot machines", detail: "Pre-owned slot machines, upright, slant top, multigame, electronic roulette", type: "Page", href: "/slot-machines/" },
   { title: "Live table equipment", detail: "Roulette, blackjack, baccarat, poker, craps, shufflers, chips, seating", type: "Page", href: "/live-games/" },
   { title: "Casino floor accessories", detail: "TITO, service carts, key control, signage, operations accessories", type: "Page", href: "/accessories/" },

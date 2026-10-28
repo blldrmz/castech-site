@@ -82,6 +82,9 @@ export default function JackpotScreensPage() {
               Photographs show installed jackpot displays. The same screens can show jackpot values from your server or any other content you choose, such as a live sports broadcast. Slot machine brands visible in the photographs belong to their
               manufacturers and are not affiliated with CasTech EQ.
             </p>
+            <Link href="/installations" className="castech-btn-secondary mt-8 inline-flex">
+              See installation stories and site videos <span aria-hidden="true" className="ml-2">↗</span>
+            </Link>
           </div>
 
           <div className="mt-20 max-w-3xl">
