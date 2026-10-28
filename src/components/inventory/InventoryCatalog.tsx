@@ -9,43 +9,26 @@ import {
   type InventorySlotMachine,
   type InventoryTypeFilterId,
 } from "@/content/inventory";
-import { slotCatalogImageUrl } from "@/lib/slotImages";
-import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-function filterByBrand(
-  items: InventorySlotMachine[],
-  brandTabId: InventoryBrandTabId,
-): InventorySlotMachine[] {
-  const tab = inventoryBrandTabs.find((t) => t.id === brandTabId);
-  if (!tab || tab.brandKey === null) return items;
-  return items.filter((m) => m.brand === tab.brandKey);
-}
+const title = (m: InventorySlotMachine) => (m.brand === "Electronic roulette" ? m.model : `${m.brand} ${m.model}`);
+const inquiry = (m: InventorySlotMachine) => `/contact?item=${encodeURIComponent(title(m))}`;
 
-function groupByBrand(items: InventorySlotMachine[]): [string, InventorySlotMachine[]][] {
-  const map = new Map<string, InventorySlotMachine[]>();
-  for (const m of items) {
-    const list = map.get(m.brand) ?? [];
-    list.push(m);
-    map.set(m.brand, list);
-  }
-  return [...map.entries()].sort(([a], [b]) => a.localeCompare(b));
-}
+const chip = (active: boolean) =>
+  active
+    ? "font-heading rounded-xl border border-[#c4a66e]/45 bg-[#c4a66e]/[0.12] px-3.5 py-2 text-[12px] font-semibold tracking-wide text-[#f3d59e] transition"
+    : "font-heading rounded-xl border border-white/[0.08] bg-zinc-900/50 px-3.5 py-2 text-[12px] font-semibold tracking-wide text-zinc-300 transition hover:border-white/15 hover:text-zinc-100";
 
 export function InventoryCatalog() {
-  const [brandTab, setBrandTab] = useState<InventoryBrandTabId>("egt");
-  const [typeFilter, setTypeFilter] =
-    useState<InventoryTypeFilterId>("All");
+  const [brandTab, setBrandTab] = useState<InventoryBrandTabId>("all");
+  const [typeFilter, setTypeFilter] = useState<InventoryTypeFilterId>("All");
   const [lightbox, setLightbox] = useState<InventorySlotMachine | null>(null);
-
-  const closeLightbox = useCallback(() => setLightbox(null), []);
+  const close = useCallback(() => setLightbox(null), []);
 
   useEffect(() => {
     if (!lightbox) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeLightbox();
-    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
     window.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -53,210 +36,98 @@ export function InventoryCatalog() {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
     };
-  }, [lightbox, closeLightbox]);
+  }, [lightbox, close]);
 
   const filtered = useMemo(() => {
-    let list = filterByBrand(inventorySlotMachines, brandTab);
-    list = list.filter((m) => matchesInventoryTypeFilter(m, typeFilter));
-    return list;
+    const tab = inventoryBrandTabs.find((t) => t.id === brandTab);
+    return inventorySlotMachines.filter(
+      (m) => (!tab || tab.brandKey === null || m.brand === tab.brandKey) && matchesInventoryTypeFilter(m, typeFilter),
+    );
   }, [brandTab, typeFilter]);
 
-  const brandSections = useMemo(() => groupByBrand(filtered), [filtered]);
-
   return (
-    <section
-      className="border-b border-white/[0.06] bg-[#070d15]"
-      aria-labelledby="slot-machine-catalog-heading"
-    >
+    <section className="border-b border-white/[0.06] bg-[#070d15]" aria-labelledby="slot-machine-catalog-heading">
       <div className="castech-container castech-section-y">
         <div className="max-w-3xl">
-          <h2 id="slot-machine-catalog-heading" className="castech-h2">
-            Slot machines
-          </h2>
+          <h2 id="slot-machine-catalog-heading" className="castech-h2">Slot machines</h2>
           <p className="castech-body mt-5 text-zinc-400 sm:mt-6">
-            All slot machines listed here are <strong className="text-zinc-200">pre-owned units</strong>.
-            Condition, year, stock and lead times are confirmed per unit on request. CasTech EQ is not
-            an authorized dealer or distributor of any brand shown; manufacturer names are used only to
+            All slot machines listed here are <strong className="text-zinc-200">pre-owned units</strong>. Condition, year, stock and lead times are
+            confirmed per unit on request. CasTech EQ is not an authorized dealer or distributor of any brand shown; manufacturer names are used only to
             identify cabinet models.
           </p>
         </div>
 
-        <div className="mt-10 space-y-8 sm:mt-12">
+        <div className="mt-10 space-y-6 sm:mt-12">
           <div>
-            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
-              Brand
-            </p>
-            <div
-              className="mt-3 flex flex-wrap gap-2"
-              role="tablist"
-              aria-label="Filter by brand"
-            >
-              {inventoryBrandTabs.map((tab) => {
-                const active = brandTab === tab.id;
-                return (
-                  <button
-                    key={tab.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={active}
-                    onClick={() => setBrandTab(tab.id)}
-                    className={
-                      active
-                        ? "font-heading rounded-xl border border-[#c4a66e]/45 bg-[#c4a66e]/[0.12] px-3.5 py-2 text-[12px] font-semibold tracking-wide text-emerald-100 shadow-sm shadow-[#c4a66e]/10 transition hover:bg-[#c4a66e]/[0.16]"
-                        : "font-heading rounded-xl border border-white/[0.08] bg-zinc-900/50 px-3.5 py-2 text-[12px] font-semibold tracking-wide text-zinc-300 transition hover:border-white/15 hover:bg-zinc-800/60 hover:text-zinc-100"
-                    }
-                  >
-                    {tab.label}
-                  </button>
-                );
-              })}
+            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Brand</p>
+            <div className="mt-3 flex flex-wrap gap-2" role="tablist" aria-label="Filter by brand">
+              {inventoryBrandTabs.map((t) => (
+                <button key={t.id} type="button" role="tab" aria-selected={brandTab === t.id} onClick={() => setBrandTab(t.id)} className={chip(brandTab === t.id)}>
+                  {t.label}
+                </button>
+              ))}
             </div>
           </div>
-
           <div>
-            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
-              Format
-            </p>
-            <div
-              className="mt-3 flex flex-wrap gap-2"
-              role="tablist"
-              aria-label="Filter by cabinet format"
-            >
-              {inventoryTypeFilters.map((id) => {
-                const active = typeFilter === id;
-                return (
-                  <button
-                    key={id}
-                    type="button"
-                    role="tab"
-                    aria-selected={active}
-                    onClick={() => setTypeFilter(id)}
-                    className={
-                      active
-                        ? "font-heading rounded-xl border border-white/[0.14] bg-white/[0.08] px-3.5 py-2 text-[12px] font-semibold tracking-wide text-zinc-50 transition hover:bg-white/[0.1]"
-                        : "font-heading rounded-xl border border-white/[0.06] bg-transparent px-3.5 py-2 text-[12px] font-semibold tracking-wide text-zinc-400 transition hover:border-white/12 hover:text-zinc-200"
-                    }
-                  >
-                    {id}
-                  </button>
-                );
-              })}
+            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Format</p>
+            <div className="mt-3 flex flex-wrap gap-2" role="tablist" aria-label="Filter by cabinet format">
+              {inventoryTypeFilters.map((id) => (
+                <button key={id} type="button" role="tab" aria-selected={typeFilter === id} onClick={() => setTypeFilter(id)} className={chip(typeFilter === id)}>
+                  {id}
+                </button>
+              ))}
             </div>
           </div>
         </div>
 
-        <p className="font-heading mt-10 text-sm font-medium text-zinc-500 sm:mt-12">
-          Showing{" "}
-          <span className="text-zinc-300">{filtered.length}</span>{" "}
-          {filtered.length === 1 ? "model" : "models"}
+        <p className="font-heading mt-10 text-sm font-medium text-zinc-500">
+          Showing <span className="text-zinc-300">{filtered.length}</span> {filtered.length === 1 ? "model" : "models"}
         </p>
 
-        <div className="mt-10 space-y-16 sm:space-y-20">
-          {brandSections.map(([brand, models]) => (
-            <div key={brand}>
-              <h3 className="font-heading border-b border-[#c4a66e]/25 pb-3 text-2xl font-bold tracking-tight text-zinc-50 sm:text-3xl">
-                {brand}
-              </h3>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {models.map((item) => {
-                  const thumbSrc = slotCatalogImageUrl(item, "thumb");
-                  return (
-                    <div
-                      key={`${item.brand}-${item.model}`}
-                      className="flex gap-3 rounded-2xl border border-white/[0.07] bg-zinc-900/40 p-3 transition hover:border-[#c4a66e]/25"
-                    >
-                      <button
-                        type="button"
-                        className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-lg border border-white/[0.08] bg-zinc-950 p-1.5 outline-none ring-[#c4a66e]/40 focus-visible:ring-2"
-                        onClick={() => setLightbox(item)}
-                        aria-label={`Enlarge brand image for ${item.brand} ${item.model}`}
-                      >
-                        <Image
-                          src={thumbSrc}
-                          alt={`${item.brand} logo`}
-                          fill
-                          className="object-contain"
-                          sizes="104px"
-                          unoptimized
-                        />
-                      </button>
-                      <div className="min-w-0 flex-1">
-                        <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-[#e3bc7b]/90">
-                          {item.type}
-                        </p>
-                        <p className="font-heading mt-1 text-sm font-bold leading-snug tracking-tight text-zinc-100">
-                          {item.model}
-                        </p>
-                        <p className="mt-1 line-clamp-2 text-xs font-medium leading-relaxed text-zinc-400">
-                          {item.description}
-                        </p>
-                        <Link
-                          href="/contact"
-                          className="mt-2 inline-block text-xs font-semibold text-[#e3bc7b]/95 hover:text-[#e3bc7b]"
-                        >
-                          Request details →
-                        </Link>
-                      </div>
-                    </div>
-                  );
-                })}
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {filtered.map((m) => (
+            <article key={m.image} className="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0e1722] transition hover:border-[#c4a66e]/35">
+              <button
+                type="button"
+                onClick={() => setLightbox(m)}
+                className="relative flex h-64 items-center justify-center bg-[#0b131d] p-4 outline-none ring-[#c4a66e]/40 focus-visible:ring-2"
+                aria-label={`Enlarge photo: ${title(m)}`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={m.image} alt={`${title(m)}, pre-owned`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+              </button>
+              <div className="flex flex-1 flex-col p-5">
+                <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-[#e3bc7b]/90">{m.type}</p>
+                <h3 className="font-heading mt-1.5 text-base font-bold leading-snug tracking-tight text-zinc-50">{title(m)}</h3>
+                <p className="mt-2 text-xs font-medium leading-relaxed text-zinc-400">{m.description}</p>
+                <Link href={inquiry(m)} className="mt-auto pt-4 text-xs font-semibold text-[#e3bc7b] hover:text-[#f3d59e]">
+                  Request details ↗
+                </Link>
               </div>
-            </div>
+            </article>
           ))}
-        </div>
 
-        {filtered.length === 0 ? (
-          <p className="font-sans mt-12 text-center text-base font-medium text-zinc-500">
-            No models match these filters. Open{" "}
-            <button
-              type="button"
-              className="text-[#e3bc7b] underline-offset-2 hover:underline"
-              onClick={() => setBrandTab("all")}
-            >
-              All
-            </button>{" "}
-            brands or relax the format filter.
-          </p>
-        ) : null}
+          <article className="flex flex-col justify-between rounded-2xl border border-dashed border-[#c4a66e]/45 bg-[#c4a66e]/[0.05] p-6">
+            <div>
+              <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-[#e3bc7b]">Not on the list?</p>
+              <h3 className="font-heading mt-2 text-lg font-bold leading-snug tracking-tight text-zinc-50">Tell us the machine you are looking for.</h3>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">
+                Send us the brand, model, cabinet type or game mix you need. We will search our supplier network and find it for you.
+              </p>
+            </div>
+            <Link href="/contact?item=Slot%20machine%20search" className="castech-btn-primary mt-6 self-start">
+              Find a machine for me <span aria-hidden="true" className="ml-2">↗</span>
+            </Link>
+          </article>
+        </div>
       </div>
 
       {lightbox ? (
-        <div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image preview"
-          onClick={closeLightbox}
-        >
-          <div
-            className="relative w-[256px] max-w-[90vw]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="absolute -right-1 -top-10 rounded-lg border border-white/15 bg-zinc-900 px-3 py-1.5 text-xs font-semibold text-zinc-200 hover:bg-zinc-800 sm:-right-2 sm:-top-12"
-              onClick={closeLightbox}
-            >
-              Close
-            </button>
-            <div className="relative h-[256px] w-[256px] max-w-[85vw] overflow-hidden rounded-xl border border-white/[0.12] bg-zinc-900 p-4 shadow-2xl">
-              <Image
-                src={slotCatalogImageUrl(lightbox, "modal")}
-                alt={`${lightbox.brand} logo`}
-                width={256}
-                height={256}
-                className="h-full w-full object-contain"
-                unoptimized
-              />
-            </div>
-            <p className="mt-3 text-center font-heading text-sm font-semibold text-zinc-200">
-              {lightbox.brand}{" "}
-              <span className="text-zinc-400">·</span> {lightbox.model}
-            </p>
-            <p className="mt-1 text-center text-xs text-zinc-500">
-              Cabinet photo on request — shown here is brand identity.
-            </p>
-          </div>
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/85 p-4" role="dialog" aria-modal="true" aria-label={title(lightbox)} onClick={close}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={lightbox.image} alt={title(lightbox)} className="max-h-[82vh] max-w-full rounded-lg object-contain" onClick={(e) => e.stopPropagation()} />
+          <p className="absolute bottom-5 left-0 right-0 text-center text-sm font-semibold text-zinc-200">{title(lightbox)} · {lightbox.type}</p>
+          <button type="button" onClick={close} aria-label="Close" className="absolute right-4 top-4 h-11 w-11 rounded-full bg-white/10 text-2xl text-white hover:bg-white/20">×</button>
         </div>
       ) : null}
     </section>

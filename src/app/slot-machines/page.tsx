@@ -7,7 +7,7 @@ import { slotMachinesPageHero } from "@/content/inventory";
 
 export const metadata = pageMeta(
   "Used slot machines & electronic gaming equipment",
-  "Pre-owned slot machines: upright, slant top, multigame and electronic roulette cabinets from EGT, Novomatic, IGT, Aristocrat and more. Not an authorized dealer.",
+  "Pre-owned slot machines from EGT, Novomatic, Aristocrat and Amatic, VIP lounge cabinets and electronic roulette. Not on the list? We will find the machine you need.",
   "/slot-machines/",
 );
 
@@ -22,8 +22,8 @@ export default function SlotMachinesPage() {
       />
       <InventoryCatalog />
       <SectionCta
-        title="Found the right format?"
-        text="We confirm condition, availability, power requirements and delivery windows for your market. Reach out with your shortlist."
+        title="Looking for a machine that is not listed?"
+        text="Contact us with the brand, model or cabinet type you need. We will find it for you and confirm condition, availability and delivery for your market."
       />
     </SiteShell>
   );

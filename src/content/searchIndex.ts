@@ -36,7 +36,7 @@ const pages: SearchEntry[] = [
 export const searchIndex: SearchEntry[] = [
   ...pages,
   ...inventorySlotMachines.map((m) => ({
-    title: `${m.brand} ${m.model}`,
+    title: m.brand === "Electronic roulette" ? m.model : `${m.brand} ${m.model}`,
     detail: `${m.type} ${m.description}`,
     type: "Slot machine (used)",
     href: `/slot-machines/`,
