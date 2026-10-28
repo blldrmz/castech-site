@@ -23,7 +23,7 @@ export const aboutBackground = {
   yearsText: "years of international casino management and setup",
   paragraphs: [
     "Our founder Bilal Durmaz spent 22 years in international casino management and setup across Europe, Africa and Asia, on land and on cruise ships, opening casinos in Ghana, Northern Cyprus, Kosovo, Batumi and Tbilisi (Georgia) and on two cruise ships.",
-    "In 2021 that experience became a company: Deniz Trade LLC in Batumi, Georgia. We started with casino equipment and slot machine sales and our own LED screen production. Since then we have supplied slot machines and casino equipment to customers from Africa and Europe to Taiwan, and built and installed jackpot screens for casinos in Batumi and Tbilisi.",
+    "In 2021 that experience became a company: Deniz Trade LLC in Batumi, Georgia. We started with casino equipment and slot machine sales and our own LED screen production. Since then we have supplied slot machines and casino equipment to customers in Liberia, Belgium, Trinidad and Tobago and Taiwan, and built and installed jackpot screens for casinos in Batumi and Tbilisi.",
     "In 2026 we founded Virexa AI Technologies s.r.o. in Prague, together with CasTech AI. CasTech EQ continues our equipment and LED jackpot screen work as a Virexa brand, with Deniz Trade LLC as our sister company in Georgia.",
     "We know how a floor runs and what an operator needs on opening day, so we talk in floor terms: layouts, sightlines, lead times, spares and service, not just product lists.",
   ],
@@ -31,9 +31,11 @@ export const aboutBackground = {
   timeline: [
     { year: "22 yrs", text: "Casino management, setup and openings in Europe, Africa, Asia and on cruise ships" },
     { year: "2021", text: "Deniz Trade LLC founded in Batumi: casino equipment, slot machines and LED screen production" },
-    { year: "Since 2021", text: "Slot machines and equipment supplied from Africa and Europe to Taiwan; jackpot screens built and installed in Batumi and Tbilisi casinos" },
+    { year: "Since 2021", text: "Slot machines and equipment supplied to Liberia, Belgium, Trinidad and Tobago and Taiwan; jackpot screens built and installed in Batumi and Tbilisi casinos" },
     { year: "2026", text: "Virexa AI Technologies s.r.o. and CasTech AI launched in Prague" },
   ],
+  salesTitle: "Where we have supplied",
+  sales: ["Liberia", "Belgium", "Trinidad and Tobago", "Taiwan", "Georgia"],
   placesTitle: "Where we have worked",
   places: [
     "Northern Cyprus",

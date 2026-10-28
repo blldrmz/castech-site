@@ -81,6 +81,12 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ol>
+              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.salesTitle}</p>
+              <ul className="mt-4 flex flex-wrap gap-2.5">
+                {aboutBackground.sales.map((c) => (
+                  <li key={c} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>
+                ))}
+              </ul>
               <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.placesTitle}</p>
               <ul className="mt-4 flex flex-wrap gap-2.5">
                 {aboutBackground.places.map((c) => (
