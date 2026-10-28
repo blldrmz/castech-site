@@ -18,16 +18,19 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   title: {
-    default: "CasTech — Professional Casino Equipment",
-    template: "%s | CasTech",
+    default: "CasTech EQ — Casino Equipment & LED Jackpot Screens",
+    template: "%s | CasTech EQ",
   },
   description:
-    "Casino equipment and hardware: LED jackpot screens, used slot machines, live tables and floor accessories. A Virexa AI Technologies division.",
+    "Casino equipment and hardware: LED jackpot screens, used slot machines, live tables and floor accessories. A brand of Virexa AI Technologies s.r.o., Prague.",
+  alternates: { canonical: "https://castecheq.com/" },
+  twitter: { card: "summary_large_image", images: ["/og-image.png"] },
   metadataBase: new URL("https://castecheq.com"),
   openGraph: {
-    title: "CasTech — Professional Casino Equipment",
+    title: "CasTech EQ — Casino Equipment & LED Jackpot Screens",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "CasTech EQ — casino equipment and LED jackpot screens" }],
     description:
-      "Own-production LED jackpot screens, used slot machines, refurbished shufflers and casino equipment from CasTech EQ, a Virexa AI Technologies division.",
+      "Own-production LED jackpot screens, used slot machines, refurbished shufflers and casino equipment from CasTech EQ, a brand of Virexa AI Technologies s.r.o.",
     locale: "en_US",
     type: "website",
     url: "https://castecheq.com",

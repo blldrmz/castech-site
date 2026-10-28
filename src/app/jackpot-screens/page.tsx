@@ -14,8 +14,8 @@ import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta(
-  "LED jackpot screens, made to your size",
-  "Own-production LED jackpot screens for casino floors: built to your dimensions, compatible with jackpot servers of any brand and model, delivered by CasTech EQ.",
+  "LED jackpot screens made to your size",
+  "Own-production LED jackpot screens for casino floors: built to your dimensions, compatible with jackpot servers of any brand, by CasTech EQ.",
   "/jackpot-screens/",
 );
 

@@ -6,8 +6,8 @@ import { SiteShell } from "@/components/SiteShell";
 import { slotMachinesPageHero } from "@/content/inventory";
 
 export const metadata = pageMeta(
-  "Used slot machines & electronic gaming",
-  "Pre-owned slot machines: upright, slant top, multigame and electronic roulette cabinets from EGT, Novomatic, IGT, Aristocrat and more. Condition and availability confirmed per unit. CasTech EQ is not an authorized dealer.",
+  "Used slot machines & electronic gaming equipment",
+  "Pre-owned slot machines: upright, slant top, multigame and electronic roulette cabinets from EGT, Novomatic, IGT, Aristocrat and more. Not an authorized dealer.",
   "/slot-machines/",
 );
 

@@ -8,8 +8,8 @@ import { liveGroupCoverById } from "@/content/sectionCovers";
 import { liveGameGroups, liveGamesPageHero } from "@/content/liveGames";
 
 export const metadata = pageMeta(
-  "Live games & table equipment",
-  "Roulette, blackjack, baccarat, poker and craps equipment: tables, felts, chips, wheels and refurbished shufflers. Other items produced to order through direct manufacturer partners.",
+  "Casino live games & table equipment",
+  "Roulette, blackjack, baccarat, poker and craps equipment: tables, felts, chips, wheels and refurbished shufflers, plus made-to-order items.",
   "/live-games/",
 );
 

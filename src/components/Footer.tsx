@@ -26,6 +26,7 @@ export function Footer() {
             <Link href="/about" className="hover:text-[#e3bc7b]">About</Link>
             <Link href="/contact" className="hover:text-[#e3bc7b]">Contact</Link>
             <Link href="/privacy" className="hover:text-[#e3bc7b]">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-[#e3bc7b]">Terms &amp; Conditions</Link>
           </div>
           <div className="text-sm text-slate-300">
             <a href={`mailto:${contactContent.email}`} className="block hover:text-[#e3bc7b]">{contactContent.email}</a>

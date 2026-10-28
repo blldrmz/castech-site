@@ -7,8 +7,8 @@ import { accessoryGroups, accessoriesPageHero } from "@/content/accessoriesConte
 import { accessoryGroupCoverById } from "@/content/sectionCovers";
 
 export const metadata = pageMeta(
-  "Casino floor accessories",
-  "TITO, seating, service carts, table smallwares, key control, signage and operations accessories for casino floors. CasTech EQ.",
+  "Casino floor accessories & operations equipment",
+  "TITO, seating, service carts, table smallwares, key control and signage for casino floors, from CasTech EQ, a brand of Virexa AI Technologies.",
   "/accessories/",
 );
 

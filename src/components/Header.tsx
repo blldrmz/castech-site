@@ -54,7 +54,7 @@ export function Header() {
           className="min-w-0 shrink text-left font-heading transition-opacity hover:opacity-90"
         >
           <div className="text-base font-bold tracking-[0.18em] text-zinc-50 sm:text-lg md:text-xl">
-            {brand.name}
+            {brand.name} <span className="text-[#e3bc7b]">EQ</span>
           </div>
           <div className="mt-0.5 text-[8px] font-semibold uppercase tracking-[0.28em] text-zinc-300 sm:text-[9px] md:text-[10px]">
             {brand.tagline}
