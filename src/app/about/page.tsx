@@ -71,7 +71,17 @@ export default function AboutPage() {
                 </span>
                 <span className="pb-2 text-sm tracking-[.06em] text-slate-300">{aboutBackground.yearsText}</span>
               </div>
-              <p className="mt-8 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.placesTitle}</p>
+              <p className="mt-8 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.timelineTitle}</p>
+              <ol className="mt-5 space-y-0 border-l border-[#e3bc7b]/30">
+                {aboutBackground.timeline.map((t) => (
+                  <li key={t.year} className="relative pb-6 pl-6 last:pb-0">
+                    <span aria-hidden="true" className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#e3bc7b]" />
+                    <span className="block font-heading text-sm font-bold text-white">{t.year}</span>
+                    <span className="mt-1 block text-sm leading-6 text-slate-300">{t.text}</span>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.placesTitle}</p>
               <ul className="mt-4 flex flex-wrap gap-2.5">
                 {aboutBackground.places.map((c) => (
                   <li key={c} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>

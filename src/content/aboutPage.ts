@@ -7,7 +7,7 @@ export const aboutPageContent = {
     "Our own production is LED jackpot screens: built to the sizes you request and compatible with jackpot servers of any brand and model, then delivered and set up for your floor.",
     "Slot machines are supplied pre-owned and shufflers refurbished. Other equipment that has to be manufactured is sourced to order through our direct relationships with manufacturers. CasTech EQ is not an authorized dealer or distributor of any brand; brand names on this website only identify equipment.",
     "Exact specifications, availability, compliance requirements and commercial terms are confirmed individually for every inquiry. Virexa AI Technologies s.r.o., IČO 29716055, Cihlářská 782/10a, Prosek, 190 00 Praha 9.",
-    "In Georgia we work through our sister company Deniz Trade LLC (ID 445613480, Khakhuli Str. No. 3, Batumi), established in 2021 and the base of our installation and LED production work in the region.",
+    "Our sister company in Georgia is Deniz Trade LLC (ID 445613480, Khakhuli Str. No. 3, Batumi), founded in 2021.",
   ],
   highlights: [
     { title: "Own LED production", text: "Jackpot screens made to your sizes, compatible with any jackpot server brand and model." },
@@ -18,13 +18,21 @@ export const aboutPageContent = {
 
 export const aboutBackground = {
   eyebrow: "Who we are",
-  title: "22 years of international casino management and setup.",
+  title: "22 years on casino floors, then our own company.",
   yearsLabel: "22",
   yearsText: "years of international casino management and setup",
   paragraphs: [
-    "CasTech EQ is led by founder Bilal Durmaz, with 22 years of international casino management and setup experience across Europe, Africa and Asia, on land and on cruise ships.",
-    "We have managed casino departments and opened casinos in Ghana, Northern Cyprus, Kosovo, Batumi and Tbilisi (Georgia), and on two cruise ships, setting up gaming floors and their technical systems. Since 2021 we have worked under our own name, first through Deniz Trade LLC in Batumi, Georgia, and now also through Virexa AI Technologies s.r.o. in Prague: equipment sales, casino setup and LED jackpot screen production.",
+    "Our founder Bilal Durmaz spent 22 years in international casino management and setup across Europe, Africa and Asia, on land and on cruise ships, opening casinos in Ghana, Northern Cyprus, Kosovo, Batumi and Tbilisi (Georgia) and on two cruise ships.",
+    "In 2021 that experience became a company: Deniz Trade LLC in Batumi, Georgia. We started with casino equipment and slot machine sales and our own LED screen production. Since then we have supplied slot machines and casino equipment to customers from Africa and Europe to Taiwan, and built and installed jackpot screens for casinos in Batumi and Tbilisi.",
+    "In 2026 we founded Virexa AI Technologies s.r.o. in Prague, together with CasTech AI. CasTech EQ continues our equipment and LED jackpot screen work as a Virexa brand, with Deniz Trade LLC as our sister company in Georgia.",
     "We know how a floor runs and what an operator needs on opening day, so we talk in floor terms: layouts, sightlines, lead times, spares and service, not just product lists.",
+  ],
+  timelineTitle: "Our story",
+  timeline: [
+    { year: "22 yrs", text: "Casino management, setup and openings in Europe, Africa, Asia and on cruise ships" },
+    { year: "2021", text: "Deniz Trade LLC founded in Batumi: casino equipment, slot machines and LED screen production" },
+    { year: "Since 2021", text: "Slot machines and equipment supplied from Africa and Europe to Taiwan; jackpot screens built and installed in Batumi and Tbilisi casinos" },
+    { year: "2026", text: "Virexa AI Technologies s.r.o. and CasTech AI launched in Prague" },
   ],
   placesTitle: "Where we have worked",
   places: [
