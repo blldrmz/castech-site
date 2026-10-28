@@ -39,8 +39,19 @@ export function SearchResults() {
 
       {initial ? (
         <p className="mt-8 text-sm text-slate-400" role="status" aria-live="polite">
-          {results.length ? `${results.length} result${results.length === 1 ? "" : "s"} for “${initial}”` : `No results for “${initial}”. Try a shorter word, or contact us and we will help.`}
+          {results.length ? `${results.length} result${results.length === 1 ? "" : "s"} for “${initial}”` : `No results for “${initial}”. Try a shorter word.`}
         </p>
+      ) : null}
+
+      {initial ? (
+        <div className="mt-6 flex max-w-2xl flex-col gap-4 rounded-xl border border-dashed border-[#c4a66e]/45 bg-[#c4a66e]/[0.05] p-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm leading-6 text-slate-200">
+            {results.length ? "Looking for a specific machine that is not listed?" : "We may still be able to source it."} Tell us what you need and we will find it for you.
+          </p>
+          <Link href={`/contact?item=${encodeURIComponent(`Find a machine: ${initial}`)}`} className="castech-btn-primary shrink-0 whitespace-nowrap">
+            Find it for me <span aria-hidden="true" className="ml-2">↗</span>
+          </Link>
+        </div>
       ) : null}
 
       <ul className="mt-6 grid gap-3">

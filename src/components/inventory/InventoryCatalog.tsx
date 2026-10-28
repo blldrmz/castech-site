@@ -115,7 +115,7 @@ export function InventoryCatalog() {
                 Send us the brand, model, cabinet type or game mix you need. We will search our supplier network and find it for you.
               </p>
             </div>
-            <Link href="/contact?item=Slot%20machine%20search" className="castech-btn-primary mt-6 self-start">
+            <Link href="/contact?item=Find%20a%20machine" className="castech-btn-primary mt-6 self-start">
               Find a machine for me <span aria-hidden="true" className="ml-2">↗</span>
             </Link>
           </article>

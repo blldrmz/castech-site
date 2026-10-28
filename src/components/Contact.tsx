@@ -15,7 +15,10 @@ export function Contact() {
   useEffect(() => {
     const item = new URLSearchParams(window.location.search).get("item");
     if (item && messageRef.current && !messageRef.current.value) {
-      messageRef.current.value = "Inquiry about: " + item.slice(0, 200) + "\n\n";
+      messageRef.current.value =
+        item.startsWith("Find a machine")
+          ? "Please find this machine for me:\n\nBrand / model: " + item.replace(/^Find a machine:?\s*/, "").slice(0, 120) + "\nCabinet type (upright, slant top, VIP...):\nGame mix or jackpot:\nQuantity:\nDelivery country:\n"
+          : "Inquiry about: " + item.slice(0, 200) + "\n\n";
     }
   }, []);
 
