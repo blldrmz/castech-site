@@ -54,7 +54,7 @@ export function Contact() {
     } catch {
       setStatus("fallback");
       window.location.href =
-        "mailto:" + contactContent.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
+        "mailto:" + contactContent.inquiryEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
     }
   }
 
