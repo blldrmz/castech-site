@@ -14,7 +14,7 @@ export type InstallationStory = {
 
 const img = (name: string, w: number, h: number, caption: string, alt = caption, feature = false): InstallationMedia => ({
   kind: "image",
-  src: `/images/installations/${name}.webp`,
+  src: name.startsWith("/") ? name : `/images/installations/${name}.webp`,
   alt,
   caption,
   w,
@@ -64,9 +64,9 @@ export const installationStories: readonly InstallationStory[] = [
       vid("bell-cube", 464, 832, "Cube display, live values on all sides"),
       vid("bell-cube-floor", 576, 1024, "Walking around the cube on the floor"),
       img("bell-cube-02", 1280, 720, "Cube display seen across the gaming floor"),
-      img("bell-cube-03", 720, 1280, "Cube display from the end of the bank"),
-      img("bell-cube-04", 720, 1280, "Cube display above a three-machine bank"),
-      img("bell-cube-05", 802, 1280, "Cube display, close view"),
+      img("/images/hero/egt-cube.webp", 512, 910, "Cube display from the end of the bank"),
+      img("/images/hero/egt-three-machines.webp", 912, 1172, "Cube display above a three-machine bank"),
+      img("/images/hero/overhead-grand.webp", 771, 1051, "Cube display, close view"),
     ],
   },
   {
@@ -101,12 +101,12 @@ export const installationStories: readonly InstallationStory[] = [
       { label: "Result", text: "Jackpot values visible from the door and from across the room." },
     ],
     media: [
-      img("wall-01", 576, 678, "Wall-mounted jackpot screen in a corner above the bank", undefined, true),
-      img("entrance-01", 720, 1280, "Three-level jackpot screen above a casino entrance"),
+      img("/images/hero/wall-screen.webp", 928, 1145, "Wall-mounted jackpot screen in a corner above the bank", undefined, true),
+      img("/images/hero/entrance-led.webp", 864, 1001, "Three-level jackpot screen above a casino entrance"),
       img("top-01", 720, 1280, "Branded screen above a slot bank"),
       img("cube-01", 720, 704, "Multi-level jackpot display above a bank"),
       vid("cube-jackpot", 576, 1024, "Multi-level display with animated content"),
-      img("wall-02", 1280, 324, "Wall screen with Grand and Major values"),
+      img("/images/hero/six-bank.webp", 1129, 928, "Wall screen above a six-machine bank"),
     ],
   },
   {
@@ -121,7 +121,7 @@ export const installationStories: readonly InstallationStory[] = [
       { label: "Your choice", text: "Content is set by the venue and can be changed at any time." },
     ],
     media: [
-      img("lounge-01", 720, 537, "Large screen in a slot lounge showing a live sports broadcast", undefined, true),
+      img("/images/hero/tv-wall.webp", 1181, 912, "Large screen in a slot lounge showing a live sports broadcast", undefined, true),
       img("roulette-01", 999, 720, "Roulette results and jackpot display on the gaming floor"),
     ],
   },

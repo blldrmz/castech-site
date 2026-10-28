@@ -113,7 +113,7 @@ export function InstallationGallery({ items }: { items: readonly InstallationMed
             <figure key={m.src} className={cls}>
               <button type="button" onClick={() => setOpen(pi)} className="block h-full w-full cursor-zoom-in" aria-label={`Enlarge: ${m.caption}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={m.src} alt={m.alt} width={m.w} height={m.h} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
+                <img src={m.src} alt={m.alt} width={m.w} height={m.h} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_28%] transition duration-500 group-hover:scale-[1.03]" />
               </button>
               {caption}
             </figure>
