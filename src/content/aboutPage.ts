@@ -22,7 +22,7 @@ export const aboutBackground = {
   yearsText: "years of international casino management and setup",
   paragraphs: [
     "CasTech EQ is led by founder Bilal Durmaz, with 22 years of international casino management and setup experience across Europe, Africa and Asia, on land and on cruise ships.",
-    "We have managed casino departments, opened casinos, including in Accra, Ghana, and set up gaming floors, cruise ship casinos and their technical systems. Since 2021 we have worked under our own name: equipment sales, casino setup and LED jackpot screen production.",
+    "We have managed casino departments and opened casinos in Ghana, Northern Cyprus, Kosovo, Batumi and Tbilisi (Georgia), and on two cruise ships, setting up gaming floors and their technical systems. Since 2021 we have worked under our own name: equipment sales, casino setup and LED jackpot screen production.",
     "We know how a floor runs and what an operator needs on opening day, so we talk in floor terms: layouts, sightlines, lead times, spares and service, not just product lists.",
   ],
   placesTitle: "Where we have worked",
