@@ -1,3 +1,4 @@
+import { JackpotGallery } from "@/components/JackpotGallery";
 import { PageHero } from "@/components/PageHero";
 import { SectionCta } from "@/components/SectionCta";
 import { SiteShell } from "@/components/SiteShell";
@@ -10,7 +11,6 @@ import {
   jackpotSizes,
 } from "@/content/jackpotScreens";
 import { pageMeta } from "@/lib/seo";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = pageMeta(
@@ -33,7 +33,6 @@ const heroSlides = [
   { src: "/images/hero/boost-closeup.webp", position: "center" },
   { src: "/images/hero/apex-clover-wave.webp", position: "center" },
   { src: "/images/hero/apex-clover-twist.webp", position: "center" },
-  { src: "/images/jackpot/information-column.webp", position: "center" },
   { src: "/images/hero/slim-column.webp", position: "center" },
 ];
 
@@ -77,16 +76,7 @@ export default function JackpotScreensPage() {
           <div className="mt-20">
             <p className="castech-eyebrow">Installations</p>
             <h2 className="castech-h2 castech-h2-gap">On real casino floors.</h2>
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
-              {jackpotGallery.map((g) => (
-                <figure key={g.src} className="overflow-hidden rounded-xl border border-white/10 bg-[#0e1722]">
-                  <div className="relative aspect-[3/4]">
-                    <Image src={g.src} alt={g.alt} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
-                  </div>
-                  <figcaption className="px-4 py-3 text-xs font-semibold text-zinc-300">{g.caption}</figcaption>
-                </figure>
-              ))}
-            </div>
+            <JackpotGallery items={jackpotGallery} />
             <p className="mt-6 max-w-3xl text-xs leading-6 text-slate-400">
               Photographs show installed jackpot displays. The same screens can show jackpot values from your server or any other content you choose, such as a live sports broadcast. Slot machine brands visible in the photographs belong to their
               manufacturers and are not affiliated with CasTech EQ.

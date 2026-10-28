@@ -60,6 +60,5 @@ export const jackpotGallery = [
   { src: "/images/hero/boost-closeup.webp", alt: "Integrated LED display between neighbouring slot machines", caption: "LED divider between machines" },
   { src: "/images/hero/apex-clover-wave.webp", alt: "Slim LED column between two curved slot machines", caption: "Slim LED column between curved cabinets" },
   { src: "/images/hero/apex-clover-twist.webp", alt: "Slim illuminated LED column between two slot machines", caption: "Slim illuminated LED column" },
-  { src: "/images/jackpot/information-column.webp", alt: "Vertical LED information column separating gaming rows", caption: "Central LED information column" },
   { src: "/images/hero/slim-column.webp", alt: "Red LED side panel between two slot banks", caption: "LED side panel between slot banks" },
 ] as const;
