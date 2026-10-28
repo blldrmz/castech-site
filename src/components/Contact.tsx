@@ -42,19 +42,26 @@ export function Contact() {
     ].join("\n");
 
     setStatus("sending");
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 12000);
     try {
       const res = await fetch(contactContent.formEndpoint, {
         method: "POST",
+        signal: ctrl.signal,
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ name, company, email, phone, message, _subject: subject, _template: "table", _replyto: email }),
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
+      const result = await res.json().catch(() => ({}));
+      if (result.success !== true && result.success !== "true") throw new Error(result.message || "Not accepted");
       form.reset();
       setStatus("sent");
     } catch {
       setStatus("fallback");
       window.location.href =
         "mailto:" + contactContent.inquiryEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
+    } finally {
+      clearTimeout(timer);
     }
   }
 
