@@ -33,6 +33,7 @@ const heroSlides = [
   { src: "/images/hero/boost-closeup.webp", position: "center" },
   { src: "/images/hero/apex-clover-wave.webp", position: "center" },
   { src: "/images/hero/apex-clover-twist.webp", position: "center" },
+  { src: "/images/hero/princess-bell-link.webp", position: "center" },
   { src: "/images/hero/slim-column.webp", position: "center" },
 ];
 
