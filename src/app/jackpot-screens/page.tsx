@@ -24,6 +24,7 @@ const heroSlides = [
   { src: "/images/hero/egt-three-machines.webp", position: "center" },
   { src: "/images/hero/overhead-grand.webp", position: "center" },
   { src: "/images/hero/wall-screen.webp", position: "center" },
+  { src: "/images/hero/four-sided-purple.webp", position: "center" },
   { src: "/images/hero/entrance-led.webp", position: "center" },
   { src: "/images/hero/tv-wall.webp", position: "center" },
   { src: "/images/hero/egt-cube.webp", position: "center" },

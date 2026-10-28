@@ -1,39 +1,40 @@
+import { jackpotGallery } from "./jackpotScreens";
 export type CatalogueItem={title:string;image:string;note:string};
 export type CatalogueCategory={slug:string;title:string;cover:string;items:CatalogueItem[]};
 export const catalogueCategories:CatalogueCategory[]=[
  {
   "slug": "led",
   "title": "LED Displays & Jackpot Panels",
-  "cover": "/images/catalog/led/01-double-sided-jackpot-led-display.webp",
+  "cover": "/images/hero/four-sided-purple.webp",
   "items": [
    {
     "title": "Double-Sided Jackpot LED Display",
-    "image": "/images/catalog/led/01-double-sided-jackpot-led-display.webp",
+    "image": "/images/hero/four-sided-purple.webp",
     "note": ""
    },
    {
     "title": "Four-Sided Jackpot Installation — Side View",
-    "image": "/images/catalog/led/02-four-sided-jackpot-installation-side-view.webp",
+    "image": "/images/hero/four-sided-purple.webp",
     "note": ""
    },
    {
     "title": "Four-Sided Jackpot Installation — Opposite View",
-    "image": "/images/catalog/led/03-four-sided-jackpot-installation-opposite-view.webp",
+    "image": "/images/hero/four-sided-purple.webp",
     "note": ""
    },
    {
     "title": "Wide Jackpot Display — Front View",
-    "image": "/images/catalog/led/04-wide-jackpot-display-front-view.webp",
+    "image": "/images/hero/four-sided-purple.webp",
     "note": ""
    },
    {
     "title": "LED Divider — 25 cm",
-    "image": "/images/catalog/led/05-led-divider-25-cm.webp",
+    "image": "/images/hero/four-sided-purple.webp",
     "note": "LED separator for use between slot machines. · Pixel pitch: P2.5 Specified size: 25 cm"
    },
    {
     "title": "Slot Side Closure Panel — 32 cm",
-    "image": "/images/catalog/led/06-slot-side-closure-panel-32-cm.webp",
+    "image": "/images/hero/four-sided-purple.webp",
     "note": ""
    }
   ]
@@ -522,3 +523,13 @@ export const catalogueCategories:CatalogueCategory[]=[
   ]
  }
 ];
+
+// The LED category always mirrors the Jackpot Screens page gallery.
+const ledItems: CatalogueItem[] = jackpotGallery.map((g) => ({
+  title: g.caption,
+  image: g.src,
+  note: g.caption.startsWith("LED divider") ? "Pixel pitch P2.5 · 25 cm wide" : "",
+}));
+const led = catalogueCategories.find((c) => c.slug === "led")!;
+led.items = ledItems;
+led.cover = ledItems[0].image;
