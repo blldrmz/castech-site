@@ -96,6 +96,9 @@ export function Contact() {
                 <span className="block">{companyContent.legalName}</span>
                 <span className="block">IČO {companyContent.ico}</span>
                 <span className="block text-sm leading-7 text-slate-400">{companyContent.register}</span>
+                <span className="mt-3 block">{companyContent.sister.legalName} <span className="text-slate-400">(sister company, Georgia, since {companyContent.sister.since})</span></span>
+                <span className="block">ID {companyContent.sister.id}</span>
+                <span className="block text-sm leading-7 text-slate-400">{companyContent.sister.address}</span>
               </div>
               <div>
                 <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Website</span>

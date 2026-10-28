@@ -39,6 +39,12 @@ export const companyContent = {
   ico: "29716055",
   register:
     "Registered in the Commercial Register kept by the Municipal Court in Prague, section C, file 451241",
+  sister: {
+    legalName: "Deniz Trade LLC",
+    id: "445613480",
+    address: "Khakhuli Str. No. 3, Batumi, Georgia",
+    since: "2021",
+  },
 } as const;
 
 export const footerContent = {

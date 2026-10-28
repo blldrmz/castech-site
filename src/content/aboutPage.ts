@@ -7,6 +7,7 @@ export const aboutPageContent = {
     "Our own production is LED jackpot screens: built to the sizes you request and compatible with jackpot servers of any brand and model, then delivered and set up for your floor.",
     "Slot machines are supplied pre-owned and shufflers refurbished. Other equipment that has to be manufactured is sourced to order through our direct relationships with manufacturers. CasTech EQ is not an authorized dealer or distributor of any brand; brand names on this website only identify equipment.",
     "Exact specifications, availability, compliance requirements and commercial terms are confirmed individually for every inquiry. Virexa AI Technologies s.r.o., IČO 29716055, Cihlářská 782/10a, Prosek, 190 00 Praha 9.",
+    "In Georgia we work through our sister company Deniz Trade LLC (ID 445613480, Khakhuli Str. No. 3, Batumi), established in 2021 and the base of our installation and LED production work in the region.",
   ],
   highlights: [
     { title: "Own LED production", text: "Jackpot screens made to your sizes, compatible with any jackpot server brand and model." },
@@ -22,7 +23,7 @@ export const aboutBackground = {
   yearsText: "years of international casino management and setup",
   paragraphs: [
     "CasTech EQ is led by founder Bilal Durmaz, with 22 years of international casino management and setup experience across Europe, Africa and Asia, on land and on cruise ships.",
-    "We have managed casino departments and opened casinos in Ghana, Northern Cyprus, Kosovo, Batumi and Tbilisi (Georgia), and on two cruise ships, setting up gaming floors and their technical systems. Since 2021 we have worked under our own name: equipment sales, casino setup and LED jackpot screen production.",
+    "We have managed casino departments and opened casinos in Ghana, Northern Cyprus, Kosovo, Batumi and Tbilisi (Georgia), and on two cruise ships, setting up gaming floors and their technical systems. Since 2021 we have worked under our own name, first through Deniz Trade LLC in Batumi, Georgia, and now also through Virexa AI Technologies s.r.o. in Prague: equipment sales, casino setup and LED jackpot screen production.",
     "We know how a floor runs and what an operator needs on opening day, so we talk in floor terms: layouts, sightlines, lead times, spares and service, not just product lists.",
   ],
   placesTitle: "Where we have worked",

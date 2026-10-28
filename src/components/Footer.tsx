@@ -18,6 +18,13 @@ export function Footer() {
               <br />
               IČO {companyContent.ico}
             </p>
+            <p className="mt-3 max-w-xs text-xs leading-6 text-slate-400">
+              Sister company in Georgia: {companyContent.sister.legalName}
+              <br />
+              {companyContent.sister.address}
+              <br />
+              ID {companyContent.sister.id}
+            </p>
           </div>
           <div className="flex flex-wrap gap-6 text-sm text-slate-300">
             <Link href="/jackpot-screens" className="hover:text-[#e3bc7b]">Jackpot Screens</Link>
