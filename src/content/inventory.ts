@@ -69,7 +69,7 @@ export const inventorySlotMachines: InventorySlotMachine[] = [
   { brand: "Novomatic", model: "Power Stars", type: "Upright", image: C + "12-novomatic-power-stars-slot-machine.webp", condition: "Pre-owned" },
   // IGT
   { brand: "IGT", model: "Trimline Dual", type: "Dual Screen", image: S + "igt-trimline-dual.webp", gamePack: "Choice of games", billValidator: "JCM UBA", year: "2006–2008", printer: OR, condition: "Pre-owned" },
-  { brand: "IGT", model: "G-23 Slant", type: "Slant Top", image: null, gamePack: "Multigame and single game", billValidator: "JCM UBA", year: "2013–2014", printer: OR, condition: "Pre-owned" },
+  { brand: "IGT", model: "G-23 Slant", type: "Slant Top", image: S + "igt-g23-slant.webp", gamePack: "Multigame and single game", billValidator: "JCM UBA", year: "2013–2014", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "G-23", type: "Upright", image: S + "igt-g23.webp", gamePack: "Choice of game", billValidator: "MEI", year: "2011–2014", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "Axxis 23/23", type: "Dual Screen", image: S + "igt-axxis-23-23.webp", gamePack: "New U-Switch multigame", billValidator: "MEI", year: "2017", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "Crystal Dual LCD", type: "Dual Screen", image: null, gamePack: "New U-Switch multigame", billValidator: "MEI", year: "2017", printer: OR, condition: "Pre-owned" },
