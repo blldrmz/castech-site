@@ -53,7 +53,6 @@ export const inventorySlotMachines: InventorySlotMachine[] = [
   { brand: "EGT", model: "G 27-32 ST", type: "Upright", image: C + "02-egt-g-27-32-st.webp", condition: "Pre-owned" },
   { brand: "EGT", model: "P 27-32H ST", type: "Upright", image: C + "03-egt-p-27-32h-st.webp", condition: "Pre-owned" },
   { brand: "EGT", model: "P 27-27 ST", type: "Upright", image: C + "04-egt-p-27-27-st.webp", condition: "Pre-owned" },
-  { brand: "EGT", model: "Vega Vision Premier Slant Top", type: "Slant Top", image: S + "egt-vega-vision-premier-slant-top.webp", gamePack: "Premier", billValidator: "JCM UBA", year: "2015–2017", printer: OR, condition: "Pre-owned" },
   { brand: "EGT", model: "VegaVision+ 22\" Upright", type: "Upright", image: S + "egt-vegavision-22-upright.webp", gamePack: "Multigame", billValidator: "JCM UBA", year: "2012–2014", printer: OR, condition: "Pre-owned" },
   { brand: "EGT", model: "P24/24", type: "Dual Screen", image: S + "egt-p24-24.webp", gamePack: "Choice of games", billValidator: "JCM UBA", year: "2015", printer: OR, condition: "Pre-owned" },
   // Novomatic
@@ -70,7 +69,6 @@ export const inventorySlotMachines: InventorySlotMachine[] = [
   { brand: "IGT", model: "G-23 Slant", type: "Slant Top", image: S + "igt-g23-slant.webp", gamePack: "Multigame and single game", billValidator: "JCM UBA", year: "2013–2014", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "G-23", type: "Upright", image: S + "igt-g23.webp", gamePack: "Choice of game", billValidator: "MEI", year: "2011–2014", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "Axxis 23/23", type: "Dual Screen", image: S + "igt-axxis-23-23.webp", gamePack: "New U-Switch multigame", billValidator: "MEI", year: "2017", printer: OR, condition: "Pre-owned" },
-  { brand: "IGT", model: "Crystal Dual LCD", type: "Dual Screen", image: null, gamePack: "New U-Switch multigame", billValidator: "MEI", year: "2017", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "Crystal Dual MLD", type: "Dual Screen", image: S + "igt-crystal-dual-mld.webp", gamePack: "New U-Switch multigame", billValidator: "MEI", year: "2017", printer: OR, condition: "Pre-owned" },
   // Aristocrat
   { brand: "Aristocrat", model: "Viridian Wide Screen", type: "Upright", image: S + "aristocrat-viridian-ws.webp", gamePack: "Choice of games", billValidator: "MEI", year: "2011–2015", printer: OR, condition: "Pre-owned" },
