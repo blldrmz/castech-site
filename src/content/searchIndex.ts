@@ -36,9 +36,9 @@ const pages: SearchEntry[] = [
 export const searchIndex: SearchEntry[] = [
   ...pages,
   ...inventorySlotMachines.map((m) => ({
-    title: m.brand === "Electronic roulette" ? m.model : `${m.brand} ${m.model}`,
-    detail: `${m.type} ${m.description}`,
-    type: "Slot machine (used)",
+    title: `${m.brand} ${m.model}`,
+    detail: `${m.type} ${m.gamePack ?? ""} ${m.billValidator ?? ""} ${m.note ?? ""}`,
+    type: m.condition === "New" ? "Slot machine (new)" : "Slot machine (used)",
     href: `/slot-machines/`,
   })),
   ...liveGameGroups.flatMap((g) =>
