@@ -91,7 +91,7 @@ export const inventorySlotMachines: InventorySlotMachine[] = [
   { brand: "Merkur", model: "Avantgard Trio", type: "Upright", image: S + "merkur-avantgard-trio.webp", gamePack: "Choice of games, jackpot option", billValidator: "JCM iVIZION", year: "2018–2020", printer: OR, condition: "Pre-owned" },
   { brand: "Merkur", model: "Merkurstar", type: "Upright", image: S + "merkur-merkurstar.webp", gamePack: "130-game multigame", billValidator: "JCM UBA", year: "2017–2019", printer: OR, condition: "Pre-owned" },
   // Others
-  { brand: "G-Tech", model: "Axxis 3D", type: "Upright", image: S + "gtech-axxis-3d.webp", gamePack: "Spynx 3D", billValidator: "JCM UBA", year: "2015", printer: OR, condition: "Pre-owned" },
+  { brand: "G-Tech", model: "Axxis 3D", type: "Upright", image: null, gamePack: "Spynx 3D", billValidator: "JCM UBA", year: "2015", printer: OR, condition: "Pre-owned" },
   { brand: "Bally", model: "V22/22 Curve", type: "Dual Screen", image: S + "bally-v22-22-curve.webp", gamePack: "130-game multigame", billValidator: "JCM UBA", year: "2011–2014", printer: OR, condition: "Pre-owned" },
   { brand: "Konami", model: "Podium", type: "Upright", image: S + "konami-podium.webp", gamePack: "Selexion multigame", billValidator: "MEI", year: "2011–2014", printer: OR, condition: "Pre-owned" },
   { brand: "Apex", model: "Evo 3 Slant Top", type: "Slant Top", image: S + "apex-evo-3-slant-top.webp", gamePack: "Choice of game", billValidator: "UBA", year: "2011–2014", printer: OR, condition: "Pre-owned" },
