@@ -14,8 +14,8 @@ import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta(
-  "LED jackpot screens made to your size",
-  "Own-production LED jackpot screens for casino floors: built to your dimensions, compatible with jackpot servers of any brand, by CasTech EQ.",
+  "Jackpot Screens for Casinos | Custom LED Jackpot Screen",
+  "Custom LED jackpot screens for casinos, in any size. Compatible with EGT, Apex, Novomatic and other jackpot servers. Designed and delivered by CasTech EQ by Virexa.",
   "/jackpot-screens/",
 );
 
@@ -81,6 +81,10 @@ export default function JackpotScreensPage() {
             <p className="mt-6 max-w-3xl text-xs leading-6 text-slate-400">
               Photographs show installed jackpot displays. The same screens can show jackpot values from your server or any other content you choose, such as a live sports broadcast. Slot machine brands visible in the photographs belong to their
               manufacturers and are not affiliated with CasTech EQ.
+            </p>
+            <p className="castech-body mt-6 max-w-3xl text-zinc-300">
+              Need a larger LED screen or video wall, indoor or outdoor? See{" "}
+              <a href="https://castechled.com" className="text-[#e3bc7b] underline-offset-4 hover:underline">casino LED screens and LED video walls</a> by CasTech LED.
             </p>
             <Link href="/installations" className="castech-btn-secondary mt-8 inline-flex">
               See installation stories and site videos <span aria-hidden="true" className="ml-2">↗</span>

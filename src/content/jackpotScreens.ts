@@ -1,8 +1,8 @@
 export const jackpotHero = {
   eyebrow: "Own production",
-  title: "LED jackpot screens made to your size.",
+  title: "Custom LED jackpot screens for casinos.",
   lead:
-    "CasTech EQ by Virexa designs, produces and delivers LED jackpot displays for casino floors. Every screen is built to the dimensions you need and works with jackpot servers of any brand and model.",
+    "CasTech EQ by Virexa designs and produces LED jackpot screens for casinos. Each jackpot screen is built to your size and connects to any brand of jackpot server, including EGT, Apex and Novomatic. You can show live jackpot values or other content, such as sports broadcasts.",
 } as const;
 
 export const jackpotHighlights = [
@@ -47,15 +47,15 @@ export const jackpotBrief = [
 ] as const;
 
 export const jackpotGallery = [
-  { src: "/images/hero/six-bank.webp", alt: "Row of six slot machines under a wide LED jackpot display", caption: "Wide jackpot display over a six-machine bank" },
-  { src: "/images/hero/egt-three-machines.webp", alt: "LED jackpot display above a three-machine slot bank", caption: "Overhead jackpot display above a slot bank" },
-  { src: "/images/hero/overhead-grand.webp", alt: "Multi-level LED jackpot display over slot machines", caption: "Multi-level jackpot display" },
-  { src: "/images/hero/wall-screen.webp", alt: "Large wall-mounted LED jackpot screen above slot machines", caption: "Wall-mounted jackpot screen" },
-  { src: "/images/hero/egt-cube.webp", alt: "Cube-style LED jackpot display above a slot bank", caption: "Cube jackpot display" },
-  { src: "/images/hero/three-level-fireworks.webp", alt: "Three-level LED jackpot display with Super, Middle and Mini values", caption: "Three-level jackpot display" },
-  { src: "/images/hero/four-sided-purple.webp", alt: "Four-sided LED jackpot display above a slot bank with live jackpot values", caption: "Four-sided jackpot display" },
-  { src: "/images/hero/entrance-led.webp", alt: "LED jackpot values displayed at a casino entrance", caption: "Entrance jackpot screen" },
-  { src: "/images/hero/tv-wall.webp", alt: "Slot bank under a large LED screen in a lounge", caption: "Large screen above a slot lounge: jackpot or live broadcast" },
+  { src: "/images/hero/six-bank.webp", alt: "Wide LED jackpot screen above a bank of six slot machines in a casino", caption: "Wide jackpot display over a six-machine bank" },
+  { src: "/images/hero/egt-three-machines.webp", alt: "Custom jackpot screen above slot machines, compatible with EGT jackpot server", caption: "Overhead jackpot display above a slot bank" },
+  { src: "/images/hero/overhead-grand.webp", alt: "Multi-level casino jackpot screen over slot machines", caption: "Multi-level jackpot display" },
+  { src: "/images/hero/wall-screen.webp", alt: "Large casino jackpot screen mounted on the wall above slot machines", caption: "Wall-mounted jackpot screen" },
+  { src: "/images/hero/egt-cube.webp", alt: "Cube LED jackpot screen above a slot bank", caption: "Cube jackpot display" },
+  { src: "/images/hero/three-level-fireworks.webp", alt: "Three-level LED jackpot screen showing Super, Middle and Mini jackpot values", caption: "Three-level jackpot display" },
+  { src: "/images/hero/four-sided-purple.webp", alt: "Four-sided LED jackpot screen with live jackpot values above a slot bank", caption: "Four-sided jackpot display" },
+  { src: "/images/hero/entrance-led.webp", alt: "LED jackpot screen at a casino entrance", caption: "Entrance jackpot screen" },
+  { src: "/images/hero/tv-wall.webp", alt: "Large LED jackpot screen above a slot lounge, also used for live broadcasts", caption: "Large screen above a slot lounge: jackpot or live broadcast" },
   { src: "/images/hero/dark-room.webp", alt: "Vertical LED columns between slot machines in a dark gaming room", caption: "LED columns between machines" },
   { src: "/images/hero/boost-closeup.webp", alt: "Integrated LED display between neighbouring slot machines", caption: "LED divider between machines" },
   { src: "/images/hero/apex-clover-wave.webp", alt: "Slim LED column between two curved slot machines", caption: "Slim LED column between curved cabinets" },
