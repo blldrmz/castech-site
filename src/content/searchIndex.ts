@@ -26,7 +26,7 @@ const pages: SearchEntry[] = [
   { title: "Wireless table charger", detail: "Wireless phone charging built into poker, card and roulette table rails", type: "Page", href: "/installations/#wireless-charging" },
   { title: "Used slot machines", detail: "Pre-owned slot machines, upright, slant top, multigame, electronic roulette", type: "Page", href: "/slot-machines/" },
   { title: "Live table equipment", detail: "Roulette, blackjack, baccarat, poker, craps, shufflers, chips, seating", type: "Page", href: "/live-games/" },
-  { title: "Table signs and roulette displays", detail: "Own-production table limit signs, roulette result displays, live gaming tables", type: "Page", href: "/table-signs/" },
+  { title: "Table signs and roulette displays", detail: "Table limit signs and roulette result displays, 11 to 21 inch or custom size, designed and assembled by CasTech EQ", type: "Page", href: "/table-signs/" },
   { title: "Casino floor accessories", detail: "TITO, service carts, key control, signage, operations accessories", type: "Page", href: "/accessories/" },
   { title: "Equipment catalogue", detail: "All product categories", type: "Page", href: "/catalog/" },
   { title: "About CasTech EQ", detail: "Virexa AI Technologies, used and refurbished equipment, direct manufacturer sourcing", type: "Page", href: "/about/" },

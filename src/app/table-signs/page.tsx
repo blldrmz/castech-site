@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const metadata = pageMeta(
   "Casino Table Signs | Table Limit Displays & Roulette Result Displays",
-  "Own-production casino table signs: table limit displays and roulette result displays for live gaming tables, built to your table layout by CasTech EQ.",
+  "Casino table signs designed and assembled by CasTech EQ: table limit displays and roulette result displays, 11 to 21 inch screens or any size on request.",
   "/table-signs/",
 );
 
@@ -21,7 +21,7 @@ const gallery = tableSigns.items.map((i) => ({
 
 const brief = [
   "Which games: roulette, blackjack, poker, baccarat or others",
-  "Number of tables and how each sign will be mounted",
+  "Number of tables, preferred screen size and how each sign will be mounted",
   "What to show: table limits, roulette results, statistics or promotions",
   "Delivery country and target date",
 ];
@@ -33,7 +33,7 @@ export default function TableSignsPage() {
         id="top"
         eyebrow="Table signs"
         title="Table signs for every live gaming table."
-        lead="Our own-production table limit signs and roulette result displays for live gaming tables. Each table sign is built to your table layout and shows limits, results and statistics clearly to players."
+        lead="Table limit signs and roulette result displays designed and assembled by CasTech EQ. Screen sizes from 11 to 21 inches, or any other size on request, on stands designed to fit your table layout."
       />
       <div className="bg-[#070d15]">
         <div className="castech-container castech-section-y">
