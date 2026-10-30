@@ -11,11 +11,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "CasTech EQ — Casino Equipment & LED Jackpot Screens",
+    default: "Casino Equipment Supplier | Slot Machines, Gaming Tables, Chips & Jackpot Screens | CasTech EQ",
     template: "%s | CasTech EQ",
   },
   description:
-    "Casino equipment and hardware: LED jackpot screens, used slot machines, live tables and floor accessories. A brand of Virexa AI Technologies s.r.o., Prague.",
+    "Casino equipment supplier based in Prague and Batumi. New gaming tables, chairs, chips, layouts and accessories, plus used slot machines, refurbished shufflers and custom LED jackpot screens.",
   alternates: { canonical: "https://castecheq.com/" },
   twitter: { card: "summary_large_image", images: ["/og-image.png"] },
   metadataBase: new URL("https://castecheq.com"),

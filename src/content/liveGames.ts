@@ -12,9 +12,9 @@ export type LiveGameGroup = {
 
 export const liveGamesPageHero = {
   eyebrow: "Live table equipment",
-  title: "Complete range for real casino play",
+  title: "Casino gaming tables and live game equipment.",
   lead:
-    "From roulette hardware to poker felts, continuous shufflers, pit displays and every critical component on a professional floor—sourced, specified and supported by CasTech for new venues and refits.",
+    "Roulette, blackjack, poker and baccarat tables for every casino floor. We supply complete live game setups, including roulette wheels, layouts, chips, casino chairs and table hardware, matched to your floor design and specifications.",
 } as const;
 
 export const liveGameGroups: LiveGameGroup[] = [

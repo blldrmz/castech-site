@@ -1,8 +1,8 @@
 export const aboutPageContent = {
   eyebrow: "About CasTech EQ",
-  title: "Professional equipment for casino environments.",
+  title: "Built by casino experts.",
   lead:
-    "CasTech EQ is the casino equipment brand of Virexa AI Technologies s.r.o., registered in Prague. We manufacture LED jackpot screens and supply pre-owned slot machines, refurbished shufflers and table equipment for professional operators.",
+    "CasTech EQ by Virexa is built on 22 years of hands-on casino work, from slot technician and slot manager to surveillance, IT and technical management. Our team has opened casinos in Ghana, Northern Cyprus, Kosovo and Georgia and on cruise ships, and has run casino operations across Africa, Europe and Asia.",
   paragraphs: [
     "Our own production is LED jackpot screens: built to the sizes you request and compatible with jackpot servers of any brand and model, then delivered and set up for your floor.",
     "Slot machines are supplied pre-owned and shufflers refurbished. Other equipment that has to be manufactured is sourced to order through our direct relationships with manufacturers. CasTech EQ is not an authorized dealer or distributor of any brand; brand names on this website only identify equipment.",

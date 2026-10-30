@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { pageMeta } from "@/lib/seo";
 import { EquipmentGroupList } from "@/components/EquipmentGroupList";
 import { LiveGameSpotlight } from "@/components/live-games/LiveGameSpotlight";
@@ -8,8 +9,8 @@ import { liveGroupCoverById } from "@/content/sectionCovers";
 import { liveGameGroups, liveGamesPageHero } from "@/content/liveGames";
 
 export const metadata = pageMeta(
-  "Casino live games & table equipment",
-  "Roulette, blackjack, baccarat, poker and craps equipment: tables, felts, chips, wheels and refurbished shufflers, plus made-to-order items.",
+  "Casino Gaming Tables | Roulette, Blackjack, Poker & Baccarat",
+  "Casino gaming tables for roulette, blackjack, poker and baccarat, plus roulette wheels, layouts, chips, casino chairs, table hardware and refurbished shufflers.",
   "/live-games/",
 );
 
@@ -29,6 +30,14 @@ export default function LiveGamesPage() {
             groups={liveGameGroups}
             coverById={liveGroupCoverById}
           />
+        </div>
+      </div>
+      <div className="bg-[#070d15]">
+        <div className="castech-container pb-16">
+          <p className="castech-body max-w-3xl text-zinc-300">
+            Need limit and result displays for your tables? See our{" "}
+            <Link href="/table-signs" className="text-[#e3bc7b] underline-offset-4 hover:underline">table signs and roulette displays</Link>.
+          </p>
         </div>
       </div>
       <SectionCta

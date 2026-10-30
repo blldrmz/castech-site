@@ -5,7 +5,7 @@ import { SiteShell } from "@/components/SiteShell";
 import { aboutBackground, aboutPageContent } from "@/content/aboutPage";
 
 export const metadata = pageMeta(
-  "About CasTech EQ, a brand of Virexa AI Technologies",
+  "About CasTech EQ | 22 Years of International Casino Experience",
   "CasTech EQ, a brand of Virexa AI Technologies s.r.o.: 22 years of casino setup experience, own-production LED jackpot screens, used slots and shufflers.",
   "/about/",
 );

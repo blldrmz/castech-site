@@ -7,8 +7,8 @@ import { accessoryGroups, accessoriesPageHero } from "@/content/accessoriesConte
 import { accessoryGroupCoverById } from "@/content/sectionCovers";
 
 export const metadata = pageMeta(
-  "Casino floor accessories & operations equipment",
-  "TITO, seating, service carts, table smallwares, key control and signage for casino floors, from CasTech EQ, a brand of Virexa AI Technologies.",
+  "Casino Accessories & Supplies | Chips, Cards, Layouts",
+  "Casino accessories and supplies: chips, playing cards, dealer accessories, layouts, chip trays and floor supplies, delivered to your casino by CasTech EQ.",
   "/accessories/",
 );
 

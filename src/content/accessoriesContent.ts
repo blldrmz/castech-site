@@ -2,9 +2,9 @@ import type { LiveGameGroup } from "./liveGames";
 
 export const accessoriesPageHero = {
   eyebrow: "Floor & pit accessories",
-  title: "What keeps the room running every shift",
+  title: "Casino accessories and floor supplies.",
   lead:
-    "Beyond the games themselves, operators need chairs, TITO, service carts, security consumables, and a hundred small products that are easy to forget until the floor opens. We bundle these with your equipment orders for consistent specification.",
+    "Everything your gaming floor needs day to day: casino chips, playing cards, dealer accessories, layouts, chip trays and floor supplies, delivered to your casino.",
 } as const;
 
 export const accessoryGroups: LiveGameGroup[] = [

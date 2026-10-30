@@ -40,9 +40,9 @@ export type InventoryTypeFilterId = (typeof inventoryTypeFilters)[number];
 
 export const slotMachinesPageHero = {
   eyebrow: "Used slot machines & electronic gaming",
-  title: "Pre-owned slot machines and e-gaming",
+  title: "Used slot machines for casinos.",
   lead:
-    "Slot machines and electronic roulette from EGT, Novomatic, IGT, Aristocrat, Ainsworth, Merkur and more. Game packs, bill validators and years are listed per model; condition, availability and price are confirmed on request.",
+    "We supply quality used slot machines from leading manufacturers such as EGT, Novomatic and Apex. The condition, configuration and availability of each machine is confirmed before sale, and we help with shipping and setup.",
 } as const;
 
 const OR = "On request";

@@ -6,8 +6,8 @@ import { SiteShell } from "@/components/SiteShell";
 import { slotMachinesPageHero } from "@/content/inventory";
 
 export const metadata = pageMeta(
-  "Used slot machines & electronic gaming equipment",
-  "Pre-owned slot machines from EGT, Novomatic, Aristocrat and Amatic, VIP lounge cabinets and electronic roulette. Not on the list? We will find the machine you need.",
+  "Used Slot Machines for Sale | EGT, Novomatic, Apex & More",
+  "Used slot machines for sale from EGT, Novomatic, Apex and other leading manufacturers. Condition, configuration and availability confirmed before sale, with shipping and setup support.",
   "/slot-machines/",
 );
 
