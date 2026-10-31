@@ -16,7 +16,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
           <div>
             <p className="flex items-center gap-3 font-heading text-xl font-bold tracking-[.17em] text-white">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/castech-mark.svg" alt="" width={65} height={62} className="h-14 w-auto" />
+              <img src="/brand/castech-mark.svg" alt="" width={62} height={62} className="h-14 w-auto" />
               <span>CASTECH <span className="text-gold">EQ</span></span>
             </p>
             <p className="mt-3 text-[12px] tracking-[.13em] text-slate-400">{t.claim}</p>
