@@ -43,7 +43,7 @@ export function Header() {
   useEffect(() => {
     if (!open) return;
     const onResize = () => {
-      if (window.matchMedia("(min-width: 768px)").matches) setOpen(false);
+      if (window.matchMedia("(min-width: 1280px)").matches) setOpen(false);
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -67,18 +67,22 @@ export function Header() {
       <div className="castech-container flex max-w-7xl items-center justify-between gap-3 py-3.5 sm:gap-4 sm:py-4">
         <Link
           href={lhref(locale, "/")}
-          className="min-w-0 shrink text-left font-heading transition-opacity hover:opacity-90"
+          className="flex min-w-0 shrink items-center gap-2.5 text-left font-heading transition-opacity hover:opacity-90 sm:gap-3"
         >
-          <div className="text-base font-bold tracking-[0.18em] text-zinc-50 sm:text-lg md:text-xl">
-            {brand.name} <span className="text-[#e3bc7b]">EQ</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/brand/castech-mark.svg" alt="" width={46} height={45} className="h-9 w-auto shrink-0 sm:h-11" />
+          <span className="min-w-0">
+          <div className="whitespace-nowrap text-[15px] font-bold tracking-[0.12em] text-zinc-50 sm:text-lg sm:tracking-[0.18em] md:text-xl">
+            {brand.name} <span className="text-gold">EQ</span>
           </div>
-          <div className="mt-0.5 text-[8px] font-semibold uppercase tracking-[0.28em] text-zinc-300 sm:text-[9px] md:text-[10px]">
+          <div className="mt-1 hidden whitespace-nowrap text-[11px] min-[420px]:block font-semibold uppercase tracking-[0.1em] text-zinc-300 sm:tracking-[0.16em]">
             {t.tagline}
           </div>
+          </span>
         </Link>
 
         <nav
-          className="hidden flex-wrap items-center justify-end gap-0.5 font-heading md:flex lg:gap-1"
+          className="hidden flex-wrap items-center justify-end gap-0.5 font-heading xl:flex xl:gap-1"
           aria-label={t.mainNav}
         >
           {nav.map(({ href, label }) => (
@@ -110,7 +114,7 @@ export function Header() {
           <details ref={langRef} className="group relative">
             <summary
               aria-label={t.langLabel}
-              className="flex h-10 cursor-pointer list-none items-center gap-1.5 rounded-xl border border-white/[0.08] px-3 font-heading text-[12px] font-semibold tracking-[.12em] text-zinc-200 transition hover:border-[#e3bc7b]/50 hover:text-[#e3bc7b] [&::-webkit-details-marker]:hidden"
+              className="flex h-10 cursor-pointer list-none items-center gap-1.5 rounded-xl border border-white/[0.08] px-3 font-heading text-[12px] font-semibold tracking-[.12em] text-zinc-200 transition hover:border-gold/50 hover:text-gold [&::-webkit-details-marker]:hidden"
             >
               {locale.toUpperCase()}
               <svg aria-hidden="true" className="h-3 w-3 transition group-open:rotate-180" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth={1.6}>
@@ -125,10 +129,10 @@ export function Header() {
                   hrefLang={l}
                   lang={l}
                   onClick={() => langRef.current?.removeAttribute("open")}
-                  className={`flex items-center justify-between px-4 py-2.5 text-[13px] transition hover:bg-white/[0.05] ${l === locale ? "font-semibold text-[#e3bc7b]" : "text-zinc-200"}`}
+                  className={`flex items-center justify-between px-4 py-2.5 text-[13px] transition hover:bg-white/[0.05] ${l === locale ? "font-semibold text-gold" : "text-zinc-200"}`}
                 >
                   {LANG_NAMES[l]}
-                  <span className="text-[10px] tracking-[.14em] text-zinc-500">{l.toUpperCase()}</span>
+                  <span className="text-[10px] tracking-[.14em] text-zinc-400">{l.toUpperCase()}</span>
                 </Link>
               ))}
             </div>
@@ -136,7 +140,7 @@ export function Header() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-zinc-300 transition hover:bg-white/[0.05] md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-zinc-300 transition hover:bg-white/[0.05] xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? t.closeMenu : t.openMenu}
@@ -177,7 +181,7 @@ export function Header() {
 
       <div
         id="mobile-nav"
-        className={`border-t border-white/[0.06] bg-zinc-950/98 md:hidden ${
+        className={`border-t border-white/[0.06] bg-zinc-950/98 xl:hidden ${
           open ? "block" : "hidden"
         }`}
       >

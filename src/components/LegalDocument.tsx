@@ -5,16 +5,16 @@ const MAIL = "sales@virexa-tech.com";
 function withLinks(text: string) {
   const parts = text.split(new RegExp(`(${MAIL}|uoou\\.gov\\.cz|/\\.well-known/security\\.txt)`, "g"));
   return parts.map((part, i) => {
-    if (part === MAIL) return <a key={i} href={`mailto:${MAIL}`} className="text-[#e3bc7b] underline underline-offset-4">{part}</a>;
-    if (part === "uoou.gov.cz") return <a key={i} href="https://uoou.gov.cz" rel="noopener noreferrer" className="text-[#e3bc7b] underline underline-offset-4">{part}</a>;
-    if (part === "/.well-known/security.txt") return <a key={i} href="/.well-known/security.txt" className="text-[#e3bc7b] underline underline-offset-4">{part}</a>;
+    if (part === MAIL) return <a key={i} href={`mailto:${MAIL}`} className="text-gold underline underline-offset-4">{part}</a>;
+    if (part === "uoou.gov.cz") return <a key={i} href="https://uoou.gov.cz" rel="noopener noreferrer" className="text-gold underline underline-offset-4">{part}</a>;
+    if (part === "/.well-known/security.txt") return <a key={i} href="/.well-known/security.txt" className="text-gold underline underline-offset-4">{part}</a>;
     return part;
   });
 }
 
 export function LegalDocument({ sections }: { sections: LegalSection[] }) {
   return (
-    <div className="bg-[#070d15]">
+    <div className="bg-ink">
       <div className="castech-container castech-section-y">
         <div className="mx-auto max-w-3xl space-y-10">
           {sections.map((s) => (

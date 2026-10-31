@@ -10,12 +10,14 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
   ];
   if (t.batumiFirst) phones.reverse();
   return (
-    <footer className="border-t border-[#e3bc7b]/20 bg-[#070d15]">
+    <footer className="border-t border-gold/20 bg-ink">
       <div className="castech-container py-12">
         <div className="flex flex-wrap items-start justify-between gap-10">
           <div>
-            <p className="font-heading text-xl font-bold tracking-[.17em] text-white">
-              CASTECH <span className="text-[#e3bc7b]">EQ</span>
+            <p className="flex items-center gap-3 font-heading text-xl font-bold tracking-[.17em] text-white">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/castech-mark.svg" alt="" width={46} height={45} className="h-11 w-auto" />
+              <span>CASTECH <span className="text-gold">EQ</span></span>
             </p>
             <p className="mt-3 text-[12px] tracking-[.13em] text-slate-400">{t.claim}</p>
             <p className="mt-5 max-w-xs text-xs leading-6 text-slate-400">
@@ -35,19 +37,19 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
           </div>
           <div className="flex max-w-xl flex-wrap gap-6 text-sm text-slate-300">
             {t.links.map((l) => (
-              <Link key={l.href} href={href(locale, l.href)} className="hover:text-[#e3bc7b]">{l.label}</Link>
+              <Link key={l.href} href={href(locale, l.href)} className="hover:text-gold">{l.label}</Link>
             ))}
           </div>
           <div className="text-sm text-slate-300">
-            <a href={`mailto:${contactContent.email}`} className="block hover:text-[#e3bc7b]">{contactContent.email}</a>
+            <a href={`mailto:${contactContent.email}`} className="block hover:text-gold">{contactContent.email}</a>
             {phones.map((p) => (
-              <a key={p.tel} href={`tel:${p.tel}`} className="mt-2 block hover:text-[#e3bc7b]">{p.label}</a>
+              <a key={p.tel} href={`tel:${p.tel}`} className="mt-2 block hover:text-gold">{p.label}</a>
             ))}
           </div>
         </div>
         <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-7 text-xs text-slate-400">
           <span>{t.copyright}</span>
-          <a href="https://virexa-tech.com" target="_blank" rel="noopener noreferrer" className="font-semibold tracking-[.08em] text-[#e3bc7b] hover:underline">
+          <a href="https://virexa-tech.com" target="_blank" rel="noopener noreferrer" className="font-semibold tracking-[.08em] text-gold hover:underline">
             {t.company}
           </a>
         </div>

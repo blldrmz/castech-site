@@ -19,31 +19,31 @@ export function PageHero({ eyebrow, title, lead, id, slides, locale = "en" }: Pr
       {slides && <HeroSlides slides={slides} />}
       <div className="relative castech-container py-20 sm:py-24 lg:py-28">
         <nav className="mb-9 flex items-center gap-3 text-[12px] font-semibold tracking-wide text-slate-300" aria-label="Breadcrumb">
-          <Link href={href(locale, "/")} className="transition hover:text-[#e3bc7b]">{t.breadcrumbHome}</Link>
+          <Link href={href(locale, "/")} className="transition hover:text-gold">{t.breadcrumbHome}</Link>
           <span aria-hidden="true" className="text-slate-500">/</span>
-          <Link href={locale === "en" ? "/catalog" : localePath(locale, "/")} className="transition hover:text-[#e3bc7b]">{t.breadcrumbEquipment}</Link>
+          <Link href={locale === "en" ? "/catalog" : localePath(locale, "/")} className="transition hover:text-gold">{t.breadcrumbEquipment}</Link>
           <span aria-hidden="true" className="text-slate-500">/</span>
-          <span className="text-[#e3bc7b]">{eyebrow}</span>
+          <span className="text-gold">{eyebrow}</span>
         </nav>
         {slides ? (
           <div className="max-w-xl lg:max-w-[44%]">
-            <p className="inline-flex items-center gap-3 font-heading text-xs font-bold uppercase tracking-[.16em] text-[#e3bc7b]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#e3bc7b]" aria-hidden="true" /> {eyebrow}
+            <p className="inline-flex items-center gap-3 font-heading text-xs font-bold uppercase tracking-[.16em] text-gold">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" /> {eyebrow}
             </p>
             <h1 className="mt-6 font-heading text-[clamp(2.4rem,4.2vw,4.4rem)] font-bold leading-[1.08] tracking-[-.06em] text-white">{title}</h1>
-            <div className="mt-8 border-l-2 border-[#e3bc7b]/55 pl-6">
+            <div className="mt-8 border-l-2 border-gold/55 pl-6">
               <p className="text-[15px] font-medium leading-[1.9] text-slate-100 [text-shadow:0_1px_12px_rgba(0,0,0,.85)] sm:text-[17px]">{lead}</p>
             </div>
           </div>
         ) : (
         <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_.8fr] lg:gap-16">
           <div>
-            <p className="inline-flex items-center gap-3 font-heading text-xs font-bold uppercase tracking-[.16em] text-[#e3bc7b]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#e3bc7b]" aria-hidden="true" /> {eyebrow}
+            <p className="inline-flex items-center gap-3 font-heading text-xs font-bold uppercase tracking-[.16em] text-gold">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" /> {eyebrow}
             </p>
             <h1 className="mt-7 max-w-4xl font-heading text-[clamp(2.6rem,4.6vw,4.9rem)] font-bold leading-[1.08] tracking-[-.06em] text-white">{title}</h1>
           </div>
-          <div className="border-l-2 border-[#e3bc7b]/55 pl-6">
+          <div className="border-l-2 border-gold/55 pl-6">
             <p className="max-w-lg text-[15px] font-medium leading-[1.9] text-slate-100 [text-shadow:0_1px_12px_rgba(0,0,0,.85)] sm:text-[17px]">{lead}</p>
             <p className="mt-7 text-[11px] font-semibold uppercase tracking-[.1em] text-slate-400">{t.heroTagline}</p>
           </div>

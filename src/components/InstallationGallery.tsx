@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { InstallationMedia } from "@/content/installations";
+import { srcSetFor } from "@/lib/srcset";
 
 function AutoVideo({ m }: { m: Extract<InstallationMedia, { kind: "video" }> }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -84,7 +85,7 @@ export function InstallationGallery({ items }: { items: readonly InstallationMed
         {items.map((m, i) => {
           const isLast = i === items.length - 1 && i > 0;
           const cls = [
-            "group relative overflow-hidden rounded-xl border border-white/10 bg-[#0e1722]",
+            "group relative overflow-hidden rounded-xl border border-white/10 bg-surface-2",
             single ? (m.w > m.h ? "aspect-video" : "mx-auto aspect-[9/16] w-full max-w-sm") : "",
             !single && m.feature ? "col-span-2 row-span-2" : "",
             !single && isLast && !m.feature
@@ -96,7 +97,7 @@ export function InstallationGallery({ items }: { items: readonly InstallationMed
           const caption = (
             <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent px-3.5 pb-3 pt-8 text-left text-xs font-semibold leading-5 text-zinc-100">
               {m.kind === "video" && (
-                <span aria-hidden="true" className="mr-2 inline-grid h-[18px] w-[18px] place-items-center rounded-full bg-[#e3bc7b] align-[1px] text-[8px] text-[#1a1305]">▶</span>
+                <span aria-hidden="true" className="mr-2 inline-grid h-[18px] w-[18px] place-items-center rounded-full bg-gold align-[1px] text-[8px] text-gold-ink">▶</span>
               )}
               {m.caption}
             </figcaption>
@@ -113,7 +114,7 @@ export function InstallationGallery({ items }: { items: readonly InstallationMed
             <figure key={m.src} className={cls}>
               <button type="button" onClick={() => setOpen(pi)} className="block h-full w-full cursor-zoom-in" aria-label={`Enlarge: ${m.caption}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={m.src} alt={m.alt} width={m.w} height={m.h} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_28%] transition duration-500 group-hover:scale-[1.03]" />
+                <img src={m.src} srcSet={srcSetFor(m.src)} sizes="(min-width:1024px) 33vw, 50vw" alt={m.alt} width={m.w} height={m.h} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_28%] transition duration-500 group-hover:scale-[1.03]" />
               </button>
               {caption}
             </figure>
