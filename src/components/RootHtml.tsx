@@ -25,7 +25,7 @@ const organizationJsonLd = {
     addressCountry: "CZ",
   },
   contactPoint: [
-    { "@type": "ContactPoint", telephone: "+420605784248", areaServed: "CZ", contactType: "sales" },
+    { "@type": "ContactPoint", telephone: "+420704481975", areaServed: "CZ", contactType: "sales" },
     { "@type": "ContactPoint", telephone: "+995555481975", areaServed: "GE", contactType: "sales", availableLanguage: ["English", "Russian"] },
   ],
 };
