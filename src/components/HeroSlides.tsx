@@ -28,8 +28,8 @@ export function HeroSlides({ slides, interval = 5500 }: { slides: HeroSlide[]; i
           </div>
         ))}
       </div>
-      <div className="absolute inset-0 bg-[#070d15]/60 lg:bg-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#070d15] via-transparent to-[#070d15]/50" />
+      <div className="absolute inset-0 bg-ink/60 lg:bg-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/50" />
     </div>
   );
 }

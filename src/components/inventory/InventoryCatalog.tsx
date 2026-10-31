@@ -12,6 +12,7 @@ import {
 import { href, type Locale } from "@/lib/i18n";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { srcSetFor } from "@/lib/srcset";
 
 const title = (m: InventorySlotMachine) => `${m.brand} ${m.model}`;
 
@@ -229,7 +230,7 @@ const TEXT = {
 
 const chip = (active: boolean) =>
   active
-    ? "font-heading rounded-xl border border-[#c4a66e]/45 bg-[#c4a66e]/[0.12] px-3.5 py-2 text-[12px] font-semibold tracking-wide text-[#f3d59e] transition"
+    ? "font-heading rounded-xl border border-gold-deep/45 bg-gold-deep/[0.12] px-3.5 py-2 text-[12px] font-semibold tracking-wide text-gold-light transition"
     : "font-heading rounded-xl border border-white/[0.08] bg-zinc-900/50 px-3.5 py-2 text-[12px] font-semibold tracking-wide text-zinc-300 transition hover:border-white/15 hover:text-zinc-100";
 
 export function InventoryCatalog({ locale = "en" }: { locale?: Locale }) {
@@ -261,7 +262,7 @@ export function InventoryCatalog({ locale = "en" }: { locale?: Locale }) {
   }, [brandTab, typeFilter]);
 
   return (
-    <section className="border-b border-white/[0.06] bg-[#070d15]" aria-labelledby="slot-machine-catalog-heading">
+    <section className="border-b border-white/[0.06] bg-ink" aria-labelledby="slot-machine-catalog-heading">
       <div className="castech-container castech-section-y">
         <div className="max-w-3xl">
           <h2 id="slot-machine-catalog-heading" className="castech-h2">{t.heading}</h2>
@@ -270,7 +271,7 @@ export function InventoryCatalog({ locale = "en" }: { locale?: Locale }) {
 
         <div className="mt-10 space-y-6 sm:mt-12">
           <div>
-            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">{t.brand}</p>
+            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-400">{t.brand}</p>
             <div className="mt-3 flex flex-wrap gap-2" role="tablist" aria-label={t.brandFilter}>
               {inventoryBrandTabs.map((t) => (
                 <button key={t.id} type="button" role="tab" aria-selected={brandTab === t.id} onClick={() => setBrandTab(t.id)} className={chip(brandTab === t.id)}>
@@ -280,7 +281,7 @@ export function InventoryCatalog({ locale = "en" }: { locale?: Locale }) {
             </div>
           </div>
           <div>
-            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">{t.format}</p>
+            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-400">{t.format}</p>
             <div className="mt-3 flex flex-wrap gap-2" role="tablist" aria-label={t.formatFilter}>
               {inventoryTypeFilters.map((id) => (
                 <button key={id} type="button" role="tab" aria-selected={typeFilter === id} onClick={() => setTypeFilter(id)} className={chip(typeFilter === id)}>
@@ -291,31 +292,31 @@ export function InventoryCatalog({ locale = "en" }: { locale?: Locale }) {
           </div>
         </div>
 
-        <p className="font-heading mt-10 text-sm font-medium text-zinc-500">
+        <p className="font-heading mt-10 text-sm font-medium text-zinc-400">
           {t.showing} <span className="text-zinc-300">{filtered.length}</span> {t.models(filtered.length)}
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((m) => (
-            <article key={m.image} className="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0e1722] transition hover:border-[#c4a66e]/35">
+            <article key={m.image} className="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-2 transition hover:border-gold-deep/35">
               {m.image ? (
                 <button
                   type="button"
                   onClick={() => setLightbox(m)}
-                  className="relative flex h-64 items-center justify-center bg-[#0b131d] p-4 outline-none ring-[#c4a66e]/40 focus-visible:ring-2"
+                  className="relative flex h-64 items-center justify-center bg-[radial-gradient(ellipse_at_50%_38%,#1b2838_0%,#0b131d_72%)] p-3 outline-none ring-gold-deep/40 focus-visible:ring-2"
                   aria-label={`${t.enlarge}: ${title(m)}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={m.image} alt={`${title(m)}, ${v(m.condition).toLowerCase()}`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                  <img src={m.image} srcSet={srcSetFor(m.image)} sizes="(min-width:1024px) 25vw, 50vw" alt={`${title(m)}, ${v(m.condition).toLowerCase()}`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
                 </button>
               ) : (
                 <div className="flex h-64 flex-col items-center justify-center gap-2 bg-[#0b131d] p-4 text-center">
                   <span className="font-heading text-sm font-semibold text-zinc-300">{m.brand}</span>
-                  <span className="text-xs text-zinc-500">{t.photoOnRequest}</span>
+                  <span className="text-xs text-zinc-400">{t.photoOnRequest}</span>
                 </div>
               )}
               <div className="flex flex-1 flex-col p-5">
-                <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-[#e3bc7b]/90">
+                <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-gold/90">
                   {v(m.type)} · {v(m.condition)}
                 </p>
                 <h3 className="font-heading mt-1.5 text-base font-bold leading-snug tracking-tight text-zinc-50">{title(m)}</h3>
@@ -332,27 +333,27 @@ export function InventoryCatalog({ locale = "en" }: { locale?: Locale }) {
                     .filter(([, val]) => val)
                     .map(([k, val]) => (
                       <div key={k} className="contents">
-                        <dt className="text-zinc-500">{k}</dt>
+                        <dt className="text-zinc-400">{k}</dt>
                         <dd className="text-zinc-200">{v(String(val))}</dd>
                       </div>
                     ))}
                   {!m.gamePack ? (
                     <>
-                      <dt className="text-zinc-500">{t.details}</dt>
+                      <dt className="text-zinc-400">{t.details}</dt>
                       <dd className="text-zinc-200">{t.detailsOnRequest}</dd>
                     </>
                   ) : null}
                 </dl>
-                <Link href={inquiry(m)} className="mt-auto pt-4 text-xs font-semibold text-[#e3bc7b] hover:text-[#f3d59e]">
+                <Link href={inquiry(m)} className="mt-auto pt-4 text-xs font-semibold text-gold hover:text-gold-light">
                   {t.request}
                 </Link>
               </div>
             </article>
           ))}
 
-          <article className="flex flex-col justify-between rounded-2xl border border-dashed border-[#c4a66e]/45 bg-[#c4a66e]/[0.05] p-6">
+          <article className="flex flex-col justify-between rounded-2xl border border-dashed border-gold-deep/45 bg-gold-deep/[0.05] p-6">
             <div>
-              <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-[#e3bc7b]">{t.notListed}</p>
+              <p className="font-heading text-[11px] font-semibold uppercase tracking-wide text-gold">{t.notListed}</p>
               <h3 className="font-heading mt-2 text-lg font-bold leading-snug tracking-tight text-zinc-50">{t.tellUs}</h3>
               <p className="mt-3 text-sm leading-6 text-zinc-300">
                 {t.tellUsText}

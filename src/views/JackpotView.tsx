@@ -42,7 +42,7 @@ export function JackpotView({ c, locale = "en" }: { c: JackpotContent; locale?: 
     <SiteShell locale={locale}>
       <PageHero id="top" slides={heroSlides} eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.lead} locale={locale} />
 
-      <div className="bg-[#070d15]">
+      <div className="bg-ink">
         <div className="castech-container castech-section-y">
           <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {c.highlights.map((h) => (
@@ -78,10 +78,10 @@ export function JackpotView({ c, locale = "en" }: { c: JackpotContent; locale?: 
             <p className="castech-eyebrow">{l.installEyebrow}</p>
             <h2 className="castech-h2 castech-h2-gap">{l.installTitle}</h2>
             <JackpotGallery items={c.gallery} locale={locale} />
-            <p className="mt-6 max-w-3xl text-xs leading-6 text-slate-400">{l.photoNote}</p>
+            <p className="mt-6 max-w-[72ch] text-[13px] leading-6 text-slate-400">{l.photoNote}</p>
             <p className="castech-body mt-6 max-w-3xl text-zinc-300">
               {l.ledPre}{" "}
-              <a href="https://castechled.com" className="text-[#e3bc7b] underline-offset-4 hover:underline">{l.ledLink}</a>
+              <a href="https://castechled.com" className="text-gold underline-offset-4 hover:underline">{l.ledLink}</a>
               {l.ledPost}
             </p>
             <Link href="/installations" className="castech-btn-secondary mt-8 inline-flex">
@@ -95,7 +95,7 @@ export function JackpotView({ c, locale = "en" }: { c: JackpotContent; locale?: 
             <ul className="mt-8 space-y-3">
               {c.brief.map((b) => (
                 <li key={b} className="castech-body flex gap-3 text-zinc-200">
-                  <span aria-hidden="true" className="mt-1 text-[#e3bc7b]">•</span>
+                  <span aria-hidden="true" className="mt-1 text-gold">•</span>
                   <span>{b}</span>
                 </li>
               ))}

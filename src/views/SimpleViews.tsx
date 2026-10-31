@@ -42,16 +42,16 @@ export function LiveGamesView({
     <SiteShell locale={locale}>
       <PageHero id="top" eyebrow={hero.eyebrow} title={hero.title} lead={hero.lead} locale={locale} />
       <LiveGameSpotlight locale={locale} />
-      <div className="bg-[#070d15]">
+      <div className="bg-ink">
         <div className="castech-container castech-section-y pt-16 sm:pt-20">
           <EquipmentGroupList groups={groups} locale={locale} />
         </div>
       </div>
-      <div className="bg-[#070d15]">
+      <div className="bg-ink">
         <div className="castech-container pb-16">
           <p className="castech-body max-w-3xl text-zinc-300">
             {signsPre}{" "}
-            <Link href={href(locale, "/table-signs")} className="text-[#e3bc7b] underline-offset-4 hover:underline">{signsLink}</Link>.
+            <Link href={href(locale, "/table-signs")} className="text-gold underline-offset-4 hover:underline">{signsLink}</Link>.
           </p>
         </div>
       </div>
@@ -64,7 +64,7 @@ export function AccessoriesView({ hero, groups, cta, locale = "en" }: { hero: He
   return (
     <SiteShell locale={locale}>
       <PageHero id="top" eyebrow={hero.eyebrow} title={hero.title} lead={hero.lead} locale={locale} />
-      <div className="bg-[#070d15]">
+      <div className="bg-ink">
         <div className="castech-container castech-section-y pt-16 sm:pt-20">
           <EquipmentGroupList groups={groups} locale={locale} />
         </div>
@@ -92,7 +92,7 @@ export function TableSignsView({ c, locale = "en" }: { c: TableSignsContent; loc
   return (
     <SiteShell locale={locale}>
       <PageHero id="top" eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.lead} locale={locale} />
-      <div className="bg-[#070d15]">
+      <div className="bg-ink">
         <div className="castech-container castech-section-y">
           <p className="castech-eyebrow">{c.galleryEyebrow}</p>
           <h2 className="castech-h2 castech-h2-gap">{c.galleryTitle}</h2>
@@ -104,7 +104,7 @@ export function TableSignsView({ c, locale = "en" }: { c: TableSignsContent; loc
             <ul className="mt-8 space-y-3">
               {c.brief.map((b) => (
                 <li key={b} className="castech-body flex gap-3 text-zinc-200">
-                  <span aria-hidden="true" className="mt-1 text-[#e3bc7b]">•</span>
+                  <span aria-hidden="true" className="mt-1 text-gold">•</span>
                   <span>{b}</span>
                 </li>
               ))}
@@ -114,7 +114,7 @@ export function TableSignsView({ c, locale = "en" }: { c: TableSignsContent; loc
             </Link>
             <p className="castech-body mt-10 text-zinc-300">
               {c.pitPre}{" "}
-              <Link href={href(locale, "/live-games")} className="text-[#e3bc7b] underline-offset-4 hover:underline">{c.pitLink}</Link>.
+              <Link href={href(locale, "/live-games")} className="text-gold underline-offset-4 hover:underline">{c.pitLink}</Link>.
             </p>
           </div>
         </div>
@@ -129,7 +129,7 @@ export function ContactView({ srTitle, locale = "en" }: { srTitle: string; local
     <SiteShell locale={locale}>
       <div className="bg-zinc-950/80">
         <div className="castech-container pt-20 sm:pt-24">
-          <div className="h-px w-14 rounded-full bg-gradient-to-r from-[#e3bc7b]/70 to-transparent" />
+          <div className="h-px w-14 rounded-full bg-gradient-to-r from-gold/70 to-transparent" />
         </div>
       </div>
       <h1 className="sr-only">{srTitle}</h1>

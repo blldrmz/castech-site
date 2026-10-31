@@ -1,5 +1,4 @@
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { SiteShell } from "@/components/SiteShell";
 import { HomeLanding } from "@/components/HomeLanding";
 import { pageMeta } from "@/lib/seo";
 import { generateStaticParams, resolve, type LocaleParams } from "./params";
@@ -15,12 +14,8 @@ export async function generateMetadata({ params }: LocaleParams) {
 export default async function Home({ params }: LocaleParams) {
   const { locale } = await resolve(params);
   return (
-    <div className="min-h-screen bg-[#070d15] text-white">
-      <Header />
-      <main>
-        <HomeLanding locale={locale} />
-      </main>
-      <Footer locale={locale} />
-    </div>
+    <SiteShell locale={locale}>
+      <HomeLanding locale={locale} />
+    </SiteShell>
   );
 }

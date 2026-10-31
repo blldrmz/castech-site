@@ -61,7 +61,7 @@ export const inventorySlotMachines: InventorySlotMachine[] = [
   { brand: "Novomatic", model: "FV 834", type: "Upright", image: C + "05-novomatic-fv834.webp", gamePack: "Impera 6 & 7", billValidator: "JCM UBA", year: "2018–2020", printer: OR, condition: "Pre-owned" },
   { brand: "Novomatic", model: "FV 640", type: "Upright", image: S + "novomatic-fv640.webp", gamePack: "Impera 6 & 7", billValidator: "JCM UBA", year: "2018–2019", printer: OR, condition: "Pre-owned" },
   { brand: "Novomatic", model: "FV 610", type: "Upright", image: S + "novomatic-fv610.webp", gamePack: "Premium games", billValidator: "JCM UBA", year: "2015–2016", printer: OR, condition: "Pre-owned" },
-  { brand: "Novomatic", model: "Panthera 2 27 (FV640B) Curve", type: "Upright", image: S + "novomatic-panthera-2-fv640b.webp", gamePack: "Superia Cash Connection 2, linked multigame mix", billValidator: "JCM UBA", printer: "Included", condition: "New" },
+  { brand: "Novomatic", model: "Panthera 2 27 (FV640B) Curve", type: "Upright", image: S + "novomatic-panthera-2-fv640b.webp", gamePack: "Superia Cash Connection 2, linked multigame mix", billValidator: "JCM UBA", printer: "Included", condition: "Pre-owned" },
   { brand: "Novomatic", model: "VIP Lounge", type: "VIP Lounge", image: C + "07-novomatic-vip-lounge.webp", condition: "Pre-owned", note: "VIP lounge cabinet with integrated seat." },
   { brand: "Novomatic", model: "Power Stars", type: "Upright", image: C + "12-novomatic-power-stars-slot-machine.webp", condition: "Pre-owned" },
   // IGT

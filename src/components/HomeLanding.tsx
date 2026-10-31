@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { catalogueCategories } from "@/content/catalogueData";
 import { href, type Locale } from "@/lib/i18n";
+import { srcSetFor } from "@/lib/srcset";
 
 const focus = ["led", "machines", "tables", "chairs", "shufflers", "chips", "cards", "accessories"];
 
-const linkCls = "text-[#e3bc7b] underline-offset-4 hover:underline";
+const linkCls = "text-gold underline-offset-4 hover:underline";
 type LK = (path: string, label: string) => React.ReactNode;
 
 const TEXT = {
@@ -162,10 +163,10 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
   return (
     <div className="bg-[#080e16]">
       <section className="relative overflow-hidden border-b border-white/10">
-        <div className="pointer-events-none absolute right-[-15%] top-[-40%] h-[650px] w-[650px] rounded-full bg-[#c4a66e]/[.065] blur-[90px]" />
+        <div className="pointer-events-none absolute right-[-15%] top-[-40%] h-[650px] w-[650px] rounded-full bg-gold-deep/[.065] blur-[90px]" />
         <div className="relative castech-container grid items-center gap-14 py-24 sm:py-32 lg:grid-cols-[1.15fr_.85fr] lg:py-40">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[.27em] text-[#e2bb7a]">{t.eyebrow}</p>
+            <p className="text-[11px] font-bold uppercase tracking-[.27em] text-gold">{t.eyebrow}</p>
             <h1
               className={`mt-8 max-w-4xl font-heading font-bold leading-[1.06] tracking-[-.07em] text-white ${
                 locale !== "en" ? "text-[clamp(2.6rem,4.8vw,5rem)] tracking-[-.05em]" : "text-[clamp(3.2rem,6vw,6.2rem)]"
@@ -173,28 +174,28 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
             >
               {t.h1a}
               <br />
-              <span className="text-[#e3bc7b]">{t.h1b}</span>
+              <span className="text-gold">{t.h1b}</span>
             </h1>
             <p className="mt-8 max-w-xl text-base leading-[1.95] text-slate-300">{t.lead(lk)}</p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 href={locale === "en" ? "/catalog" : href(locale, "/jackpot-screens")}
-                className="inline-flex min-h-12 items-center rounded-md bg-[#e3bc7b] px-7 text-sm font-bold text-[#0b1420] hover:bg-[#f3d59e]"
+                className="inline-flex min-h-12 items-center rounded-md bg-gold px-7 text-sm font-bold text-[#0b1420] hover:bg-gold-light"
               >
                 {t.explore}
               </Link>
               <Link
                 href={href(locale, "/contact")}
-                className="inline-flex min-h-12 items-center rounded-md border border-white/25 px-7 text-sm font-semibold text-white hover:border-[#e3bc7b]"
+                className="inline-flex min-h-12 items-center rounded-md border border-white/25 px-7 text-sm font-semibold text-white hover:border-gold"
               >
                 {t.sales}
               </Link>
             </div>
           </div>
           <div className="relative mx-auto hidden w-full max-w-[450px] lg:block">
-            <div className="border border-[#e3bc7b]/25 p-5">
+            <div className="border border-gold/25 p-5">
               <div className="border border-white/10 bg-[#101b28] p-9">
-                <p className="text-[11px] uppercase tracking-[.25em] text-[#e3bc7b]">{t.supplyTitle}</p>
+                <p className="text-[11px] uppercase tracking-[.25em] text-gold">{t.supplyTitle}</p>
                 <ul className="mt-9 space-y-7 text-white">
                   {t.supply.map(([title, text]) => (
                     <li key={title}>
@@ -211,26 +212,26 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
       <section className="castech-container py-24 sm:py-28">
         <div className="flex flex-wrap items-end justify-between gap-8">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#e3bc7b]">{t.deptEyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[.2em] text-gold">{t.deptEyebrow}</p>
             <h2 className="mt-4 font-heading text-3xl font-bold tracking-[-.05em] text-white sm:text-5xl">{t.deptTitle}</h2>
           </div>
-          <Link href={locale === "en" ? "/catalog" : href(locale, "/contact")} className="border-b border-[#e3bc7b]/70 pb-2 text-sm font-semibold text-[#e3bc7b]">
+          <Link href={locale === "en" ? "/catalog" : href(locale, "/contact")} className="border-b border-gold/70 pb-2 text-sm font-semibold text-gold">
             {t.allCategories}
           </Link>
         </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {lead.map((c, i) => (
-            <Link key={c.slug} href={c.href} className="group flex flex-col overflow-hidden border border-white/10 bg-[#111b29] transition hover:border-[#e3bc7b]/60">
-              <div className="relative aspect-[16/10] overflow-hidden bg-[#0a121c]">
+            <Link key={c.slug} href={c.href} className="group flex flex-col overflow-hidden border border-white/10 bg-surface transition hover:border-gold/60">
+              <div className="relative aspect-[16/10] overflow-hidden bg-surface-media">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.cover} alt={c.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain p-2 transition group-hover:scale-[1.03]" />
+                <img src={c.cover} srcSet={srcSetFor(c.cover)} sizes="(min-width:1024px) 290px, 50vw" alt={c.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain p-2 transition group-hover:scale-[1.03]" />
               </div>
-              <div className="flex items-center justify-between p-6 sm:p-7">
+              <div className="flex items-start justify-between gap-2 p-4 sm:items-center sm:p-7">
                 <div>
-                  <span className="text-[11px] tracking-[.15em] text-[#e3bc7b]">0{i + 1} / {t.collection}</span>
-                  <h3 className="mt-2 font-heading text-[22px] font-semibold tracking-[-.04em] text-white">{c.title}</h3>
+                  <span className="text-[11px] tracking-[.15em] text-gold">0{i + 1}<span className="hidden sm:inline"> / {t.collection}</span></span>
+                  <h3 className="mt-2 font-heading text-[17px] font-semibold leading-snug tracking-[-.03em] text-white sm:text-[22px]">{c.title}</h3>
                 </div>
-                <span className="text-xl text-[#e3bc7b]">↗</span>
+                <span aria-hidden="true" className="text-lg text-gold sm:text-xl">↗</span>
               </div>
             </Link>
           ))}
@@ -239,11 +240,11 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
       <section className="border-t border-white/10 bg-[#101a27]">
         <div className="castech-container flex flex-col justify-between gap-7 py-20 sm:flex-row sm:items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[.16em] text-[#e3bc7b]">{t.ctaEyebrow}</p>
+            <p className="text-xs font-bold uppercase tracking-[.16em] text-gold">{t.ctaEyebrow}</p>
             <h2 className="mt-4 font-heading text-3xl font-bold tracking-[-.04em] text-white">{t.ctaTitle}</h2>
             <p className="mt-3 text-sm leading-7 text-slate-300">{t.ctaText}</p>
           </div>
-          <Link href={href(locale, "/contact")} className="w-fit rounded-md bg-[#e3bc7b] px-8 py-4 text-sm font-bold text-[#09131c]">
+          <Link href={href(locale, "/contact")} className="w-fit rounded-md bg-gold px-8 py-4 text-sm font-bold text-[#09131c]">
             {t.ctaButton}
           </Link>
         </div>

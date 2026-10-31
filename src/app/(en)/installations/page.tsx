@@ -17,17 +17,17 @@ export default function InstallationsPage() {
     <SiteShell>
       <PageHero id="top" slides={installationsHeroSlides} eyebrow={installationsHero.eyebrow} title={installationsHero.title} lead={installationsHero.lead} />
 
-      <nav aria-label="Installations on this page" className="border-b border-white/10 bg-[#070d15]">
+      <nav aria-label="Installations on this page" className="border-b border-white/10 bg-ink">
         <div className="castech-container flex gap-2 overflow-x-auto py-3 [scrollbar-width:none]">
           {installationStories.map((s) => (
-            <a key={s.id} href={`#${s.id}`} className="shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-[#e3bc7b] hover:bg-[#e3bc7b] hover:text-[#1a1305]">
+            <a key={s.id} href={`#${s.id}`} className="shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-gold hover:bg-gold hover:text-gold-ink">
               {s.tag}
             </a>
           ))}
         </div>
       </nav>
 
-      <div className="bg-[#070d15]">
+      <div className="bg-ink">
         <div className="castech-container castech-section-y">
           {installationStories.map((s, i) => (
             <section key={s.id} id={s.id} className={`scroll-mt-28 ${i ? "mt-20 border-t border-white/10 pt-20 sm:mt-24 sm:pt-24" : ""}`}>
@@ -47,7 +47,7 @@ export default function InstallationsPage() {
                 <dl className="grid content-start gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10">
                   {s.points.map((p) => (
                     <div key={p.label} className="bg-[#0c1725] px-6 py-5">
-                      <dt className="font-heading text-[11px] font-bold uppercase tracking-[.14em] text-[#e3bc7b]">{p.label}</dt>
+                      <dt className="font-heading text-[11px] font-bold uppercase tracking-[.14em] text-gold">{p.label}</dt>
                       <dd className="mt-2 text-sm leading-7 text-slate-200">{p.text}</dd>
                     </div>
                   ))}
@@ -57,7 +57,7 @@ export default function InstallationsPage() {
             </section>
           ))}
 
-          <p className="mt-16 max-w-3xl text-xs leading-6 text-slate-400">
+          <p className="mt-16 max-w-[72ch] text-[13px] leading-6 text-slate-400">
             Photographs and videos were taken on site and in our workshop. Jackpot systems and slot machine brands visible on the screens belong to their manufacturers and are not affiliated with CasTech EQ; our screens connect to the venue&apos;s existing jackpot server.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

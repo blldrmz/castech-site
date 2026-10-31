@@ -161,7 +161,7 @@ export const catalogueCategories:CatalogueCategory[]=[
  {
   "slug": "chairs",
   "title": "Casino Chairs",
-  "cover": "/images/catalog/chairs/01-casino-chair-base-finish-options.webp",
+  "cover": "/images/catalog/covers/casino-chairs.webp",
   "items": [
    {
     "title": "Casino Chair — Base & Finish Options",
@@ -228,7 +228,7 @@ export const catalogueCategories:CatalogueCategory[]=[
  {
   "slug": "cards",
   "title": "Playing Cards",
-  "cover": "/images/catalog/cards/01-casino-playing-cards.webp",
+  "cover": "/images/catalog/covers/playing-cards.webp",
   "items": [
    {
     "title": "Casino Playing Cards",
@@ -388,7 +388,7 @@ export const catalogueCategories:CatalogueCategory[]=[
  {
   "slug": "accessories",
   "title": "Accessories",
-  "cover": "/images/catalog/accessories/01-float-tray-gold.webp",
+  "cover": "/images/catalog/covers/accessories.webp",
   "items": [
    {
     "title": "Float Tray — Gold",

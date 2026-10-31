@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import { ui, type Locale } from "@/lib/i18n";
+import { srcSetFor } from "@/lib/srcset";
 
 type Item = { src: string; alt: string; caption: string };
 
@@ -32,10 +33,10 @@ export function JackpotGallery({ items, locale = "en" }: { items: readonly Item[
     <>
       <div className="mt-10 columns-2 gap-4 sm:gap-5 lg:columns-3 xl:columns-4">
         {items.map((g, i) => (
-          <figure key={g.src} className="mb-4 break-inside-avoid overflow-hidden rounded-xl border border-white/10 bg-[#0e1722] sm:mb-5">
+          <figure key={g.src} className="mb-4 break-inside-avoid overflow-hidden rounded-xl border border-white/10 bg-surface-2 sm:mb-5">
             <button type="button" onClick={() => setOpen(i)} className="block w-full cursor-zoom-in" aria-label={`${t.open}: ${g.caption}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={g.src} alt={g.alt} loading="lazy" decoding="async" className="block h-auto w-full" />
+              <img src={g.src} srcSet={srcSetFor(g.src)} sizes="(min-width:1024px) 25vw, 50vw" alt={g.alt} loading="lazy" decoding="async" className="block h-auto w-full" />
             </button>
             <figcaption className="px-4 py-3 text-xs font-semibold text-zinc-300">{g.caption}</figcaption>
           </figure>

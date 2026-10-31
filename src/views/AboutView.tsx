@@ -38,7 +38,7 @@ export function AboutView({ c, b, cta, locale = "en" }: { c: AboutContent; b: Ab
         lead={c.lead}
         locale={locale}
       />
-      <div className="bg-[#070d15]">
+      <div className="bg-ink">
         <div className="castech-container castech-section-y">
           <div className="mx-auto max-w-3xl space-y-8">
             {c.paragraphs.map((p, i) => (
@@ -53,7 +53,7 @@ export function AboutView({ c, b, cta, locale = "en" }: { c: AboutContent; b: Ab
                 key={h.title}
                 className="castech-card-product flex flex-col p-6 sm:p-7"
               >
-                <h3 className="castech-card-title">{h.title}</h3>
+                <h2 className="castech-card-title">{h.title}</h2>
                 <p className="castech-body mt-3 text-sm text-zinc-200 sm:mt-4 sm:text-base">
                   {h.text}
                 </p>
@@ -76,7 +76,7 @@ export function AboutView({ c, b, cta, locale = "en" }: { c: AboutContent; b: Ab
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {b.highlights.map((h) => (
                   <li key={h} className="castech-body flex gap-3 text-sm text-zinc-200">
-                    <span aria-hidden="true" className="mt-0.5 text-[#e3bc7b]">•</span>
+                    <span aria-hidden="true" className="mt-0.5 text-gold">•</span>
                     <span>{h}</span>
                   </li>
                 ))}
@@ -86,30 +86,30 @@ export function AboutView({ c, b, cta, locale = "en" }: { c: AboutContent; b: Ab
               <div className="flex items-end gap-4 border-b border-white/15 pb-6">
                 <span className="font-heading text-7xl font-extralight leading-none tracking-[-.06em] text-white sm:text-8xl">
                   {b.yearsLabel}
-                  <span className="text-[#e3bc7b]">.</span>
+                  <span className="text-gold">.</span>
                 </span>
-                <span className="pb-2 text-sm tracking-[.06em] text-slate-300">{b.yearsText}</span>
+                <span className="pb-2 text-sm text-slate-300">{b.yearsText}</span>
               </div>
-              <p className="mt-8 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{b.timelineTitle}</p>
-              <ol className="mt-5 space-y-0 border-l border-[#e3bc7b]/30">
+              <p className="mt-8 text-[11px] font-bold uppercase tracking-[.2em] text-gold">{b.timelineTitle}</p>
+              <ol className="mt-5 space-y-0 border-l border-gold/30">
                 {b.timeline.map((t) => (
                   <li key={t.year} className="relative pb-6 pl-6 last:pb-0">
-                    <span aria-hidden="true" className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#e3bc7b]" />
+                    <span aria-hidden="true" className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-gold" />
                     <span className="block font-heading text-sm font-bold text-white">{t.year}</span>
                     <span className="mt-1 block text-sm leading-6 text-slate-300">{t.text}</span>
                   </li>
                 ))}
               </ol>
-              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{b.salesTitle}</p>
+              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-gold">{b.salesTitle}</p>
               <ul className="mt-4 flex flex-wrap gap-2.5">
                 {b.sales.map((c) => (
-                  <li key={c} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>
+                  <li key={c} className="rounded-full border border-gold/35 bg-gold/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>
                 ))}
               </ul>
-              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{b.placesTitle}</p>
+              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-gold">{b.placesTitle}</p>
               <ul className="mt-4 flex flex-wrap gap-2.5">
                 {b.places.map((c) => (
-                  <li key={c} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>
+                  <li key={c} className="rounded-full border border-gold/35 bg-gold/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>
                 ))}
               </ul>
             </div>

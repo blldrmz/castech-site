@@ -44,7 +44,7 @@ export function SearchResults() {
       ) : null}
 
       {initial ? (
-        <div className="mt-6 flex max-w-2xl flex-col gap-4 rounded-xl border border-dashed border-[#c4a66e]/45 bg-[#c4a66e]/[0.05] p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex max-w-2xl flex-col gap-4 rounded-xl border border-dashed border-gold-deep/45 bg-gold-deep/[0.05] p-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm leading-6 text-slate-200">
             {results.length ? "Looking for a specific machine that is not listed?" : "We may still be able to source it."} Tell us what you need and we will find it for you.
           </p>
@@ -59,9 +59,9 @@ export function SearchResults() {
           <li key={`${r.title}|${r.href}`}>
             <Link
               href={r.href}
-              className="block rounded-lg border border-white/10 bg-[#111b29] p-5 transition hover:border-[#e3bc7b]/60"
+              className="block rounded-lg border border-white/10 bg-surface p-5 transition hover:border-gold/60"
             >
-              <span className="block text-[10px] font-semibold uppercase tracking-[.15em] text-[#e3bc7b]">{r.type}</span>
+              <span className="block text-[11px] font-semibold uppercase tracking-[.15em] text-gold">{r.type}</span>
               <span className="mt-2 block font-heading text-base font-semibold text-white">{r.title}</span>
             </Link>
           </li>
