@@ -70,7 +70,7 @@ export function Header() {
           className="flex min-w-0 shrink items-center gap-2.5 text-left font-heading transition-opacity hover:opacity-90 sm:gap-3"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/castech-mark.svg" alt="" width={46} height={45} className="h-9 w-auto shrink-0 sm:h-11" />
+          <img src="/brand/castech-mark.svg" alt="" width={65} height={62} className="h-11 w-auto shrink-0 sm:h-[62px]" />
           <span className="min-w-0">
           <div className="whitespace-nowrap text-[15px] font-bold tracking-[0.12em] text-zinc-50 sm:text-lg sm:tracking-[0.18em] md:text-xl">
             {brand.name} <span className="text-gold">EQ</span>
