@@ -71,7 +71,7 @@ const TEXT = {
   cs: {
     eyebrow: "CASTECH / VYBAVENÍ PRO KASINA",
     h1a: "Vybavení pro kasina",
-    h1b: "od automatů po jackpotové obrazovky.",
+    h1b: "od automatů po LED obrazovky.",
     lead: (lk: LK) => (
       <>
         CasTech EQ by Virexa dodává kasinům nové {lk("/live-games", "herní stoly")}, kasinové židle, žetony, sukna a {lk("/accessories", "příslušenství")} přímo od
@@ -164,20 +164,20 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
     <div className="bg-[#080e16]">
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="pointer-events-none absolute right-[-15%] top-[-40%] h-[650px] w-[650px] rounded-full bg-gold-deep/[.065] blur-[90px]" />
-        <div className="relative castech-container grid items-center gap-14 py-24 sm:py-32 lg:grid-cols-[1.15fr_.85fr] lg:py-40">
+        <div className="relative castech-container grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.35fr_.65fr] lg:py-24">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[.27em] text-gold">{t.eyebrow}</p>
             <h1
-              className={`mt-8 max-w-4xl font-heading font-bold leading-[1.06] tracking-[-.07em] text-white ${
-                locale !== "en" ? "text-[clamp(2.6rem,4.8vw,5rem)] tracking-[-.05em]" : "text-[clamp(3.2rem,6vw,6.2rem)]"
+              className={`mt-6 max-w-4xl font-heading font-bold leading-[1.04] tracking-[-.06em] text-white ${
+                locale !== "en" ? "text-[clamp(2.2rem,3.4vw,3.05rem)] tracking-[-.045em]" : "text-[clamp(2.6rem,4.2vw,3.75rem)]"
               }`}
             >
               {t.h1a}
               <br />
               <span className="text-gold">{t.h1b}</span>
             </h1>
-            <p className="mt-8 max-w-xl text-base leading-[1.95] text-slate-300">{t.lead(lk)}</p>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <p className="mt-6 max-w-2xl text-base leading-[1.85] text-slate-300">{t.lead(lk)}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={locale === "en" ? "/catalog" : href(locale, "/jackpot-screens")}
                 className="inline-flex min-h-12 items-center rounded-md bg-gold px-7 text-sm font-bold text-[#0b1420] hover:bg-gold-light"
@@ -192,14 +192,14 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
               </Link>
             </div>
           </div>
-          <div className="relative mx-auto hidden w-full max-w-[450px] lg:block">
+          <div className="relative mx-auto hidden w-full max-w-[400px] lg:block">
             <div className="border border-gold/25 p-5">
-              <div className="border border-white/10 bg-[#101b28] p-9">
+              <div className="border border-white/10 bg-[#101b28] p-7">
                 <p className="text-[11px] uppercase tracking-[.25em] text-gold">{t.supplyTitle}</p>
-                <ul className="mt-9 space-y-7 text-white">
+                <ul className="mt-6 space-y-5 text-white">
                   {t.supply.map(([title, text]) => (
                     <li key={title}>
-                      <span className="block font-heading text-xl font-semibold tracking-[-.03em]">{title}</span>
+                      <span className="block font-heading text-lg font-semibold tracking-[-.03em]">{title}</span>
                       <span className="mt-1 block border-t border-white/15 pt-3 text-sm text-slate-300">{text}</span>
                     </li>
                   ))}
