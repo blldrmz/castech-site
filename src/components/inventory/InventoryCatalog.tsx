@@ -45,6 +45,68 @@ const RU_VALUES: Record<string, string> = {
   New: "Новый",
 };
 
+const DE_VALUES: Record<string, string> = {
+  "On request": "Auf Anfrage",
+  "Included": "Inklusive",
+  "Choice of games": "Spiele nach Wahl",
+  "Choice of game": "Spiel nach Wahl",
+  "Choice of multigames": "Multigame nach Wahl",
+  "Choice of games, jackpot option": "Spiele nach Wahl, Jackpot-Option",
+  "Any game choice, including jackpot": "Beliebige Spiele, inklusive Jackpot",
+  "Multigame": "Multigame",
+  "Multigame and single game": "Multigame und Einzelspiel",
+  "New U-Switch multigame": "Neues U-Switch Multigame",
+  "130-game multigame": "Multigame mit 130 Spielen",
+  "Premium games": "Premium-Spiele",
+  "Premium S games": "Premium-S-Spiele",
+  "Multi Win games": "Multi-Win-Spiele",
+  "Selexion multigame": "Selexion Multigame",
+  "Electronic roulette": "Elektronisches Roulette",
+  "Superia Cash Connection 2, linked multigame mix": "Superia Cash Connection 2, verlinkter Multigame-Mix",
+  "Hot & Wild progressive, incl. sign and controller": "Hot & Wild Progressive, inkl. Anzeige und Controller",
+  "VIP lounge cabinet with integrated seat.": "VIP-Lounge-Gehäuse mit integriertem Sitz.",
+  "Upright": "Upright",
+  "Slant Top": "Slant Top",
+  "Dual Screen": "Zwei Bildschirme",
+  "VIP Lounge": "VIP-Lounge",
+  "Electronic Roulette": "Elektronisches Roulette",
+  "All": "Alle",
+  "Pre-owned": "Gebraucht",
+  "New": "Neu",
+};
+
+const CS_VALUES: Record<string, string> = {
+  "On request": "Na vyžádání",
+  "Included": "Součástí",
+  "Choice of games": "Výběr her",
+  "Choice of game": "Hra dle výběru",
+  "Choice of multigames": "Multigame dle výběru",
+  "Choice of games, jackpot option": "Výběr her, možnost jackpotu",
+  "Any game choice, including jackpot": "Libovolné hry včetně jackpotu",
+  "Multigame": "Multigame",
+  "Multigame and single game": "Multigame i jednotlivé hry",
+  "New U-Switch multigame": "Nový multigame U-Switch",
+  "130-game multigame": "Multigame se 130 hrami",
+  "Premium games": "Prémiové hry",
+  "Premium S games": "Hry Premium S",
+  "Multi Win games": "Hry Multi Win",
+  "Selexion multigame": "Multigame Selexion",
+  "Electronic roulette": "Elektronická ruleta",
+  "Superia Cash Connection 2, linked multigame mix": "Superia Cash Connection 2, propojený multigame",
+  "Hot & Wild progressive, incl. sign and controller": "Progresivní Hot & Wild, včetně displeje a kontroléru",
+  "VIP lounge cabinet with integrated seat.": "VIP kabinet s integrovaným sedadlem.",
+  "Upright": "Upright",
+  "Slant Top": "Slant Top",
+  "Dual Screen": "Dvě obrazovky",
+  "VIP Lounge": "VIP kabinet",
+  "Electronic Roulette": "Elektronická ruleta",
+  "All": "Vše",
+  "Pre-owned": "Použité",
+  "New": "Nové",
+};
+
+const VALUES: Record<Exclude<Locale, "en">, Record<string, string>> = { de: DE_VALUES, cs: CS_VALUES, ru: RU_VALUES };
+
 const TEXT = {
   en: {
     heading: "Slot machines",
@@ -75,6 +137,64 @@ const TEXT = {
     tellUsText: "Send us the brand, model, cabinet type or game mix you need. We will search our supplier network and find it for you.",
     find: "Find a machine for me",
     close: "Close",
+  },
+  de: {
+    heading: "Spielautomaten",
+    intro: (
+      <>
+        Alle Automaten sind <strong className="text-zinc-200">gebraucht</strong>, sofern nicht als neu gekennzeichnet. Spielepakete, Banknotenprüfer und Baujahre sind
+        je Modell angegeben; Zustand, Verfügbarkeit, Preis und Lieferzeit werden je Gerät auf Anfrage bestätigt. CasTech EQ ist kein autorisierter Händler oder Distributor der gezeigten Marken; Herstellernamen dienen nur der Bezeichnung der Gehäusemodelle.
+      </>
+    ),
+    brand: "Hersteller",
+    brandFilter: "Nach Hersteller filtern",
+    format: "Gehäuse",
+    formatFilter: "Nach Gehäusetyp filtern",
+    showing: "Angezeigt:",
+    models: (n: number) => (n === 1 ? "Modell" : "Modelle"),
+    enlarge: "Foto vergrößern",
+    photoOnRequest: "Foto auf Anfrage",
+    gamePack: "Spiele",
+    billValidator: "Banknotenprüfer",
+    year: "Baujahr",
+    printer: "Drucker",
+    details: "Details",
+    detailsOnRequest: "Spiele und Baujahr auf Anfrage",
+    request: "Details anfragen ↗",
+    notListed: "Nicht in der Liste?",
+    tellUs: "Sagen Sie uns, welchen Automaten Sie suchen.",
+    tellUsText: "Nennen Sie Hersteller, Modell, Gehäusetyp oder Spielemix. Wir suchen ihn über unser Lieferantennetzwerk für Sie.",
+    find: "Automaten für mich finden",
+    close: "Schließen",
+  },
+  cs: {
+    heading: "Výherní automaty",
+    intro: (
+      <>
+        Všechny automaty jsou <strong className="text-zinc-200">použité</strong>, pokud není uvedeno jinak. Herní sady, akceptory bankovek a roky výroby jsou uvedeny u
+        každého modelu; stav, dostupnost, cenu a dodací lhůtu potvrzujeme u každého kusu na vyžádání. CasTech EQ není autorizovaným prodejcem ani distributorem uvedených značek; názvy výrobců slouží pouze k označení modelů.
+      </>
+    ),
+    brand: "Výrobce",
+    brandFilter: "Filtrovat podle výrobce",
+    format: "Kabinet",
+    formatFilter: "Filtrovat podle typu kabinetu",
+    showing: "Zobrazeno modelů:",
+    models: () => "",
+    enlarge: "Zvětšit fotografii",
+    photoOnRequest: "Fotografie na vyžádání",
+    gamePack: "Hry",
+    billValidator: "Akceptor bankovek",
+    year: "Rok výroby",
+    printer: "Tiskárna",
+    details: "Podrobnosti",
+    detailsOnRequest: "Hry a rok výroby na vyžádání",
+    request: "Vyžádat podrobnosti ↗",
+    notListed: "Není v seznamu?",
+    tellUs: "Napište nám, jaký automat hledáte.",
+    tellUsText: "Uveďte výrobce, model, typ kabinetu nebo sadu her. Najdeme ho pro vás v naší síti dodavatelů.",
+    find: "Najít automat",
+    close: "Zavřít",
   },
   ru: {
     heading: "Игровые автоматы",
@@ -114,7 +234,7 @@ const chip = (active: boolean) =>
 
 export function InventoryCatalog({ locale = "en" }: { locale?: Locale }) {
   const t = TEXT[locale];
-  const v = (x: string) => (locale === "ru" ? RU_VALUES[x] ?? x : x);
+  const v = (x: string) => (locale === "en" ? x : VALUES[locale][x] ?? x);
   const inquiry = (m: InventorySlotMachine) => href(locale, `/contact?item=${encodeURIComponent(title(m))}`);
   const [brandTab, setBrandTab] = useState<InventoryBrandTabId>("all");
   const [typeFilter, setTypeFilter] = useState<InventoryTypeFilterId>("All");

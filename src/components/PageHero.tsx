@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HeroSlides, type HeroSlide } from "./HeroSlides";
-import { href, ui, type Locale } from "@/lib/i18n";
+import { href, localePath, ui, type Locale } from "@/lib/i18n";
 
 type Props = {
   eyebrow: string;
@@ -21,7 +21,7 @@ export function PageHero({ eyebrow, title, lead, id, slides, locale = "en" }: Pr
         <nav className="mb-9 flex items-center gap-3 text-[12px] font-semibold tracking-wide text-slate-300" aria-label="Breadcrumb">
           <Link href={href(locale, "/")} className="transition hover:text-[#e3bc7b]">{t.breadcrumbHome}</Link>
           <span aria-hidden="true" className="text-slate-500">/</span>
-          <Link href={locale === "ru" ? "/ru/" : "/catalog"} className="transition hover:text-[#e3bc7b]">{t.breadcrumbEquipment}</Link>
+          <Link href={locale === "en" ? "/catalog" : localePath(locale, "/")} className="transition hover:text-[#e3bc7b]">{t.breadcrumbEquipment}</Link>
           <span aria-hidden="true" className="text-slate-500">/</span>
           <span className="text-[#e3bc7b]">{eyebrow}</span>
         </nav>

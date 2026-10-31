@@ -5,18 +5,19 @@ import { href, type Locale } from "@/lib/i18n";
 const focus = ["led", "machines", "tables", "chairs", "shufflers", "chips", "cards", "accessories"];
 
 const linkCls = "text-[#e3bc7b] underline-offset-4 hover:underline";
+type LK = (path: string, label: string) => React.ReactNode;
 
 const TEXT = {
   en: {
     eyebrow: "CASTECH / EQUIPMENT COLLECTION",
     h1a: "Casino equipment",
     h1b: "for the modern casino floor.",
-    lead: (
+    lead: (lk: LK) => (
       <>
-        CasTech EQ by Virexa supplies casinos with new <Link href="/live-games" className={linkCls}>gaming tables</Link>, casino chairs, chips, layouts and{" "}
-        <Link href="/accessories" className={linkCls}>accessories</Link>, sourced directly from manufacturers. We also offer quality{" "}
-        <Link href="/slot-machines" className={linkCls}>used slot machines</Link>, refurbished shuffle machines and our own{" "}
-        <Link href="/jackpot-screens" className={linkCls}>custom LED jackpot screens</Link>. With 22 years of casino experience and casino openings on three
+        CasTech EQ by Virexa supplies casinos with new {lk("/live-games", "gaming tables")}, casino chairs, chips, layouts and{" "}
+        {lk("/accessories", "accessories")}, sourced directly from manufacturers. We also offer quality{" "}
+        {lk("/slot-machines", "used slot machines")}, refurbished shuffle machines and our own{" "}
+        {lk("/jackpot-screens", "custom LED jackpot screens")}. With 22 years of casino experience and casino openings on three
         continents and on cruise ships, we help casinos choose, source and install the right equipment.
       </>
     ),
@@ -37,16 +38,74 @@ const TEXT = {
     ctaText: "Product details, availability and specifications on request.",
     ctaButton: "Request information ↗",
   },
+  de: {
+    eyebrow: "CASTECH / CASINO-AUSSTATTUNG",
+    h1a: "Casino-Ausstattung",
+    h1b: "für den modernen Spielsaal.",
+    lead: (lk: LK) => (
+      <>
+        CasTech EQ by Virexa liefert Casinos neue {lk("/live-games", "Spieltische")}, Casino-Stühle, Chips, Tischtücher und {lk("/accessories", "Zubehör")} direkt
+        von den Herstellern. Außerdem bieten wir hochwertige {lk("/slot-machines", "gebrauchte Spielautomaten")}, generalüberholte Shuffler und unsere eigenen{" "}
+        {lk("/jackpot-screens", "LED-Jackpot-Bildschirme nach Maß")}. Mit 22 Jahren Casino-Erfahrung und Casino-Eröffnungen auf drei Kontinenten und auf
+        Kreuzfahrtschiffen helfen wir Casinos, die richtige Ausstattung auszuwählen, zu beschaffen und zu installieren.
+      </>
+    ),
+    explore: "Jackpot-Bildschirme ↗",
+    sales: "Vertrieb kontaktieren",
+    supplyTitle: "UNSER ANGEBOT",
+    supply: [
+      ["LED-Jackpot-Bildschirme", "Eigene Produktion, in Ihrer Größe"],
+      ["Gebrauchte Spielautomaten", "Zustand je Gerät bestätigt"],
+      ["Generalüberholte Shuffler", "Dazu Tische und Saalausstattung von Herstellerpartnern"],
+    ],
+    deptEyebrow: "BEREICHE",
+    deptTitle: "Finden Sie Ihre Ausstattung.",
+    allCategories: "Kontakt aufnehmen ↗",
+    collection: "BEREICH",
+    ctaEyebrow: "GESCHÄFTSANFRAGEN",
+    ctaTitle: "Sprechen wir über Ihr Projekt.",
+    ctaText: "Produktdetails, Verfügbarkeit und Spezifikationen auf Anfrage.",
+    ctaButton: "Informationen anfordern ↗",
+  },
+  cs: {
+    eyebrow: "CASTECH / VYBAVENÍ PRO KASINA",
+    h1a: "Vybavení pro kasina",
+    h1b: "od automatů po jackpotové obrazovky.",
+    lead: (lk: LK) => (
+      <>
+        CasTech EQ by Virexa dodává kasinům nové {lk("/live-games", "herní stoly")}, kasinové židle, žetony, sukna a {lk("/accessories", "příslušenství")} přímo od
+        výrobců. Nabízíme také kvalitní {lk("/slot-machines", "použité výherní automaty")}, repasované míchačky karet a vlastní{" "}
+        {lk("/jackpot-screens", "LED jackpotové obrazovky na zakázku")}. Díky 22 letům zkušeností v kasinech a otevírání kasin na třech kontinentech a na
+        výletních lodích pomáháme kasinům vybrat, dodat a nainstalovat správné vybavení.
+      </>
+    ),
+    explore: "Jackpotové obrazovky ↗",
+    sales: "Kontaktovat obchod",
+    supplyTitle: "CO DODÁVÁME",
+    supply: [
+      ["LED jackpotové obrazovky", "Vlastní výroba, v libovolné velikosti"],
+      ["Použité výherní automaty", "Stav ověřujeme u každého kusu"],
+      ["Repasované míchačky karet", "A také stoly a vybavení sálu od partnerských výrobců"],
+    ],
+    deptEyebrow: "SEKCE",
+    deptTitle: "Najděte své vybavení.",
+    allCategories: "Kontaktujte nás ↗",
+    collection: "SEKCE",
+    ctaEyebrow: "OBCHODNÍ POPTÁVKY",
+    ctaTitle: "Pojďme probrat váš projekt.",
+    ctaText: "Podrobnosti, dostupnost a specifikace na vyžádání.",
+    ctaButton: "Vyžádat informace ↗",
+  },
   ru: {
     eyebrow: "CASTECH / ОБОРУДОВАНИЕ ДЛЯ КАЗИНО",
     h1a: "Оборудование для казино",
     h1b: "от автоматов до джекпот-табло.",
-    lead: (
+    lead: (lk: LK) => (
       <>
-        CasTech EQ by Virexa поставляет казино новые <Link href="/ru/live-games/" className={linkCls}>игровые столы</Link>, кресла, фишки, сукно и{" "}
-        <Link href="/ru/accessories/" className={linkCls}>аксессуары</Link> напрямую от производителей. Мы также предлагаем качественные{" "}
-        <Link href="/ru/slot-machines/" className={linkCls}>игровые автоматы б/у</Link>, восстановленные шафлеры и собственные{" "}
-        <Link href="/ru/jackpot-screens/" className={linkCls}>LED-табло джекпота под заказ</Link>. За плечами 22 года работы в казино и открытия казино на
+        CasTech EQ by Virexa поставляет казино новые {lk("/live-games", "игровые столы")}, кресла, фишки, сукно и{" "}
+        {lk("/accessories", "аксессуары")} напрямую от производителей. Мы также предлагаем качественные{" "}
+        {lk("/slot-machines", "игровые автоматы б/у")}, восстановленные шафлеры и собственные{" "}
+        {lk("/jackpot-screens", "LED-табло джекпота под заказ")}. За плечами 22 года работы в казино и открытия казино на
         трёх континентах и на круизных лайнерах — мы помогаем выбрать, поставить и установить подходящее оборудование.
       </>
     ),
@@ -69,25 +128,35 @@ const TEXT = {
   },
 };
 
-/** Russian titles and Russian page targets for the home category grid. */
-const RU_CATEGORIES: Record<string, { title: string; href: string }> = {
-  led: { title: "LED-табло джекпота", href: "/ru/jackpot-screens/" },
-  machines: { title: "Игровые автоматы", href: "/ru/slot-machines/" },
-  tables: { title: "Игровые столы", href: "/ru/live-games/" },
-  chairs: { title: "Кресла для казино", href: "/ru/live-games/#seating" },
-  shufflers: { title: "Шафлеры", href: "/ru/live-games/#blackjack" },
-  chips: { title: "Фишки для казино", href: "/ru/live-games/#chips" },
-  cards: { title: "Игральные карты", href: "/ru/live-games/#cards" },
-  accessories: { title: "Аксессуары", href: "/ru/accessories/" },
+const CATEGORY_PATHS: Record<string, string> = {
+  led: "/jackpot-screens",
+  machines: "/slot-machines",
+  tables: "/live-games",
+  chairs: "/live-games#seating",
+  shufflers: "/live-games#blackjack",
+  chips: "/live-games#chips",
+  cards: "/live-games#cards",
+  accessories: "/accessories",
+};
+
+/** Category titles for the home grid outside English (English uses the catalogue titles). */
+const CATEGORY_TITLES: Record<"de" | "cs" | "ru", Record<string, string>> = {
+  de: { led: "LED-Jackpot-Bildschirme", machines: "Spielautomaten", tables: "Spieltische", chairs: "Casino-Stühle", shufflers: "Shuffler", chips: "Casino-Chips", cards: "Spielkarten", accessories: "Zubehör" },
+  cs: { led: "LED jackpotové obrazovky", machines: "Výherní automaty", tables: "Herní stoly", chairs: "Kasinové židle", shufflers: "Míchačky karet", chips: "Kasinové žetony", cards: "Hrací karty", accessories: "Příslušenství" },
+  ru: { led: "LED-табло джекпота", machines: "Игровые автоматы", tables: "Игровые столы", chairs: "Кресла для казино", shufflers: "Шафлеры", chips: "Фишки для казино", cards: "Игральные карты", accessories: "Аксессуары" },
 };
 
 export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
   const t = TEXT[locale];
+  const lk: LK = (path, label) => (
+    <Link href={href(locale, path)} className={linkCls}>
+      {label}
+    </Link>
+  );
   const lead = focus.map((x) => {
     const c = catalogueCategories.find((cat) => cat.slug === x)!;
-    const ru = RU_CATEGORIES[x];
-    return locale === "ru"
-      ? { slug: c.slug, cover: c.cover, title: ru.title, href: ru.href }
+    return locale !== "en"
+      ? { slug: c.slug, cover: c.cover, title: CATEGORY_TITLES[locale][x], href: href(locale, CATEGORY_PATHS[x]) }
       : { slug: c.slug, cover: c.cover, title: c.title, href: `/catalog?category=${c.slug}` };
   });
   return (
@@ -99,17 +168,17 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
             <p className="text-[11px] font-bold uppercase tracking-[.27em] text-[#e2bb7a]">{t.eyebrow}</p>
             <h1
               className={`mt-8 max-w-4xl font-heading font-bold leading-[1.06] tracking-[-.07em] text-white ${
-                locale === "ru" ? "text-[clamp(2.6rem,4.8vw,5rem)] tracking-[-.05em]" : "text-[clamp(3.2rem,6vw,6.2rem)]"
+                locale !== "en" ? "text-[clamp(2.6rem,4.8vw,5rem)] tracking-[-.05em]" : "text-[clamp(3.2rem,6vw,6.2rem)]"
               }`}
             >
               {t.h1a}
               <br />
               <span className="text-[#e3bc7b]">{t.h1b}</span>
             </h1>
-            <p className="mt-8 max-w-xl text-base leading-[1.95] text-slate-300">{t.lead}</p>
+            <p className="mt-8 max-w-xl text-base leading-[1.95] text-slate-300">{t.lead(lk)}</p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
-                href={locale === "ru" ? "/ru/jackpot-screens/" : "/catalog"}
+                href={locale === "en" ? "/catalog" : href(locale, "/jackpot-screens")}
                 className="inline-flex min-h-12 items-center rounded-md bg-[#e3bc7b] px-7 text-sm font-bold text-[#0b1420] hover:bg-[#f3d59e]"
               >
                 {t.explore}
@@ -145,7 +214,7 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
             <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#e3bc7b]">{t.deptEyebrow}</p>
             <h2 className="mt-4 font-heading text-3xl font-bold tracking-[-.05em] text-white sm:text-5xl">{t.deptTitle}</h2>
           </div>
-          <Link href={locale === "ru" ? "/ru/contact/" : "/catalog"} className="border-b border-[#e3bc7b]/70 pb-2 text-sm font-semibold text-[#e3bc7b]">
+          <Link href={locale === "en" ? "/catalog" : href(locale, "/contact")} className="border-b border-[#e3bc7b]/70 pb-2 text-sm font-semibold text-[#e3bc7b]">
             {t.allCategories}
           </Link>
         </div>

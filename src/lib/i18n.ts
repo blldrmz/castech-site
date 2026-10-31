@@ -1,7 +1,14 @@
-export type Locale = "en" | "ru";
+export const LOCALES = ["en", "de", "cs", "ru"] as const;
+export type Locale = (typeof LOCALES)[number];
+/** Languages with their own folder (/de/, /cs/, /ru/). English lives at the root. */
+export const PREFIXED = ["de", "cs", "ru"] as const;
+export type PrefixedLocale = (typeof PREFIXED)[number];
 
-/** English paths that also exist in Russian under /ru/. */
-export const RU_PATHS = [
+export const LANG_NAMES: Record<Locale, string> = { en: "English", de: "Deutsch", cs: "Čeština", ru: "Русский" };
+export const OG_LOCALE: Record<Locale, string> = { en: "en_US", de: "de_DE", cs: "cs_CZ", ru: "ru_RU" };
+
+/** English paths that also exist in every other language. */
+export const LOCALIZED_PATHS = [
   "/",
   "/jackpot-screens/",
   "/slot-machines/",
@@ -17,30 +24,39 @@ function normalize(path: string) {
   return clean.endsWith("/") ? clean : `${clean}/`;
 }
 
-/** True when this English path has a Russian twin. */
-export function hasRu(path: string) {
-  return (RU_PATHS as readonly string[]).includes(normalize(path));
+/** True when this English path exists in the other languages too. */
+export function isLocalized(path: string) {
+  return (LOCALIZED_PATHS as readonly string[]).includes(normalize(path));
+}
+
+/** Absolute path of an English page in another language (e.g. "/about/" -> "/de/about/"). */
+export function localePath(locale: Locale, enPath: string) {
+  const base = normalize(enPath);
+  if (locale === "en") return base;
+  return base === "/" ? `/${locale}/` : `/${locale}${base}`;
 }
 
 /**
- * Link target for a locale. Russian links point to /ru/... only when that page exists in Russian;
+ * Link target for a locale. Links point to the translated page only when it exists;
  * otherwise they fall back to the English page. Query strings and hashes are kept.
  */
 export function href(locale: Locale, path: string) {
-  if (locale !== "ru" || !hasRu(path)) return path;
+  if (locale === "en" || !isLocalized(path)) return path;
   const suffix = path.slice(path.split(/[?#]/)[0].length);
-  const base = normalize(path);
-  return (base === "/" ? "/ru/" : `/ru${base}`) + suffix;
-}
-
-/** English path for a pathname that may start with /ru. */
-export function toEnPath(pathname: string) {
-  if (pathname === "/ru" || pathname === "/ru/") return "/";
-  return pathname.startsWith("/ru/") ? pathname.slice(3) : pathname;
+  return localePath(locale, path) + suffix;
 }
 
 export function localeFromPath(pathname: string): Locale {
-  return pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : "en";
+  const first = pathname.split("/")[1];
+  return (PREFIXED as readonly string[]).includes(first) ? (first as Locale) : "en";
+}
+
+/** English path for a pathname that may start with a language folder. */
+export function toEnPath(pathname: string) {
+  const loc = localeFromPath(pathname);
+  if (loc === "en") return pathname;
+  const rest = pathname.slice(loc.length + 1);
+  return rest === "" ? "/" : rest;
 }
 
 export const ui = {
@@ -62,7 +78,7 @@ export const ui = {
     closeMenu: "Close menu",
     mainNav: "Main",
     mobileNav: "Mobile",
-    langSwitch: { label: "RU", title: "Русская версия" },
+    langLabel: "Language",
     breadcrumbHome: "Home",
     breadcrumbEquipment: "Equipment",
     heroTagline: "Equipment selection · specification · inquiry",
@@ -101,6 +117,118 @@ export const ui = {
       note: "Specifications, photography and lead times are confirmed per inquiry. Shufflers are supplied refurbished; other equipment is produced to order through our direct manufacturer relationships. CasTech EQ is not an authorized dealer or distributor of any brand.",
     },
   },
+  de: {
+    tagline: "Casino-Ausstattung",
+    nav: [
+      { href: "/jackpot-screens", label: "Jackpot-Bildschirme" },
+      { href: "/slot-machines", label: "Spielautomaten" },
+      { href: "/live-games", label: "Spieltische" },
+      { href: "/about", label: "Über uns" },
+      { href: "/contact", label: "Kontakt" },
+    ],
+    quote: "Angebot anfordern",
+    search: "Suche",
+    searchSite: "Website durchsuchen",
+    searchPlaceholder: "Suche…",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schließen",
+    mainNav: "Hauptmenü",
+    mobileNav: "Mobiles Menü",
+    langLabel: "Sprache",
+    breadcrumbHome: "Start",
+    breadcrumbEquipment: "Ausstattung",
+    heroTagline: "Auswahl · Spezifikation · Anfrage",
+    footer: {
+      claim: "PROFESSIONELLE CASINO-AUSSTATTUNG",
+      sister: "Schwesterunternehmen in Georgien:",
+      links: [
+        { href: "/jackpot-screens", label: "Jackpot-Bildschirme" },
+        { href: "/slot-machines", label: "Spielautomaten" },
+        { href: "/live-games", label: "Spieltische" },
+        { href: "/table-signs", label: "Tischanzeigen" },
+        { href: "/accessories", label: "Zubehör" },
+        { href: "/about", label: "Über uns" },
+        { href: "/contact", label: "Kontakt" },
+        { href: "/privacy", label: "Datenschutz (EN)" },
+        { href: "/terms", label: "AGB (EN)" },
+      ],
+      prague: "Prag",
+      batumi: "Batumi",
+      batumiFirst: false,
+      copyright: "© 2026 CasTech EQ, eine Marke der Virexa AI Technologies s.r.o., IČO 29716055. Alle Rechte vorbehalten.",
+      company: "EIN UNTERNEHMEN VON VIREXA AI TECHNOLOGIES ↗",
+    },
+    cta: {
+      eyebrow: "Projektanfragen",
+      title: "Planen Sie ein Casino-Ausstattungsprojekt?",
+      text: "Erzählen Sie uns von Umfang und Anforderungen Ihres Projekts. Wir besprechen Formate, Spezifikationen und Beschaffungsoptionen.",
+      quote: "Angebot anfordern",
+      email: "E-Mail an CasTech",
+    },
+    gallery: { close: "Schließen", prev: "Zurück", next: "Weiter", open: "Foto öffnen" },
+    groups: {
+      explore: "Bereiche",
+      item: "POSITION",
+      ask: "Zu dieser Position anfragen ↗",
+      note: "Spezifikationen, Fotos und Lieferzeiten werden je Anfrage bestätigt. Shuffler werden generalüberholt geliefert; andere Ausstattung wird über unsere direkten Herstellerbeziehungen auf Bestellung gefertigt. CasTech EQ ist kein autorisierter Händler oder Distributor einer Marke.",
+    },
+  },
+  cs: {
+    tagline: "Vybavení pro kasina",
+    nav: [
+      { href: "/jackpot-screens", label: "Jackpotové obrazovky" },
+      { href: "/slot-machines", label: "Výherní automaty" },
+      { href: "/live-games", label: "Herní stoly" },
+      { href: "/about", label: "O nás" },
+      { href: "/contact", label: "Kontakt" },
+    ],
+    quote: "Poptat cenu",
+    search: "Hledat",
+    searchSite: "Hledat na webu",
+    searchPlaceholder: "Hledat…",
+    openMenu: "Otevřít menu",
+    closeMenu: "Zavřít menu",
+    mainNav: "Hlavní menu",
+    mobileNav: "Mobilní menu",
+    langLabel: "Jazyk",
+    breadcrumbHome: "Úvod",
+    breadcrumbEquipment: "Vybavení",
+    heroTagline: "Výběr · specifikace · poptávka",
+    footer: {
+      claim: "PROFESIONÁLNÍ VYBAVENÍ PRO KASINA",
+      sister: "Sesterská společnost v Gruzii:",
+      links: [
+        { href: "/jackpot-screens", label: "Jackpotové obrazovky" },
+        { href: "/slot-machines", label: "Výherní automaty" },
+        { href: "/live-games", label: "Herní stoly" },
+        { href: "/table-signs", label: "Stolní displeje" },
+        { href: "/accessories", label: "Příslušenství" },
+        { href: "/about", label: "O nás" },
+        { href: "/contact", label: "Kontakt" },
+        { href: "/privacy", label: "Ochrana osobních údajů (EN)" },
+        { href: "/terms", label: "Obchodní podmínky (EN)" },
+      ],
+      prague: "Praha",
+      batumi: "Batumi",
+      batumiFirst: false,
+      copyright: "© 2026 CasTech EQ, značka společnosti Virexa AI Technologies s.r.o., IČO 29716055. Všechna práva vyhrazena.",
+      company: "SPOLEČNOST VIREXA AI TECHNOLOGIES ↗",
+    },
+    cta: {
+      eyebrow: "Poptávky projektů",
+      title: "Plánujete vybavení kasina?",
+      text: "Popište nám rozsah a požadavky projektu. Probereme formáty, specifikace a možnosti dodání.",
+      quote: "Poptat nabídku",
+      email: "Napsat CasTech",
+    },
+    gallery: { close: "Zavřít", prev: "Předchozí", next: "Další", open: "Otevřít fotografii" },
+    groups: {
+      explore: "Sekce",
+      item: "POLOŽKA",
+      ask: "Zeptat se na položku ↗",
+      note: "Specifikace, fotografie a dodací lhůty potvrzujeme u každé poptávky. Míchačky karet dodáváme repasované; ostatní vybavení vyrábíme na zakázku díky přímým vztahům s výrobci. CasTech EQ není autorizovaným prodejcem ani distributorem žádné značky.",
+    },
+  },
   ru: {
     tagline: "Оборудование для казино",
     nav: [
@@ -118,7 +246,7 @@ export const ui = {
     closeMenu: "Закрыть меню",
     mainNav: "Главное меню",
     mobileNav: "Мобильное меню",
-    langSwitch: { label: "EN", title: "English version" },
+    langLabel: "Язык",
     breadcrumbHome: "Главная",
     breadcrumbEquipment: "Оборудование",
     heroTagline: "Подбор · спецификация · запрос",
@@ -159,4 +287,4 @@ export const ui = {
   },
 } as const;
 
-export type Ui = (typeof ui)["en"] | (typeof ui)["ru"];
+export type Ui = (typeof ui)[Locale];

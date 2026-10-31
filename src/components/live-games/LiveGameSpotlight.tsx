@@ -37,14 +37,32 @@ const tilesRu = [
   { href: "#cards", title: "Карты и бланки", subtitle: "Колоды, кат-карты, формы", image: media.cards },
 ] as const;
 
+const tilesDe = [
+  { href: "#roulette", title: "Tische & Tücher", subtitle: "Roulette, Blackjack, Baccara, Poker", image: media.blackjack },
+  { href: "#seating", title: "Sitze", subtitle: "Spieler, Croupiers, Pit", image: media.seating },
+  { href: "#chips", title: "Chips & Kasse", subtitle: "Plaques, Trays, Drop-Boxen", image: media.chips },
+  { href: "#cards", title: "Karten & Formulare", subtitle: "Decks, Schnittkarten, Formulare", image: media.cards },
+] as const;
+
+const tilesCs = [
+  { href: "#roulette", title: "Stoly a sukna", subtitle: "Ruleta, blackjack, baccarat, poker", image: media.blackjack },
+  { href: "#seating", title: "Sezení", subtitle: "Hráči, krupiéři, pit", image: media.seating },
+  { href: "#chips", title: "Žetony a pokladna", subtitle: "Plakety, trayky, drop boxy", image: media.chips },
+  { href: "#cards", title: "Karty a formuláře", subtitle: "Balíčky, řezací karty, formuláře", image: media.cards },
+] as const;
+
+const TILES = { en: tilesEn, de: tilesDe, cs: tilesCs, ru: tilesRu };
+
 const TEXT = {
   en: { aria: "Live game essentials", eyebrow: "At a glance", title: "Tables, chairs, chips, cards—organized the way the pit runs", view: "View section ↓" },
+  de: { aria: "Grundausstattung für Live-Spiele", eyebrow: "Auf einen Blick", title: "Tische, Stühle, Chips, Karten – organisiert, wie der Pit arbeitet", view: "Zum Bereich ↓" },
+  cs: { aria: "Základní vybavení pro živé hry", eyebrow: "Přehled", title: "Stoly, židle, žetony, karty – uspořádané podle provozu pitu", view: "Přejít na sekci ↓" },
   ru: { aria: "Основное оборудование для живых игр", eyebrow: "Коротко", title: "Столы, кресла, фишки, карты — всё, что нужно игровому залу", view: "Перейти к разделу ↓" },
 };
 
 export function LiveGameSpotlight({ locale = "en" }: { locale?: Locale }) {
   const t = TEXT[locale];
-  const tiles = locale === "ru" ? tilesRu : tilesEn;
+  const tiles = TILES[locale];
   return (
     <section
       className="border-b border-white/[0.06] bg-zinc-950/50"

@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+import type { Locale } from "@/lib/i18n";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin", "cyrillic"],
+  subsets: ["latin", "latin-ext", "cyrillic"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
@@ -29,7 +30,7 @@ const organizationJsonLd = {
   ],
 };
 
-export function RootHtml({ lang, children }: { lang: "en" | "ru"; children: React.ReactNode }) {
+export function RootHtml({ lang, children }: { lang: Locale; children: React.ReactNode }) {
   return (
     <html lang={lang} className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased`}>
