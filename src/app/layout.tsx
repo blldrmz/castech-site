@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://castecheq.com/" },
   twitter: { card: "summary_large_image", images: ["/og-image.png"] },
   metadataBase: new URL("https://castecheq.com"),
+  verification: { google: "1B7taYlx8eBoHefmlFUcJVVW2aX4eAnSuZhalKTbRrc" },
   openGraph: {
     title: "CasTech EQ — Casino Equipment & LED Jackpot Screens",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "CasTech EQ — casino equipment and LED jackpot screens" }],
