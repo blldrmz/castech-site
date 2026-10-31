@@ -1,35 +1,54 @@
-import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { SectionCta } from "@/components/SectionCta";
 import { SiteShell } from "@/components/SiteShell";
-import { aboutBackground, aboutPageContent } from "@/content/aboutPage";
+import type { Locale } from "@/lib/i18n";
 
-export const metadata = pageMeta(
-  "About CasTech EQ | 22 Years of International Casino Experience",
-  "CasTech EQ, a brand of Virexa AI Technologies s.r.o.: 22 years of casino setup experience, own-production LED jackpot screens, used slots and shufflers.",
-  "/about/",
-);
+type TitleText = { readonly title: string; readonly text: string };
 
-export default function AboutPage() {
+export type AboutContent = {
+  readonly eyebrow: string;
+  readonly title: string;
+  readonly lead: string;
+  readonly paragraphs: readonly string[];
+  readonly highlights: readonly TitleText[];
+};
+
+export type AboutBackground = {
+  readonly eyebrow: string;
+  readonly title: string;
+  readonly yearsLabel: string;
+  readonly yearsText: string;
+  readonly paragraphs: readonly string[];
+  readonly timelineTitle: string;
+  readonly timeline: readonly { readonly year: string; readonly text: string }[];
+  readonly salesTitle: string;
+  readonly sales: readonly string[];
+  readonly placesTitle: string;
+  readonly places: readonly string[];
+  readonly highlights: readonly string[];
+};
+
+export function AboutView({ c, b, cta, locale = "en" }: { c: AboutContent; b: AboutBackground; cta: { title: string; text: string }; locale?: Locale }) {
   return (
-    <SiteShell>
+    <SiteShell locale={locale}>
       <PageHero
         id="top"
-        eyebrow={aboutPageContent.eyebrow}
-        title={aboutPageContent.title}
-        lead={aboutPageContent.lead}
+        eyebrow={c.eyebrow}
+        title={c.title}
+        lead={c.lead}
+        locale={locale}
       />
       <div className="bg-[#070d15]">
         <div className="castech-container castech-section-y">
           <div className="mx-auto max-w-3xl space-y-8">
-            {aboutPageContent.paragraphs.map((p, i) => (
+            {c.paragraphs.map((p, i) => (
               <p key={i} className="castech-body text-zinc-200">
                 {p}
               </p>
             ))}
           </div>
           <div className="mt-16 grid gap-5 sm:mt-20 sm:grid-cols-3 sm:gap-6">
-            {aboutPageContent.highlights.map((h) => (
+            {c.highlights.map((h) => (
               <div
                 key={h.title}
                 className="castech-card-product flex flex-col p-6 sm:p-7"
@@ -47,15 +66,15 @@ export default function AboutPage() {
         <div className="castech-container castech-section-y">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
             <div>
-              <p className="castech-eyebrow">{aboutBackground.eyebrow}</p>
-              <h2 className="castech-h2 castech-h2-gap max-w-2xl">{aboutBackground.title}</h2>
+              <p className="castech-eyebrow">{b.eyebrow}</p>
+              <h2 className="castech-h2 castech-h2-gap max-w-2xl">{b.title}</h2>
               <div className="mt-8 space-y-6">
-                {aboutBackground.paragraphs.map((t, i) => (
+                {b.paragraphs.map((t, i) => (
                   <p key={i} className="castech-body text-zinc-200">{t}</p>
                 ))}
               </div>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-                {aboutBackground.highlights.map((h) => (
+                {b.highlights.map((h) => (
                   <li key={h} className="castech-body flex gap-3 text-sm text-zinc-200">
                     <span aria-hidden="true" className="mt-0.5 text-[#e3bc7b]">•</span>
                     <span>{h}</span>
@@ -66,14 +85,14 @@ export default function AboutPage() {
             <div className="self-start">
               <div className="flex items-end gap-4 border-b border-white/15 pb-6">
                 <span className="font-heading text-7xl font-extralight leading-none tracking-[-.06em] text-white sm:text-8xl">
-                  {aboutBackground.yearsLabel}
+                  {b.yearsLabel}
                   <span className="text-[#e3bc7b]">.</span>
                 </span>
-                <span className="pb-2 text-sm tracking-[.06em] text-slate-300">{aboutBackground.yearsText}</span>
+                <span className="pb-2 text-sm tracking-[.06em] text-slate-300">{b.yearsText}</span>
               </div>
-              <p className="mt-8 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.timelineTitle}</p>
+              <p className="mt-8 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{b.timelineTitle}</p>
               <ol className="mt-5 space-y-0 border-l border-[#e3bc7b]/30">
-                {aboutBackground.timeline.map((t) => (
+                {b.timeline.map((t) => (
                   <li key={t.year} className="relative pb-6 pl-6 last:pb-0">
                     <span aria-hidden="true" className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#e3bc7b]" />
                     <span className="block font-heading text-sm font-bold text-white">{t.year}</span>
@@ -81,15 +100,15 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ol>
-              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.salesTitle}</p>
+              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{b.salesTitle}</p>
               <ul className="mt-4 flex flex-wrap gap-2.5">
-                {aboutBackground.sales.map((c) => (
+                {b.sales.map((c) => (
                   <li key={c} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>
                 ))}
               </ul>
-              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{aboutBackground.placesTitle}</p>
+              <p className="mt-10 text-[11px] font-bold uppercase tracking-[.2em] text-[#e3bc7b]">{b.placesTitle}</p>
               <ul className="mt-4 flex flex-wrap gap-2.5">
-                {aboutBackground.places.map((c) => (
+                {b.places.map((c) => (
                   <li key={c} className="rounded-full border border-[#e3bc7b]/35 bg-[#e3bc7b]/[0.06] px-4 py-2 text-[13px] font-medium text-zinc-100">{c}</li>
                 ))}
               </ul>
@@ -97,10 +116,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <SectionCta
-        title="Work with us on your next project"
-        text="If you are expanding, refurbishing, or building from greenfield, we are ready to help with equipment selection and planning."
-      />
+      <SectionCta title={cta.title} text={cta.text} locale={locale} />
     </SiteShell>
   );
 }

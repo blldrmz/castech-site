@@ -1,16 +1,19 @@
 import type { LiveGameGroup } from "@/content/liveGames";
+import { href, ui, type Locale } from "@/lib/i18n";
 import Link from "next/link";
 
 type Props = {
   groups: LiveGameGroup[];
   coverById?: Record<string, string>;
+  locale?: Locale;
 };
 
-export function EquipmentGroupList({ groups }: Props) {
+export function EquipmentGroupList({ groups, locale = "en" }: Props) {
+  const t = ui[locale].groups;
   return (
     <div>
       <div className="mb-14 rounded-xl border border-slate-700/55 bg-[#112031] px-6 py-6 sm:mb-20 sm:px-8">
-        <p className="castech-eyebrow">Explore this category</p>
+        <p className="castech-eyebrow">{t.explore}</p>
         <div className="mt-4 flex flex-wrap gap-2.5">
           {groups.map((g) => (
             <a key={g.id} href={`#${g.id}`} className="rounded-lg border border-white/15 px-4 py-2.5 text-[12px] font-semibold text-slate-200 transition hover:border-[#e3bc7b]/50 hover:text-[#e3bc7b]">{g.title} ↘</a>
@@ -29,12 +32,12 @@ export function EquipmentGroupList({ groups }: Props) {
                   {group.items.map((item,index)=>(
                     <article key={item.title} className="flex min-h-[210px] flex-col rounded-xl border border-slate-600/40 bg-[#111e2d] p-6 transition hover:border-[#e3bc7b]/30 sm:p-7">
                       <div className="flex items-center justify-between gap-3">
-                        <span className="font-heading text-[11px] font-bold tracking-[.13em] text-[#e3bc7b]">ITEM {String(index+1).padStart(2,"0")}</span>
+                        <span className="font-heading text-[11px] font-bold tracking-[.13em] text-[#e3bc7b]">{t.item} {String(index+1).padStart(2,"0")}</span>
                         <span className="h-px w-10 bg-[#e3bc7b]/30" aria-hidden="true"/>
                       </div>
                       <h3 className="mt-6 font-heading text-[17px] font-semibold leading-7 text-white">{item.title}</h3>
                       <p className="mt-3 flex-1 text-sm leading-[1.85] text-slate-300">{item.description}</p>
-                      <Link className="mt-5 w-fit text-[12px] font-semibold text-[#e3bc7b] hover:text-[#f3d59e]" href="/contact">Ask about this item ↗</Link>
+                      <Link className="mt-5 w-fit text-[12px] font-semibold text-[#e3bc7b] hover:text-[#f3d59e]" href={href(locale, "/contact")}>{t.ask}</Link>
                     </article>
                   ))}
                 </div>
@@ -43,7 +46,7 @@ export function EquipmentGroupList({ groups }: Props) {
           </section>
         ))}
       </div>
-      <p className="mt-6 max-w-4xl text-xs leading-6 text-slate-400">Specifications, photography and lead times are confirmed per inquiry. Shufflers are supplied refurbished; other equipment is produced to order through our direct manufacturer relationships. CasTech EQ is not an authorized dealer or distributor of any brand.</p>
+      <p className="mt-6 max-w-4xl text-xs leading-6 text-slate-400">{t.note}</p>
     </div>
   );
 }

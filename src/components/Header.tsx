@@ -1,7 +1,7 @@
 "use client";
 
-import { mainNav } from "@/content/navigation";
 import { brand } from "@/content/site";
+import { hasRu, href as lhref, localeFromPath, toEnPath, ui } from "@/lib/i18n";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -16,13 +16,20 @@ function navLinkClassName(active: boolean) {
 }
 
 function isActiveLink(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(`${href}/`);
+  const p = pathname.replace(/\/$/, "") || "/";
+  const h = href.replace(/\/$/, "") || "/";
+  if (h === "/" || h === "/ru") return p === h;
+  return p === h || p.startsWith(`${h}/`);
 }
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname() ?? "/";
+  const locale = localeFromPath(pathname);
+  const t = ui[locale];
+  const enPath = toEnPath(pathname);
+  const nav = t.nav.map((n) => ({ href: lhref(locale, n.href), label: n.label }));
+  const switchHref = locale === "ru" ? enPath : hasRu(enPath) ? lhref("ru", enPath) : "/ru/";
 
   useEffect(() => {
     if (!open) return;
@@ -50,22 +57,22 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-zinc-950/90 backdrop-blur-md">
       <div className="castech-container flex max-w-7xl items-center justify-between gap-3 py-3.5 sm:gap-4 sm:py-4">
         <Link
-          href="/"
+          href={lhref(locale, "/")}
           className="min-w-0 shrink text-left font-heading transition-opacity hover:opacity-90"
         >
           <div className="text-base font-bold tracking-[0.18em] text-zinc-50 sm:text-lg md:text-xl">
             {brand.name} <span className="text-[#e3bc7b]">EQ</span>
           </div>
           <div className="mt-0.5 text-[8px] font-semibold uppercase tracking-[0.28em] text-zinc-300 sm:text-[9px] md:text-[10px]">
-            {brand.tagline}
+            {t.tagline}
           </div>
         </Link>
 
         <nav
           className="hidden flex-wrap items-center justify-end gap-0.5 font-heading md:flex lg:gap-1"
-          aria-label="Primary"
+          aria-label={t.mainNav}
         >
-          {mainNav.map(({ href, label }) => (
+          {nav.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
@@ -77,26 +84,38 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <form action="/search/" method="get" role="search" className="hidden xl:block">
+          <Link
+            href={switchHref}
+            hrefLang={locale === "ru" ? "en" : "ru"}
+            title={t.langSwitch.title}
+            className="inline-flex h-10 items-center justify-center rounded-xl border border-white/[0.08] px-3 font-heading text-[12px] font-semibold tracking-[.12em] text-zinc-200 transition hover:border-[#e3bc7b]/50 hover:text-[#e3bc7b]"
+          >
+            {t.langSwitch.label}
+          </Link>
+          {locale === "en" ? (
+          <form action="/search/" method="get" role="search" className="hidden 2xl:block">
             <input
               type="search"
               name="q"
-              aria-label="Search the site"
-              placeholder="Search…"
+              aria-label={t.searchSite}
+              placeholder={t.searchPlaceholder}
               className="w-40 rounded-lg border border-white/[0.1] bg-zinc-900/70 px-3 py-2 text-[13px] text-zinc-100 outline-none placeholder:text-zinc-400 focus:border-[#e3bc7b]"
             />
           </form>
+          ) : null}
+          {locale === "en" ? (
           <Link
             href="/search/"
-            aria-label="Search"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-zinc-300 transition hover:bg-white/[0.05] xl:hidden"
+            aria-label={t.search}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-zinc-300 transition hover:bg-white/[0.05] 2xl:hidden"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
             </svg>
           </Link>
-          <Link href="/contact" className="castech-btn-header hidden sm:inline-flex">
-            Get a quote
+          ) : null}
+          <Link href={lhref(locale, "/contact")} className="castech-btn-header hidden sm:inline-flex">
+            {t.quote}
           </Link>
 
           <button
@@ -104,7 +123,7 @@ export function Header() {
             className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-zinc-300 transition hover:bg-white/[0.05] md:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t.closeMenu : t.openMenu}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? (
@@ -148,9 +167,9 @@ export function Header() {
       >
         <nav
           className="castech-container flex max-w-7xl flex-col gap-0.5 py-4 font-heading"
-          aria-label="Mobile"
+          aria-label={t.mobileNav}
         >
-          {mainNav.map(({ href, label }) => (
+          {nav.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
@@ -165,11 +184,11 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href={lhref(locale, "/contact")}
             className="castech-btn-header mt-3 justify-center py-3"
             onClick={() => setOpen(false)}
           >
-            Get a quote
+            {t.quote}
           </Link>
         </nav>
       </div>

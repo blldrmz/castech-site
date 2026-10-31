@@ -1,8 +1,9 @@
 import { media } from "@/content/mediaUrls";
 import Image from "next/image";
+import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
 
-const tiles = [
+const tilesEn = [
   {
     href: "#roulette",
     title: "Tables & felts",
@@ -29,16 +30,30 @@ const tiles = [
   },
 ] as const;
 
-export function LiveGameSpotlight() {
+const tilesRu = [
+  { href: "#roulette", title: "Столы и сукно", subtitle: "Рулетка, блэкджек, баккара, покер", image: media.blackjack },
+  { href: "#seating", title: "Кресла", subtitle: "Для игроков, дилеров, пит-боссов", image: media.seating },
+  { href: "#chips", title: "Фишки и касса", subtitle: "Плаки, трэи, дроп-боксы", image: media.chips },
+  { href: "#cards", title: "Карты и бланки", subtitle: "Колоды, кат-карты, формы", image: media.cards },
+] as const;
+
+const TEXT = {
+  en: { aria: "Live game essentials", eyebrow: "At a glance", title: "Tables, chairs, chips, cards—organized the way the pit runs", view: "View section ↓" },
+  ru: { aria: "Основное оборудование для живых игр", eyebrow: "Коротко", title: "Столы, кресла, фишки, карты — всё, что нужно игровому залу", view: "Перейти к разделу ↓" },
+};
+
+export function LiveGameSpotlight({ locale = "en" }: { locale?: Locale }) {
+  const t = TEXT[locale];
+  const tiles = locale === "ru" ? tilesRu : tilesEn;
   return (
     <section
       className="border-b border-white/[0.06] bg-zinc-950/50"
-      aria-label="Live game essentials"
+      aria-label={t.aria}
     >
       <div className="castech-container py-14 sm:py-16">
-        <p className="castech-eyebrow">At a glance</p>
+        <p className="castech-eyebrow">{t.eyebrow}</p>
         <h2 className="castech-h2 mt-4 max-w-2xl text-zinc-50">
-          Tables, chairs, chips, cards—organized the way the pit runs
+          {t.title}
         </h2>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {tiles.map((tile) => (
@@ -64,7 +79,7 @@ export function LiveGameSpotlight() {
                     {tile.subtitle}
                   </div>
                   <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-[#e3bc7b]/95">
-                    View section ↓
+                    {t.view}
                   </div>
                 </div>
               </div>

@@ -1,13 +1,41 @@
 "use client";
 
 import { companyContent, contactContent } from "@/content/site";
+import { href, type Locale } from "@/lib/i18n";
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
 type Status = "idle" | "sending" | "sent" | "fallback";
 
-export function Contact() {
-  const { fields } = contactContent;
+const RU = {
+  eyebrow: "Запросы от компаний",
+  title: "Опишите, какое оборудование вам нужно.",
+  description:
+    "Расскажите, что требуется вашему казино: LED-табло джекпота, игровые столы, игровые автоматы или аксессуары. Мы обсудим спецификации, наличие и требования проекта. Для клиентов из Грузии и стран СНГ работает офис в Батуми.",
+  formTitle: "Запрос на оборудование",
+  formNote: "Опишите, что вам нужно. Мы ответим по электронной почте, обычно с уточняющими вопросами о количестве, размерах и стране доставки.",
+  fields: { name: "Имя", company: "Компания", email: "Email", phone: "Телефон / WhatsApp / Telegram", message: "Оборудование и требования проекта" },
+  submit: "Отправить запрос",
+  sending: "Отправка…",
+  sent: "Спасибо! Ваш запрос отправлен, мы ответим по электронной почте.",
+  fallback: "Не удалось отправить. Откроется ваша почтовая программа с готовым письмом — отправьте его оттуда.",
+  businessEmail: "Электронная почта",
+  batumi: "Грузия · Батуми (запросы на русском языке)",
+  prague: "Чехия · Прага (юридический адрес)",
+  company: "Реквизиты",
+  sister: "компания в Грузии, с",
+  website: "Сайт",
+  consentA: "Я согласен(на), что CasTech EQ использует эти данные для ответа на мой запрос. См.",
+  privacy: "Privacy Policy",
+  inquiryAbout: "Запрос по позиции: ",
+  findMachine: "Пожалуйста, найдите для меня автомат:\n\nПроизводитель / модель: ",
+  findMachineRest: "\nТип корпуса (стандартный, наклонный, VIP...):\nНабор игр или джекпот:\nКоличество:\nСтрана доставки:\n",
+};
+
+export function Contact({ locale = "en" }: { locale?: Locale }) {
+  const ru = locale === "ru";
+  const c = ru ? { ...contactContent, ...RU } : contactContent;
+  const { fields } = c;
   const [status, setStatus] = useState<Status>("idle");
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
@@ -15,12 +43,14 @@ export function Contact() {
   useEffect(() => {
     const item = new URLSearchParams(window.location.search).get("item");
     if (item && messageRef.current && !messageRef.current.value) {
-      messageRef.current.value =
-        item.startsWith("Find a machine")
-          ? "Please find this machine for me:\n\nBrand / model: " + item.replace(/^Find a machine:?\s*/, "").slice(0, 120) + "\nCabinet type (upright, slant top, VIP...):\nGame mix or jackpot:\nQuantity:\nDelivery country:\n"
-          : "Inquiry about: " + item.slice(0, 200) + "\n\n";
+      const found = item.replace(/^Find a machine:?\s*/, "").slice(0, 120);
+      messageRef.current.value = item.startsWith("Find a machine")
+        ? ru
+          ? RU.findMachine + found + RU.findMachineRest
+          : "Please find this machine for me:\n\nBrand / model: " + found + "\nCabinet type (upright, slant top, VIP...):\nGame mix or jackpot:\nQuantity:\nDelivery country:\n"
+        : (ru ? RU.inquiryAbout : "Inquiry about: ") + item.slice(0, 200) + "\n\n";
     }
-  }, []);
+  }, [ru]);
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -33,7 +63,7 @@ export function Contact() {
     const phone = String(fd.get("phone") || "").trim();
     const message = String(fd.get("message") || "").trim();
     if (!name || !email || !message) return;
-    const subject = "CasTech EQ equipment inquiry" + (company ? " — " + company : "");
+    const subject = (ru ? "[RU] " : "") + "CasTech EQ equipment inquiry" + (company ? " — " + company : "");
     const text = [
       "Name: " + name,
       "Company: " + (company || "Not specified"),
@@ -73,45 +103,62 @@ export function Contact() {
       <div className="castech-container castech-section-y">
         <div className="grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
           <div>
-            <p className="castech-eyebrow">{contactContent.eyebrow}</p>
-            <h2 className="castech-h2 castech-h2-gap max-w-xl">{contactContent.title}</h2>
-            <p className="castech-body-strong mt-8 max-w-xl sm:mt-9">{contactContent.description}</p>
+            <p className="castech-eyebrow">{c.eyebrow}</p>
+            <h2 className="castech-h2 castech-h2-gap max-w-xl">{c.title}</h2>
+            <p className="castech-body-strong mt-8 max-w-xl sm:mt-9">{c.description}</p>
 
             <div className="mt-9 space-y-5 border-t border-white/10 pt-7 text-[15px] leading-8 text-slate-300">
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Business email</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">{ru ? RU.businessEmail : "Business email"}</span>
                 <a href={`mailto:${contactContent.email}`} className="font-semibold text-white underline-offset-4 hover:underline">
                   {contactContent.email} ↗
                 </a>
               </div>
+              {ru ? (
+                <>
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Czech Republic · Prague (registered office)</span>
-                <span>{contactContent.pragueAddress}</span>
-                <a href={`tel:${contactContent.praguePhoneTel}`} className="mt-1 block font-semibold text-white hover:text-[#e3bc7b]">{contactContent.praguePhone}</a>
-              </div>
-              <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Georgia · Batumi</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">{ru ? RU.batumi : "Georgia · Batumi"}</span>
                 <span>{contactContent.batumiAddress}</span>
                 <a href={`tel:${contactContent.georgiaPhoneTel}`} className="mt-1 block font-semibold text-white hover:text-[#e3bc7b]">{contactContent.georgiaPhone}</a>
               </div>
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Company details</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">{ru ? RU.prague : "Czech Republic · Prague (registered office)"}</span>
+                <span>{contactContent.pragueAddress}</span>
+                <a href={`tel:${contactContent.praguePhoneTel}`} className="mt-1 block font-semibold text-white hover:text-[#e3bc7b]">{contactContent.praguePhone}</a>
+              </div>
+                </>
+              ) : (
+                <>
+              <div>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">{ru ? RU.prague : "Czech Republic · Prague (registered office)"}</span>
+                <span>{contactContent.pragueAddress}</span>
+                <a href={`tel:${contactContent.praguePhoneTel}`} className="mt-1 block font-semibold text-white hover:text-[#e3bc7b]">{contactContent.praguePhone}</a>
+              </div>
+              <div>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">{ru ? RU.batumi : "Georgia · Batumi"}</span>
+                <span>{contactContent.batumiAddress}</span>
+                <a href={`tel:${contactContent.georgiaPhoneTel}`} className="mt-1 block font-semibold text-white hover:text-[#e3bc7b]">{contactContent.georgiaPhone}</a>
+              </div>
+                </>
+              )}
+              <div>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">{ru ? RU.company : "Company details"}</span>
                 <span className="block">{companyContent.legalName}</span>
                 <span className="block">IČO {companyContent.ico}</span>
                 <span className="block text-sm leading-7 text-slate-400">{companyContent.register}</span>
-                <span className="mt-3 block">{companyContent.sister.legalName} <span className="text-slate-400">(sister company, Georgia, since {companyContent.sister.since})</span></span>
+                <span className="mt-3 block">{companyContent.sister.legalName} <span className="text-slate-400">({ru ? RU.sister : "sister company, Georgia, since"} {companyContent.sister.since})</span></span>
                 <span className="block">ID {companyContent.sister.id}</span>
                 <span className="block text-sm leading-7 text-slate-400">{companyContent.sister.address}</span>
               </div>
               <div>
-                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">Website</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[.17em] text-[#e3bc7b]">{ru ? RU.website : "Website"}</span>
                 <a href={contactContent.websiteHref} className="font-semibold text-white hover:text-[#e3bc7b]">{contactContent.websiteLabel} ↗</a>
               </div>
             </div>
           </div>
           <div className="rounded-[20px] border border-slate-600/50 bg-[#101c2d] p-7 shadow-xl shadow-black/30 sm:p-9">
-            <div className="font-heading text-xl font-bold tracking-tight text-white">{contactContent.formTitle}</div>
-            <p className="mt-3 text-sm font-medium leading-7 text-slate-300">{contactContent.formNote}</p>
+            <div className="font-heading text-xl font-bold tracking-tight text-white">{c.formTitle}</div>
+            <p className="mt-3 text-sm font-medium leading-7 text-slate-300">{c.formNote}</p>
             <form onSubmit={submit} className="mt-8 grid gap-5">
               <div className="grid gap-2">
                 <label htmlFor="contact-name" className="castech-field-label">{fields.name} *</label>
@@ -140,16 +187,16 @@ export function Contact() {
               <label className="flex items-start gap-3 text-[13px] leading-6 text-slate-300">
                 <input type="checkbox" name="consent" required className="mt-1.5 shrink-0" />
                 <span>
-                  I agree that CasTech EQ may use these details to reply to my inquiry. See the{" "}
+                  {ru ? RU.consentA : "I agree that CasTech EQ may use these details to reply to my inquiry. See the"}{" "}
                   <Link href="/privacy" className="text-[#e3bc7b] underline underline-offset-4">Privacy Policy</Link>. *
                 </span>
               </label>
               <button type="submit" disabled={status === "sending"} className="castech-btn-primary mt-1 w-full sm:w-auto">
-                {status === "sending" ? "Sending…" : contactContent.submit} <span aria-hidden="true">↗</span>
+                {status === "sending" ? (ru ? RU.sending : "Sending…") : c.submit} <span aria-hidden="true">↗</span>
               </button>
               <p role="status" aria-live="polite" className="text-sm leading-7 text-slate-300">
-                {status === "sent" ? "Thank you. Your inquiry was sent and we will reply by email." : null}
-                {status === "fallback" ? "Sending failed. Your email application should open with the request, please send it from there." : null}
+                {status === "sent" ? (ru ? RU.sent : "Thank you. Your inquiry was sent and we will reply by email.") : null}
+                {status === "fallback" ? (ru ? RU.fallback : "Sending failed. Your email application should open with the request, please send it from there.") : null}
               </p>
             </form>
           </div>

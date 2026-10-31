@@ -63,3 +63,20 @@ export const jackpotGallery = [
   { src: "/images/hero/princess-bell-link.webp", alt: "Slim LED column branded for a casino between two curved slot machines", caption: "Custom branded LED column between slot machines" },
   { src: "/images/hero/slim-column.webp", alt: "Red LED side panel between two slot banks", caption: "LED side panel between slot banks" },
 ] as const;
+
+export const jackpotLabels = {
+  sizesEyebrow: "Sizes",
+  quote: "Request a jackpot screen quote",
+  installEyebrow: "Installations",
+  installTitle: "On real casino floors.",
+  photoNote:
+    "Photographs show installed jackpot displays. The same screens can show jackpot values from your server or any other content you choose, such as a live sports broadcast. Slot machine brands visible in the photographs belong to their manufacturers and are not affiliated with CasTech EQ.",
+  ledPre: "Need a larger LED screen or video wall, indoor or outdoor? See",
+  ledLink: "casino LED screens and LED video walls",
+  ledPost: " by CasTech LED.",
+  installLink: "See installation stories and site videos",
+  briefEyebrow: "To quote quickly",
+  briefTitle: "What to send us.",
+  ctaTitle: "Need a jackpot screen for your floor?",
+  ctaText: "Send us your size, mounting position and jackpot server details. We will come back with a configuration and offer.",
+};

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeroSlides, type HeroSlide } from "./HeroSlides";
+import { href, ui, type Locale } from "@/lib/i18n";
 
 type Props = {
   eyebrow: string;
@@ -7,18 +8,20 @@ type Props = {
   lead: string;
   id?: string;
   slides?: HeroSlide[];
+  locale?: Locale;
 };
 
-export function PageHero({ eyebrow, title, lead, id, slides }: Props) {
+export function PageHero({ eyebrow, title, lead, id, slides, locale = "en" }: Props) {
+  const t = ui[locale];
   return (
     <section id={id} className="relative overflow-hidden border-b border-white/10 bg-[#091421]">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_70%_at_92%_48%,rgba(16,185,129,.10),transparent_90%),radial-gradient(ellipse_30%_75%_at_2%_3%,rgba(80,156,215,.08),transparent_90%)]"/>
       {slides && <HeroSlides slides={slides} />}
       <div className="relative castech-container py-20 sm:py-24 lg:py-28">
         <nav className="mb-9 flex items-center gap-3 text-[12px] font-semibold tracking-wide text-slate-300" aria-label="Breadcrumb">
-          <Link href="/" className="transition hover:text-[#e3bc7b]">Home</Link>
+          <Link href={href(locale, "/")} className="transition hover:text-[#e3bc7b]">{t.breadcrumbHome}</Link>
           <span aria-hidden="true" className="text-slate-500">/</span>
-          <Link href="/catalog" className="transition hover:text-[#e3bc7b]">Equipment</Link>
+          <Link href={locale === "ru" ? "/ru/" : "/catalog"} className="transition hover:text-[#e3bc7b]">{t.breadcrumbEquipment}</Link>
           <span aria-hidden="true" className="text-slate-500">/</span>
           <span className="text-[#e3bc7b]">{eyebrow}</span>
         </nav>
@@ -42,7 +45,7 @@ export function PageHero({ eyebrow, title, lead, id, slides }: Props) {
           </div>
           <div className="border-l-2 border-[#e3bc7b]/55 pl-6">
             <p className="max-w-lg text-[15px] font-medium leading-[1.9] text-slate-100 [text-shadow:0_1px_12px_rgba(0,0,0,.85)] sm:text-[17px]">{lead}</p>
-            <p className="mt-7 text-[11px] font-semibold uppercase tracking-[.1em] text-slate-400">Equipment selection · specification · inquiry</p>
+            <p className="mt-7 text-[11px] font-semibold uppercase tracking-[.1em] text-slate-400">{t.heroTagline}</p>
           </div>
         </div>
         )}
