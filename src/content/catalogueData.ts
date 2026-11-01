@@ -255,7 +255,7 @@ export const catalogueCategories:CatalogueCategory[]=[
  {
   "slug": "chips",
   "title": "Casino Chips",
-  "cover": "/images/catalog/chips/01-yellow-1-000-plaque-chip.webp",
+  "cover": "/images/catalog/covers/casino-chips.webp",
   "items": [
    {
     "title": "Yellow 1,000 Plaque Chip",
