@@ -15,8 +15,8 @@ export const contactContent = {
   pragueAddress: "Cihlářská 782/10a, Prosek, 190 00 Praha 9, Czech Republic",
   batumiAddress: "Khakhuli Street No. 3, Batumi, Georgia",
   georgiaPhone: "+995 555 48 19 75",
-  praguePhone: "+420 704 481 975",
-  praguePhoneTel: "+420704481975",
+  praguePhone: "+420 777 481 975",
+  praguePhoneTel: "+420777481975",
   georgiaPhoneTel: "+995555481975",
   inquiryEmail: "sales@virexa-tech.com", // where website inquiries are delivered (FormSubmit)
   formEndpoint: "https://formsubmit.co/ajax/sales@virexa-tech.com",
