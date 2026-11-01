@@ -3,7 +3,8 @@ import { catalogueCategories } from "@/content/catalogueData";
 import { href, type Locale } from "@/lib/i18n";
 import { srcSetFor } from "@/lib/srcset";
 
-const focus = ["led", "machines", "tables", "chairs", "shufflers", "chips", "cards", "accessories"];
+// Same ten departments, in the same order, as the catalogue page.
+const focus = ["led", "machines", "tables", "chairs", "cards", "chips", "shufflers", "layouts", "table-signs", "accessories"];
 
 const linkCls = "text-gold underline-offset-4 hover:underline";
 type LK = (path: string, label: string) => React.ReactNode;
@@ -137,14 +138,16 @@ const CATEGORY_PATHS: Record<string, string> = {
   shufflers: "/live-games#blackjack",
   chips: "/live-games#chips",
   cards: "/live-games#cards",
+  layouts: "/live-games",
+  "table-signs": "/table-signs",
   accessories: "/accessories",
 };
 
 /** Category titles for the home grid outside English (English uses the catalogue titles). */
 const CATEGORY_TITLES: Record<"de" | "cs" | "ru", Record<string, string>> = {
-  de: { led: "LED-Jackpot-Bildschirme", machines: "Spielautomaten", tables: "Spieltische", chairs: "Casino-Stühle", shufflers: "Shuffler", chips: "Casino-Chips", cards: "Spielkarten", accessories: "Zubehör" },
-  cs: { led: "LED jackpotové obrazovky", machines: "Výherní automaty", tables: "Herní stoly", chairs: "Kasinové židle", shufflers: "Míchačky karet", chips: "Kasinové žetony", cards: "Hrací karty", accessories: "Příslušenství" },
-  ru: { led: "LED-табло джекпота", machines: "Игровые автоматы", tables: "Игровые столы", chairs: "Кресла для казино", shufflers: "Шафлеры", chips: "Фишки для казино", cards: "Игральные карты", accessories: "Аксессуары" },
+  de: { led: "LED-Jackpot-Bildschirme", machines: "Spielautomaten", tables: "Spieltische", chairs: "Casino-Stühle", shufflers: "Shuffler", chips: "Casino-Chips", cards: "Spielkarten", layouts: "Tischtücher", "table-signs": "Tischanzeigen", accessories: "Zubehör" },
+  cs: { led: "LED jackpotové obrazovky", machines: "Výherní automaty", tables: "Herní stoly", chairs: "Kasinové židle", shufflers: "Míchačky karet", chips: "Kasinové žetony", cards: "Hrací karty", layouts: "Herní sukna", "table-signs": "Stolní displeje", accessories: "Příslušenství" },
+  ru: { led: "LED-табло джекпота", machines: "Игровые автоматы", tables: "Игровые столы", chairs: "Кресла для казино", shufflers: "Шафлеры", chips: "Фишки для казино", cards: "Игральные карты", layouts: "Сукно для столов", "table-signs": "Табло для столов", accessories: "Аксессуары" },
 };
 
 export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
@@ -219,16 +222,16 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
             {t.allCategories}
           </Link>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
           {lead.map((c, i) => (
             <Link key={c.slug} href={c.href} className="group flex flex-col overflow-hidden border border-white/10 bg-surface transition hover:border-gold/60">
               <div className="relative aspect-[16/10] overflow-hidden bg-surface-media">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.cover} srcSet={srcSetFor(c.cover)} sizes="(min-width:1024px) 290px, 50vw" alt={c.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain p-2 transition group-hover:scale-[1.03]" />
+                <img src={c.cover} srcSet={srcSetFor(c.cover)} sizes="(min-width:1024px) 230px, 50vw" alt={c.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain p-2 transition group-hover:scale-[1.03]" />
               </div>
               <div className="flex items-start justify-between gap-2 p-4 sm:items-center sm:p-7">
                 <div>
-                  <span className="text-[11px] tracking-[.15em] text-gold">0{i + 1}<span className="hidden sm:inline"> / {t.collection}</span></span>
+                  <span className="text-[11px] tracking-[.15em] text-gold">{String(i + 1).padStart(2, "0")}<span className="hidden sm:inline"> / {t.collection}</span></span>
                   <h3 className="mt-2 font-heading text-[17px] font-semibold leading-snug tracking-[-.03em] text-white sm:text-[22px]">{c.title}</h3>
                 </div>
                 <span aria-hidden="true" className="text-lg text-gold sm:text-xl">↗</span>
