@@ -1,6 +1,6 @@
 /** Local product photos from the CasTech EQ catalogue (used for section headers). */
 export const media = {
-  roulette: "/images/catalog/tables/09-casino-gaming-roulette-tables.webp",
+  roulette: "/images/catalog/tables/03-roulette-gaming-table-opposite-view.webp",
   blackjack: "/images/catalog/tables/04-blue-felt-casino-gaming-table.webp",
   chips: "/images/catalog/chips/04-mixed-denomination-casino-chip-set.webp",
   cards: "/images/catalog/cards/01-casino-playing-cards.webp",
