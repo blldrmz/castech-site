@@ -137,11 +137,6 @@ export const catalogueCategories:CatalogueCategory[]=[
     "note": ""
    },
    {
-    "title": "Modern Oval Casino Gaming Table",
-    "image": "/images/catalog/tables/06-modern-oval-casino-gaming-table.webp",
-    "note": ""
-   },
-   {
     "title": "Red Felt Casino Gaming Table",
     "image": "/images/catalog/tables/07-red-felt-casino-gaming-table.webp",
     "note": ""
@@ -149,11 +144,6 @@ export const catalogueCategories:CatalogueCategory[]=[
    {
     "title": "Wood Finish Casino Gaming Table",
     "image": "/images/catalog/tables/08-wood-finish-casino-gaming-table.webp",
-    "note": ""
-   },
-   {
-    "title": "Casino Gaming Roulette Tables",
-    "image": "/images/catalog/tables/09-casino-gaming-roulette-tables.webp",
     "note": ""
    }
   ]
