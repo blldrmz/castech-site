@@ -10,11 +10,11 @@ export const csJackpot: JackpotContent = {
     eyebrow: "Vlastní výroba",
     title: "LED jackpotové obrazovky pro kasina na zakázku.",
     lead:
-      "CasTech EQ by Virexa navrhuje a vyrábí LED jackpotové obrazovky pro kasina. Každou jackpotovou obrazovku vyrobíme ve vaší velikosti a připojíme k jackpotovému serveru jakékoli značky, včetně EGT, Apex a Novomatic. Zobrazovat můžete aktuální hodnoty jackpotu nebo jiný obsah, například sportovní přenosy.",
+      "CasTech EQ by Virexa navrhuje a vyrábí LED jackpotové obrazovky pro kasina. Každou jackpotovou obrazovku vyrobíme ve vaší velikosti a připojíme k vašemu jackpotovému serveru, včetně systémů EGT, Apex a Novomatic. Zobrazovat můžete aktuální hodnoty jackpotu nebo jiný obsah, například sportovní přenosy.",
   },
   highlights: [
     { title: "Ve vašich rozměrech", text: "Sdělte nám požadovanou šířku a výšku. Každou obrazovku vyrábíme ve vaší velikosti, ne z pevného katalogu." },
-    { title: "Jakýkoli jackpotový server", text: "Naše obrazovky jsou kompatibilní s jackpotovými servery všech značek a modelů – zůstanete u systému, který už používáte." },
+    { title: "Pro váš jackpotový server", text: "Naše obrazovky pracují s jackpotovými servery EGT, Apex, Novomatic a dalších výrobců – zůstanete u systému, který už používáte. Kompatibilitu potvrzujeme u každého projektu." },
     { title: "Jackpot nebo jiný obsah", text: "Po připojení k jackpotovému serveru obrazovka ukazuje aktuální hodnoty jackpotu. Podle potřeby může zobrazovat i jiný obsah, třeba sportovní přenos nebo promo akce." },
     { title: "Vyrábíme a dodáváme sami", text: "Jde o naši vlastní výrobu. Obrazovku vyrobíme, dodáme a pomůžeme s instalací ve vašem sále." },
   ],
@@ -129,13 +129,13 @@ export const csAbout: AboutContent = {
   lead:
     "CasTech EQ by Virexa stojí na 22 letech praktické práce v kasinech – od slot technika a slot manažera po vedení bezpečnostního dohledu, IT a technického oddělení. Náš tým otevíral kasina v Ghaně, na Severním Kypru, v Kosovu a v Gruzii i na výletních lodích a řídil kasinový provoz v Africe, Evropě a Asii.",
   paragraphs: [
-    "Naší vlastní výrobou jsou LED jackpotové obrazovky: vyrábíme je ve velikostech, které potřebujete, jsou kompatibilní s jackpotovými servery všech značek a modelů a dodáme je i nainstalujeme ve vašem sále.",
+    "Naší vlastní výrobou jsou LED jackpotové obrazovky: vyrábíme je ve velikostech, které potřebujete, pracují s jackpotovými servery EGT, Apex, Novomatic a dalších výrobců (kompatibilitu potvrzujeme u každého projektu) a dodáme je i nainstalujeme ve vašem sále.",
     "Výherní automaty dodáváme použité, míchačky karet repasované. Ostatní vybavení, které je třeba vyrobit, zajišťujeme na zakázku díky přímým vztahům s výrobci. CasTech EQ není autorizovaným prodejcem ani distributorem žádné značky; názvy značek na tomto webu slouží jen k označení vybavení.",
     "Přesné specifikace, dostupnost, regulatorní požadavky a obchodní podmínky potvrzujeme individuálně u každé poptávky. Virexa AI Technologies s.r.o., IČO 29716055, Cihlářská 782/10a, Prosek, 190 00 Praha 9.",
     "Naší sesterskou společností v Gruzii je Deniz Trade LLC (ID 445613480, Khakhuli Str. No. 3, Batumi), založená v roce 2021.",
   ],
   highlights: [
-    { title: "Vlastní LED výroba", text: "Jackpotové obrazovky ve vašich rozměrech, kompatibilní s jackpotovými servery všech značek a modelů." },
+    { title: "Vlastní LED výroba", text: "Jackpotové obrazovky ve vašich rozměrech pro jackpotové servery EGT, Apex, Novomatic a dalších." },
     { title: "Použité a repasované", text: "Použité výherní automaty a repasované míchačky karet, stav ověřený u každého kusu." },
     { title: "Přímo od výrobců", text: "Vybavení na zakázku díky našim vlastním vztahům s výrobci." },
   ],

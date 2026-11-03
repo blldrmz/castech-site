@@ -29,7 +29,7 @@ const TEXT = {
     supply: [
       ["LED jackpot screens", "Our own production, made to your size"],
       ["Used slot machines", "Condition confirmed per unit"],
-      ["Refurbished shufflers", "Plus tables and floor equipment from direct manufacturer partners"],
+      ["Refurbished shufflers", "Plus tables and floor equipment sourced directly from manufacturers"],
     ],
     deptEyebrow: "SELECTED DEPARTMENTS",
     deptTitle: "Find your equipment.",
@@ -58,7 +58,7 @@ const TEXT = {
     supply: [
       ["LED-Jackpot-Bildschirme", "Eigene Produktion, in Ihrer Größe"],
       ["Gebrauchte Spielautomaten", "Zustand je Gerät bestätigt"],
-      ["Generalüberholte Shuffler", "Dazu Tische und Saalausstattung von Herstellerpartnern"],
+      ["Generalüberholte Shuffler", "Dazu Tische und Saalausstattung direkt vom Hersteller"],
     ],
     deptEyebrow: "BEREICHE",
     deptTitle: "Finden Sie Ihre Ausstattung.",
@@ -87,7 +87,7 @@ const TEXT = {
     supply: [
       ["LED jackpotové obrazovky", "Vlastní výroba, v libovolné velikosti"],
       ["Použité výherní automaty", "Stav ověřujeme u každého kusu"],
-      ["Repasované míchačky karet", "A také stoly a vybavení sálu od partnerských výrobců"],
+      ["Repasované míchačky karet", "A také stoly a vybavení sálu přímo od výrobců"],
     ],
     deptEyebrow: "SEKCE",
     deptTitle: "Najděte své vybavení.",
@@ -117,7 +117,7 @@ const TEXT = {
     supply: [
       ["LED-табло джекпота", "Собственное производство, любой размер"],
       ["Игровые автоматы б/у", "Состояние проверяется по каждому аппарату"],
-      ["Восстановленные шафлеры", "А также столы и оборудование зала от производителей-партнёров"],
+      ["Восстановленные шафлеры", "А также столы и оборудование зала напрямую от производителей"],
     ],
     deptEyebrow: "РАЗДЕЛЫ",
     deptTitle: "Подберите оборудование.",

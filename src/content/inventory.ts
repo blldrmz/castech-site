@@ -25,7 +25,7 @@ export const inventoryBrandTabs = [
   { id: "aristocrat", label: "Aristocrat", brandKey: "Aristocrat" },
   { id: "ainsworth", label: "Ainsworth", brandKey: "Ainsworth" },
   { id: "merkur", label: "Merkur", brandKey: "Merkur" },
-  { id: "atronic-spelo", label: "Atronic / Spelo", brandKey: "Atronic / Spelo" },
+  { id: "atronic-spelo", label: "Atronic", brandKey: "Atronic" },
   { id: "amatic", label: "Amatic", brandKey: "Amatic" },
   { id: "bally", label: "Bally", brandKey: "Bally" },
   { id: "konami", label: "Konami", brandKey: "Konami" },
@@ -65,7 +65,7 @@ export const inventorySlotMachines: InventorySlotMachine[] = [
   { brand: "Novomatic", model: "VIP Lounge", type: "VIP Lounge", image: C + "07-novomatic-vip-lounge.webp", condition: "Pre-owned", note: "VIP lounge cabinet with integrated seat." },
   { brand: "Novomatic", model: "Power Stars", type: "Upright", image: C + "12-novomatic-power-stars-slot-machine.webp", condition: "Pre-owned" },
   // IGT
-  { brand: "IGT", model: "Trimline Dual", type: "Dual Screen", image: S + "igt-trimline-dual.webp", gamePack: "Choice of games", billValidator: "JCM UBA", year: "2006–2008", printer: OR, condition: "Pre-owned" },
+  { brand: "IGT", model: "Trimline Dual", type: "Dual Screen", image: "/images/slots/placeholder.svg", gamePack: "Choice of games", billValidator: "JCM UBA", year: "2006–2008", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "G-23 Slant", type: "Slant Top", image: S + "igt-g23-slant.webp", gamePack: "Multigame and single game", billValidator: "JCM UBA", year: "2013–2014", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "G-23", type: "Upright", image: S + "igt-g23.webp", gamePack: "Choice of game", billValidator: "MEI", year: "2011–2014", printer: OR, condition: "Pre-owned" },
   { brand: "IGT", model: "Axxis 23/23", type: "Dual Screen", image: S + "igt-axxis-23-23.webp", gamePack: "New U-Switch multigame", billValidator: "MEI", year: "2017", printer: OR, condition: "Pre-owned" },
@@ -78,12 +78,12 @@ export const inventorySlotMachines: InventorySlotMachine[] = [
   { brand: "Ainsworth", model: "A560 Slant", type: "Slant Top", image: S + "ainsworth-a560-slant.webp", gamePack: "Multi Win games", billValidator: "JCM UBA", year: "2014", printer: OR, condition: "Pre-owned" },
   { brand: "Ainsworth", model: "A560 Upright", type: "Upright", image: S + "ainsworth-a560-upright.webp", gamePack: "Multi Win games", billValidator: "JCM UBA", year: "2015", printer: OR, condition: "Pre-owned" },
   { brand: "Ainsworth", model: "A600", type: "Upright", image: S + "ainsworth-a600.webp", gamePack: "Any game choice, including jackpot", billValidator: "JCM UBA", year: "2019–2020", printer: OR, condition: "Pre-owned" },
-  // Atronic / Spelo
-  { brand: "Atronic / Spelo", model: "Oxygen – Hot & Wild", type: "Upright", image: S + "spelo-oxygen.webp", gamePack: "Hot & Wild progressive, incl. sign and controller", billValidator: "JCM UBA", year: "2011–2014", printer: OR, condition: "Pre-owned" },
+  // Atronic
+  { brand: "Atronic", model: "Oxygen – Hot & Wild", type: "Upright", image: S + "spelo-oxygen.webp", gamePack: "Hot & Wild progressive, incl. sign and controller", billValidator: "JCM UBA", year: "2011–2014", printer: OR, condition: "Pre-owned" },
   // Amatic
   { brand: "Amatic", model: "Grand Arc", type: "Upright", image: C + "08-amatic-multi-game-slot-machine.webp", gamePack: "Multigame", billValidator: "JCM UBA", year: "2014–2017", printer: OR, condition: "Pre-owned" },
   // Merkur
-  { brand: "Merkur", model: "Avantgard Trio", type: "Upright", image: S + "merkur-avantgard-trio.webp", gamePack: "Choice of games, jackpot option", billValidator: "JCM iVIZION", year: "2018–2020", printer: OR, condition: "Pre-owned" },
+  { brand: "Merkur", model: "Avantgarde Trio", type: "Upright", image: S + "merkur-avantgard-trio.webp", gamePack: "Choice of games, jackpot option", billValidator: "JCM iVIZION", year: "2018–2020", printer: OR, condition: "Pre-owned" },
   { brand: "Merkur", model: "Merkurstar", type: "Upright", image: S + "merkur-merkurstar.webp", gamePack: "130-game multigame", billValidator: "JCM UBA", year: "2017–2019", printer: OR, condition: "Pre-owned" },
   // Others
   { brand: "Bally", model: "V22/22 Curve", type: "Dual Screen", image: S + "bally-v22-22-curve.webp", gamePack: "130-game multigame", billValidator: "JCM UBA", year: "2011–2014", printer: OR, condition: "Pre-owned" },

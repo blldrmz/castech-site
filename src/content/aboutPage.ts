@@ -4,13 +4,13 @@ export const aboutPageContent = {
   lead:
     "CasTech EQ by Virexa is built on 22 years of hands-on casino work, from slot technician and slot manager to surveillance, IT and technical management. Our team has opened casinos in Ghana, Northern Cyprus, Kosovo and Georgia and on cruise ships, and has run casino operations across Africa, Europe and Asia.",
   paragraphs: [
-    "Our own production is LED jackpot screens: built to the sizes you request and compatible with jackpot servers of any brand and model, then delivered and set up for your floor.",
+    "Our own production is LED jackpot screens: built to the sizes you request, working with jackpot servers from EGT, Apex, Novomatic and other makers (compatibility confirmed for each project), then delivered and set up for your floor.",
     "Slot machines are supplied pre-owned and shufflers refurbished. Other equipment that has to be manufactured is sourced to order through our direct relationships with manufacturers. CasTech EQ is not an authorized dealer or distributor of any brand; brand names on this website only identify equipment.",
     "Exact specifications, availability, compliance requirements and commercial terms are confirmed individually for every inquiry. Virexa AI Technologies s.r.o., IČO 29716055, Cihlářská 782/10a, Prosek, 190 00 Praha 9.",
     "Our sister company in Georgia is Deniz Trade LLC (ID 445613480, Khakhuli Str. No. 3, Batumi), founded in 2021.",
   ],
   highlights: [
-    { title: "Own LED production", text: "Jackpot screens made to your sizes, compatible with any jackpot server brand and model." },
+    { title: "Own LED production", text: "Jackpot screens made to your sizes, for EGT, Apex, Novomatic and other jackpot servers." },
     { title: "Used and refurbished", text: "Pre-owned slot machines and refurbished shufflers, with condition confirmed per unit." },
     { title: "Direct manufacturer sourcing", text: "Made-to-order equipment sourced through our own manufacturer relationships." },
   ],

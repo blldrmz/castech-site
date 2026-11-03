@@ -2,7 +2,7 @@ export const jackpotHero = {
   eyebrow: "Own production",
   title: "Custom LED jackpot screens for casinos.",
   lead:
-    "CasTech EQ by Virexa designs and produces LED jackpot screens for casinos. Each jackpot screen is built to your size and connects to any brand of jackpot server, including EGT, Apex and Novomatic. You can show live jackpot values or other content, such as sports broadcasts.",
+    "CasTech EQ by Virexa designs and produces LED jackpot screens for casinos. Each jackpot screen is built to your size and connects to your jackpot server, including EGT, Apex and Novomatic systems. You can show live jackpot values or other content, such as sports broadcasts.",
 } as const;
 
 export const jackpotHighlights = [
@@ -11,8 +11,8 @@ export const jackpotHighlights = [
     text: "Tell us the width and height you need. Each screen is produced to your requested size, not cut from a fixed catalogue.",
   },
   {
-    title: "Any jackpot server",
-    text: "Our screens are compatible with jackpot servers of any brand and model, so you keep the system you already run.",
+    title: "Works with your jackpot server",
+    text: "Our screens work with jackpot servers from EGT, Apex, Novomatic and other makers, so you keep the system you already run. Compatibility is confirmed for each project.",
   },
   {
     title: "Jackpot or any other content",

@@ -13,7 +13,7 @@ export type SearchEntry = {
 const pages: SearchEntry[] = [
   {
     title: "LED jackpot screens",
-    detail: "Own production, made to your size, compatible with jackpot servers of any brand and model, overhead, entrance, column",
+    detail: "Own production, made to your size, works with EGT, Apex, Novomatic and other jackpot servers, overhead, entrance, column",
     type: "Page",
     href: "/jackpot-screens/",
   },

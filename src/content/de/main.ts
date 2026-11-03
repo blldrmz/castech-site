@@ -10,11 +10,11 @@ export const deJackpot: JackpotContent = {
     eyebrow: "Eigene Produktion",
     title: "LED-Jackpot-Bildschirme für Casinos nach Maß.",
     lead:
-      "CasTech EQ by Virexa entwickelt und produziert LED-Jackpot-Bildschirme für Casinos. Jeder Jackpot-Bildschirm wird in Ihrer Größe gebaut und mit Jackpot-Servern jeder Marke verbunden, darunter EGT, Apex und Novomatic. Sie können Live-Jackpotwerte oder andere Inhalte zeigen, zum Beispiel Sportübertragungen.",
+      "CasTech EQ by Virexa entwickelt und produziert LED-Jackpot-Bildschirme für Casinos. Jeder Jackpot-Bildschirm wird in Ihrer Größe gebaut und mit Ihrem Jackpot-Server verbunden, darunter Systeme von EGT, Apex und Novomatic. Sie können Live-Jackpotwerte oder andere Inhalte zeigen, zum Beispiel Sportübertragungen.",
   },
   highlights: [
     { title: "In Ihren Maßen", text: "Nennen Sie uns Breite und Höhe. Jeder Bildschirm wird in Ihrer Wunschgröße gefertigt, nicht aus einem festen Katalog gewählt." },
-    { title: "Jeder Jackpot-Server", text: "Unsere Bildschirme sind mit Jackpot-Servern jeder Marke und jedes Modells kompatibel – Sie behalten Ihr bestehendes System." },
+    { title: "Passend zu Ihrem Jackpot-Server", text: "Unsere Bildschirme arbeiten mit Jackpot-Servern von EGT, Apex, Novomatic und anderen Herstellern – Sie behalten Ihr bestehendes System. Die Kompatibilität wird für jedes Projekt bestätigt." },
     { title: "Jackpot oder andere Inhalte", text: "Mit Ihrem Jackpot-Server verbunden, zeigt der Bildschirm Live-Jackpotwerte. Auf Wunsch auch andere Inhalte wie Sportübertragungen oder Promotions." },
     { title: "Von uns gefertigt und geliefert", text: "Das ist unsere eigene Fertigung. Wir bauen den Bildschirm, liefern ihn und unterstützen die Einrichtung in Ihrem Spielsaal." },
   ],
@@ -129,13 +129,13 @@ export const deAbout: AboutContent = {
   lead:
     "CasTech EQ by Virexa basiert auf 22 Jahren praktischer Casino-Arbeit – vom Slot-Techniker und Slot-Manager bis zur Leitung von Überwachung, IT und Technik. Unser Team hat Casinos in Ghana, Nordzypern, im Kosovo und in Georgien sowie auf Kreuzfahrtschiffen eröffnet und Casinobetriebe in Afrika, Europa und Asien geführt.",
   paragraphs: [
-    "Unsere eigene Produktion sind LED-Jackpot-Bildschirme: in den von Ihnen gewünschten Größen gebaut, kompatibel mit Jackpot-Servern jeder Marke und jedes Modells, geliefert und in Ihrem Spielsaal eingerichtet.",
+    "Unsere eigene Produktion sind LED-Jackpot-Bildschirme: in den von Ihnen gewünschten Größen gebaut, für Jackpot-Server von EGT, Apex, Novomatic und anderen Herstellern (Kompatibilität je Projekt bestätigt), geliefert und in Ihrem Spielsaal eingerichtet.",
     "Spielautomaten werden gebraucht geliefert, Shuffler generalüberholt. Andere Ausstattung, die gefertigt werden muss, beziehen wir auf Bestellung über unsere direkten Herstellerbeziehungen. CasTech EQ ist kein autorisierter Händler oder Distributor einer Marke; Markennamen auf dieser Website dienen nur zur Bezeichnung der Ausstattung.",
     "Genaue Spezifikationen, Verfügbarkeit, regulatorische Anforderungen und kommerzielle Bedingungen werden für jede Anfrage individuell bestätigt. Virexa AI Technologies s.r.o., IČO 29716055, Cihlářská 782/10a, Prosek, 190 00 Praha 9.",
     "Unser Schwesterunternehmen in Georgien ist die Deniz Trade LLC (ID 445613480, Khakhuli Str. No. 3, Batumi), gegründet 2021.",
   ],
   highlights: [
-    { title: "Eigene LED-Produktion", text: "Jackpot-Bildschirme in Ihren Größen, kompatibel mit Jackpot-Servern jeder Marke und jedes Modells." },
+    { title: "Eigene LED-Produktion", text: "Jackpot-Bildschirme in Ihren Größen, für Jackpot-Server von EGT, Apex, Novomatic und anderen." },
     { title: "Gebraucht und generalüberholt", text: "Gebrauchte Spielautomaten und generalüberholte Shuffler, Zustand je Gerät bestätigt." },
     { title: "Direkt vom Hersteller", text: "Ausstattung auf Bestellung über unsere eigenen Herstellerbeziehungen." },
   ],
