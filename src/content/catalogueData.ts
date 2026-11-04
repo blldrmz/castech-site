@@ -154,11 +154,6 @@ export const catalogueCategories:CatalogueCategory[]=[
   "cover": "/images/catalog/covers/casino-chairs.webp",
   "items": [
    {
-    "title": "Casino Chair — Base & Finish Options",
-    "image": "/images/catalog/chairs/01-casino-chair-base-finish-options.webp",
-    "note": ""
-   },
-   {
     "title": "Black & Burgundy Gaming Chair",
     "image": "/images/catalog/chairs/02-black-burgundy-gaming-chair.webp",
     "note": ""
@@ -220,16 +215,6 @@ export const catalogueCategories:CatalogueCategory[]=[
   "title": "Playing Cards",
   "cover": "/images/catalog/covers/playing-cards.webp",
   "items": [
-   {
-    "title": "Casino Playing Cards",
-    "image": "/images/catalog/cards/01-casino-playing-cards.webp",
-    "note": ""
-   },
-   {
-    "title": "Playing Cards",
-    "image": "/images/catalog/cards/02-playing-cards.webp",
-    "note": ""
-   },
    {
     "title": "Casino Playing Cards",
     "image": "/images/catalog/cards/03-casino-playing-cards.webp",
@@ -352,26 +337,6 @@ export const catalogueCategories:CatalogueCategory[]=[
     "title": "Casino Table Sign — Display Stand",
     "image": "/images/catalog/table-signs/01-casino-table-sign-display-stand.webp",
     "note": "Casino Technologies & Equipment display mounted on a stand."
-   },
-   {
-    "title": "Table Sign — Touch Display",
-    "image": "/images/catalog/table-signs/02-table-sign-touch-display.webp",
-    "note": "Desktop touchscreen display shown in an interior setting."
-   },
-   {
-    "title": "Table Sign — Slim Display",
-    "image": "/images/catalog/table-signs/03-table-sign-slim-display.webp",
-    "note": "Slim display showing the CasTech EQ presentation."
-   },
-   {
-    "title": "Table Sign — Touch Terminal & Connections",
-    "image": "/images/catalog/table-signs/04-table-sign-touch-terminal-connections.webp",
-    "note": "Angled touchscreen device with rear connection ports."
-   },
-   {
-    "title": "Table Sign — Touchscreen Front View",
-    "image": "/images/catalog/table-signs/05-table-sign-touchscreen-front-view.webp",
-    "note": "Wide touchscreen device shown from the front."
    }
   ]
  },

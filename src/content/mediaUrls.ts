@@ -3,7 +3,7 @@ export const media = {
   roulette: "/images/catalog/tables/03-roulette-gaming-table-opposite-view.webp",
   blackjack: "/images/catalog/tables/04-blue-felt-casino-gaming-table.webp",
   chips: "/images/catalog/chips/04-mixed-denomination-casino-chip-set.webp",
-  cards: "/images/catalog/cards/01-casino-playing-cards.webp",
+  cards: "/images/catalog/covers/playing-cards.webp",
   seating: "/images/catalog/chairs/02-black-burgundy-gaming-chair.webp",
   dice: "/images/catalog/accessories/07-on-off-puck-set-for-craps.webp",
   poker: "/images/catalog/accessories/16-poker-shoe-single-deck.webp",

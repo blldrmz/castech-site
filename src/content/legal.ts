@@ -36,6 +36,7 @@ export const privacySections: LegalSection[] = [
       "Our email provider, which receives the messages sent to our contact addresses.",
       "FormSubmit (formsubmit.co), the form-processing service that receives website form submissions and forwards them to us by email.",
       "GitHub Pages, which hosts this website.",
+      "Deniz Trade LLC (ID 445613480, Khakhuli Str. No. 3, Batumi, Georgia), our sister company, which handles inquiries and projects for customers in Georgia and the CIS. Georgia is outside the European Economic Area; we transfer only the data needed for your inquiry.",
       "Where needed for your project, manufacturers, logistics and installation partners, and only for that purpose."
     ]
   },
@@ -59,7 +60,7 @@ export const privacySections: LegalSection[] = [
     "bullets": [
       "This website is served over HTTPS and forms are transmitted over encrypted connections.",
       "We do not collect payment card data or government identification through this website.",
-      "Messages and inquiries are accessible only to authorised staff of Virexa AI Technologies s.r.o..",
+      "Messages and inquiries are accessible only to authorised staff of Virexa AI Technologies s.r.o. and of our sister company Deniz Trade LLC in Batumi, Georgia.",
       "If you believe you have found a security issue on this website, please report it to sales@virexa-tech.com. Our contact details for this purpose are also published in the file /.well-known/security.txt."
     ]
   },
@@ -105,7 +106,7 @@ export const termsSections: LegalSection[] = [
   {
     "title": "4. No offer, quotations and contracts",
     "paragraphs": [
-      "Information on this website is not a binding offer. Prices, specifications, availability and delivery times are confirmed only in a written quotation or contract issued by Virexa AI Technologies s.r.o.. A contract is concluded when both parties have accepted it in writing."
+      "Information on this website is not a binding offer. Prices, specifications, availability and delivery times are confirmed only in a written quotation or contract issued by Virexa AI Technologies s.r.o. A contract is concluded when both parties have accepted it in writing."
     ],
     "bullets": []
   },

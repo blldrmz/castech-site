@@ -149,10 +149,8 @@ export const installationStories: readonly InstallationStory[] = [
       { label: "Result", text: "Players charge their phones at the table, with no cables across the layout." },
     ],
     media: [
-      vid("charger-promo", 720, 402, "CasTech custom wireless charging for gaming equipment", true, true),
       vid("charger-table-1", 576, 1024, "Phone charging on a poker table rail"),
       vid("charger-table-2", 576, 1024, "Wireless charging point on a card table"),
-      img("charger-01", 720, 1280, "Wireless charging mark on a table layout"),
     ],
     cta: { href: "/contact?item=Wireless%20table%20charger", label: "Ask about wireless table charging" },
   },

@@ -11,7 +11,7 @@ export const homeCategoryCards = [
     href: "/jackpot-screens",
     title: "LED Jackpot Screens",
     description:
-      "Our own production: made to your size and compatible with jackpot servers of any brand and model.",
+      "Our own production: made to your size for EGT, Apex, Novomatic and other jackpot servers.",
   },
   {
     href: "/live-games",
