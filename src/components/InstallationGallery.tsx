@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { InstallationMedia } from "@/content/installations";
 import { srcSetFor } from "@/lib/srcset";
+import { ui, type Locale } from "@/lib/i18n";
 
 function AutoVideo({ m }: { m: Extract<InstallationMedia, { kind: "video" }> }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -42,7 +43,8 @@ function AutoVideo({ m }: { m: Extract<InstallationMedia, { kind: "video" }> }) 
 }
 
 /** Feature-first grid of photos and looping site videos, with a click-to-enlarge viewer for photos. */
-export function InstallationGallery({ items }: { items: readonly InstallationMedia[] }) {
+export function InstallationGallery({ items, locale = "en" }: { items: readonly InstallationMedia[]; locale?: Locale }) {
+  const t = ui[locale].gallery;
   const photos = items.filter((m) => m.kind === "image");
   const [open, setOpen] = useState<number | null>(null);
   const close = useCallback(() => setOpen(null), []);
@@ -112,7 +114,7 @@ export function InstallationGallery({ items }: { items: readonly InstallationMed
           const pi = photos.indexOf(m);
           return (
             <figure key={m.src} className={cls}>
-              <button type="button" onClick={() => setOpen(pi)} className="block h-full w-full cursor-zoom-in" aria-label={`Enlarge: ${m.caption}`}>
+              <button type="button" onClick={() => setOpen(pi)} className="block h-full w-full cursor-zoom-in" aria-label={`${t.open}: ${m.caption}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={m.src} srcSet={srcSetFor(m.src)} sizes="(min-width:1024px) 33vw, 50vw" alt={m.alt} width={m.w} height={m.h} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_28%] transition duration-500 group-hover:scale-[1.03]" />
               </button>
@@ -128,11 +130,11 @@ export function InstallationGallery({ items }: { items: readonly InstallationMed
           <p className="absolute bottom-5 left-0 right-0 px-4 text-center text-sm font-semibold text-zinc-200">
             {photos[open].caption} · {open + 1}/{photos.length}
           </p>
-          <button type="button" onClick={close} aria-label="Close" className="absolute right-4 top-4 h-11 w-11 rounded-full bg-white/10 text-2xl text-white hover:bg-white/20">×</button>
+          <button type="button" onClick={close} aria-label={t.close} className="absolute right-4 top-4 h-11 w-11 rounded-full bg-white/10 text-2xl text-white hover:bg-white/20">×</button>
           {photos.length > 1 && (
             <>
-              <button type="button" onClick={(e) => { e.stopPropagation(); step(-1); }} aria-label="Previous photo" className="absolute left-3 top-1/2 h-11 w-11 -translate-y-1/2 rounded-full bg-white/10 text-xl text-white hover:bg-white/20">‹</button>
-              <button type="button" onClick={(e) => { e.stopPropagation(); step(1); }} aria-label="Next photo" className="absolute right-3 top-1/2 h-11 w-11 -translate-y-1/2 rounded-full bg-white/10 text-xl text-white hover:bg-white/20">›</button>
+              <button type="button" onClick={(e) => { e.stopPropagation(); step(-1); }} aria-label={t.prev} className="absolute left-3 top-1/2 h-11 w-11 -translate-y-1/2 rounded-full bg-white/10 text-xl text-white hover:bg-white/20">‹</button>
+              <button type="button" onClick={(e) => { e.stopPropagation(); step(1); }} aria-label={t.next} className="absolute right-3 top-1/2 h-11 w-11 -translate-y-1/2 rounded-full bg-white/10 text-xl text-white hover:bg-white/20">›</button>
             </>
           )}
         </div>

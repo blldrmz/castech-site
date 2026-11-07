@@ -19,14 +19,32 @@ export const LOCALIZED_PATHS = [
   "/contact/",
 ] as const;
 
+/** English paths translated only into some languages (e.g. Czech, our home market). */
+export const PARTIAL_PATHS: Record<string, readonly Locale[]> = {
+  "/installations/": ["cs"],
+  "/catalog/": ["cs"],
+};
+
 function normalize(path: string) {
   const clean = path.split(/[?#]/)[0] || "/";
   return clean.endsWith("/") ? clean : `${clean}/`;
 }
 
-/** True when this English path exists in the other languages too. */
-export function isLocalized(path: string) {
-  return (LOCALIZED_PATHS as readonly string[]).includes(normalize(path));
+/** Languages in which this English path exists (always includes English). */
+export function localesFor(path: string): readonly Locale[] {
+  const p = normalize(path);
+  if ((LOCALIZED_PATHS as readonly string[]).includes(p)) return LOCALES;
+  const extra = PARTIAL_PATHS[p];
+  return extra ? ["en", ...extra] : ["en"];
+}
+
+/**
+ * Without a locale: true when the page exists in at least one other language.
+ * With a locale: true when the page exists in that language.
+ */
+export function isLocalized(path: string, locale?: Locale) {
+  const ls = localesFor(path);
+  return locale ? ls.includes(locale) : ls.length > 1;
 }
 
 /** Absolute path of an English page in another language (e.g. "/about/" -> "/de/about/"). */
@@ -41,7 +59,7 @@ export function localePath(locale: Locale, enPath: string) {
  * otherwise they fall back to the English page. Query strings and hashes are kept.
  */
 export function href(locale: Locale, path: string) {
-  if (locale === "en" || !isLocalized(path)) return path;
+  if (locale === "en" || !isLocalized(path, locale)) return path;
   const suffix = path.slice(path.split(/[?#]/)[0].length);
   return localePath(locale, path) + suffix;
 }
@@ -199,8 +217,9 @@ export const ui = {
     tagline: "Vybavení pro kasina",
     nav: [
       { href: "/jackpot-screens", label: "Jackpotové obrazovky" },
+      { href: "/installations", label: "Realizace" },
       { href: "/slot-machines", label: "Výherní automaty" },
-      { href: "/live-games", label: "Herní stoly" },
+      { href: "/catalog", label: "Katalog" },
       { href: "/about", label: "O nás" },
       { href: "/contact", label: "Kontakt" },
     ],
@@ -229,9 +248,11 @@ export const ui = {
         { href: "/live-games", label: "Herní stoly" },
         { href: "/table-signs", label: "Stolní displeje" },
         { href: "/accessories", label: "Příslušenství" },
+        { href: "/catalog", label: "Kompletní katalog" },
       ],
       companyLinks: [
         { href: "/about", label: "O nás" },
+        { href: "/installations", label: "Realizace" },
         { href: "/contact", label: "Poptávka" },
       ],
       led: "LED obrazovky: CasTech LED",
