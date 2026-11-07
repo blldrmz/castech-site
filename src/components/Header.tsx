@@ -29,7 +29,7 @@ export function Header() {
   const t = ui[locale];
   const enPath = toEnPath(pathname);
   const nav = t.nav.map((n) => ({ href: lhref(locale, n.href), label: n.label }));
-  const langHref = (l: (typeof LOCALES)[number]) => (isLocalized(enPath) ? localePath(l, enPath) : localePath(l, "/"));
+  const langHref = (l: (typeof LOCALES)[number]) => (isLocalized(enPath, l) ? localePath(l, enPath) : localePath(l, "/"));
   const langRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {

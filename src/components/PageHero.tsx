@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HeroSlides, type HeroSlide } from "./HeroSlides";
-import { href, localePath, ui, type Locale } from "@/lib/i18n";
+import { href, isLocalized, localePath, ui, type Locale } from "@/lib/i18n";
+import { SITE_URL } from "@/lib/seo";
 
 type Props = {
   eyebrow: string;
@@ -13,15 +14,26 @@ type Props = {
 
 export function PageHero({ eyebrow, title, lead, id, slides, locale = "en" }: Props) {
   const t = ui[locale];
+  const equipHref = isLocalized("/catalog/", locale) ? href(locale, "/catalog") : localePath(locale, "/");
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t.breadcrumbHome, item: `${SITE_URL}${localePath(locale, "/")}` },
+      { "@type": "ListItem", position: 2, name: t.breadcrumbEquipment, item: `${SITE_URL}${equipHref.endsWith("/") ? equipHref : `${equipHref}/`}` },
+      { "@type": "ListItem", position: 3, name: eyebrow },
+    ],
+  };
   return (
     <section id={id} className="relative overflow-hidden border-b border-white/10 bg-[#091421]">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_70%_at_92%_48%,rgba(16,185,129,.10),transparent_90%),radial-gradient(ellipse_30%_75%_at_2%_3%,rgba(80,156,215,.08),transparent_90%)]"/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {slides && <HeroSlides slides={slides} />}
       <div className="relative castech-container py-20 sm:py-24 lg:py-28">
         <nav className="mb-9 flex items-center gap-3 text-[12px] font-semibold tracking-wide text-slate-300" aria-label="Breadcrumb">
           <Link href={href(locale, "/")} className="transition hover:text-gold">{t.breadcrumbHome}</Link>
           <span aria-hidden="true" className="text-slate-500">/</span>
-          <Link href={locale === "en" ? "/catalog" : localePath(locale, "/")} className="transition hover:text-gold">{t.breadcrumbEquipment}</Link>
+          <Link href={equipHref} className="transition hover:text-gold">{t.breadcrumbEquipment}</Link>
           <span aria-hidden="true" className="text-slate-500">/</span>
           <span className="text-gold">{eyebrow}</span>
         </nav>

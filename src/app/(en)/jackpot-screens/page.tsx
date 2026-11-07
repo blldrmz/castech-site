@@ -1,4 +1,4 @@
-import { jackpotBrief, jackpotFormats, jackpotGallery, jackpotHero, jackpotHighlights, jackpotLabels, jackpotSizes } from "@/content/jackpotScreens";
+import { jackpotBrief, jackpotFaq, jackpotFormats, jackpotGallery, jackpotHero, jackpotHighlights, jackpotLabels, jackpotSizes } from "@/content/jackpotScreens";
 import { pageMeta } from "@/lib/seo";
 import { JackpotView } from "@/views/JackpotView";
 
@@ -11,7 +11,7 @@ export const metadata = pageMeta(
 export default function JackpotScreensPage() {
   return (
     <JackpotView
-      c={{ hero: jackpotHero, highlights: jackpotHighlights, sizes: jackpotSizes, formats: jackpotFormats, brief: jackpotBrief, gallery: jackpotGallery, labels: jackpotLabels }}
+      c={{ hero: jackpotHero, highlights: jackpotHighlights, sizes: jackpotSizes, formats: jackpotFormats, brief: jackpotBrief, gallery: jackpotGallery, faq: jackpotFaq, labels: jackpotLabels }}
     />
   );
 }

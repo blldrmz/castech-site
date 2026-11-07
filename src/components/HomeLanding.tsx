@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { catalogueCategories } from "@/content/catalogueData";
-import { href, type Locale } from "@/lib/i18n";
+import { href, isLocalized, type Locale } from "@/lib/i18n";
 import { srcSetFor } from "@/lib/srcset";
 
 // Same ten departments, in the same order, as the catalogue page.
@@ -91,7 +91,7 @@ const TEXT = {
     ],
     deptEyebrow: "SEKCE",
     deptTitle: "Najděte své vybavení.",
-    allCategories: "Kontaktujte nás ↗",
+    allCategories: "Celý katalog ↗",
     collection: "SEKCE",
     ctaEyebrow: "OBCHODNÍ POPTÁVKY",
     ctaTitle: "Pojďme probrat váš projekt.",
@@ -218,7 +218,7 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
             <p className="text-xs font-semibold uppercase tracking-[.2em] text-gold">{t.deptEyebrow}</p>
             <h2 className="mt-4 font-heading text-3xl font-bold tracking-[-.05em] text-white sm:text-5xl">{t.deptTitle}</h2>
           </div>
-          <Link href={locale === "en" ? "/catalog" : href(locale, "/contact")} className="border-b border-gold/70 pb-2 text-sm font-semibold text-gold">
+          <Link href={isLocalized("/catalog/", locale) ? href(locale, "/catalog") : href(locale, "/contact")} className="border-b border-gold/70 pb-2 text-sm font-semibold text-gold">
             {t.allCategories}
           </Link>
         </div>

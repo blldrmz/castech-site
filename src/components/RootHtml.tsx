@@ -11,11 +11,20 @@ const inter = Inter({
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness"],
+  "@id": "https://castecheq.com/#organization",
   name: "CasTech EQ",
+  alternateName: ["CasTech", "CasTech EQ by Virexa"],
+  description:
+    "Casino equipment supplier based in Prague: own-production LED jackpot screens, used slot machines, gaming tables, casino chairs, chips, layouts and accessories.",
   legalName: "Virexa AI Technologies s.r.o.",
   url: "https://castecheq.com",
   email: "info@castecheq.com",
+  telephone: "+420704481975",
+  image: "https://castecheq.com/og-image.png",
+  sameAs: ["https://www.linkedin.com/company/castecheq", "https://www.instagram.com/castech.eq/", "https://castechled.com", "https://virexa-tech.com"],
+  areaServed: ["CZ", "SK", "DE", "AT", "PL", "GE", "Europe"],
+  knowsAbout: ["LED jackpot screens", "casino equipment", "slot machines", "casino gaming tables", "casino chairs"],
   identifier: "IČO 29716055",
   address: {
     "@type": "PostalAddress",

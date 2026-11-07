@@ -80,3 +80,14 @@ export const jackpotLabels = {
   ctaTitle: "Need a jackpot screen for your floor?",
   ctaText: "Send us your size, mounting position and jackpot server details. We will come back with a configuration and offer.",
 };
+
+export const jackpotFaq = {
+  title: "Jackpot screen questions.",
+  items: [
+    { q: "What sizes of jackpot screen do you make?", a: "Any size. Each screen is built to your bank, wall or column, from slim LED columns between machines to wide displays across a whole bank and large wall screens." },
+    { q: "Will the screen work with our jackpot server?", a: "Our screens work with jackpot servers from EGT, Apex, Novomatic and other makers. Compatibility with your system is confirmed before each project." },
+    { q: "Can the screen show content other than jackpots?", a: "Yes. Besides live jackpot values it can show the venue's own branding, promotions, roulette results or a live sports broadcast." },
+    { q: "Are these original manufacturer parts?", a: "No. They are our own production. Brand names are used only to describe the size or system the screen should match." },
+    { q: "Do you help with installation?", a: "Yes. We build the screen, ship it and support the setup on your floor." },
+  ],
+} as const;

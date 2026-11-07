@@ -64,11 +64,21 @@ export const csJackpot: JackpotContent = {
     ledPre: "Potřebujete větší LED obrazovku nebo videostěnu do interiéru či exteriéru? Viz",
     ledLink: "LED obrazovky a LED videostěny pro kasina",
     ledPost: " od CasTech LED.",
-    installLink: "Příběhy instalací a videa (EN)",
+    installLink: "Realizace a videa z provozoven",
     briefEyebrow: "Pro rychlou nabídku",
     briefTitle: "Co nám poslat.",
     ctaTitle: "Potřebujete jackpotovou obrazovku do svého sálu?",
     ctaText: "Pošlete nám velikost, místo montáže a údaje o jackpotovém serveru. Ozveme se s konfigurací a nabídkou.",
+  },
+  faq: {
+    title: "Časté dotazy k jackpotovým obrazovkám.",
+    items: [
+      { q: "Jaké velikosti jackpotových obrazovek vyrábíte?", a: "Jakoukoli velikost. Každou obrazovku vyrábíme na míru vaší řadě automatů, stěně nebo sloupu – od úzkých LED sloupků mezi automaty po široké obrazovky přes celou řadu a velké nástěnné displeje." },
+      { q: "Funguje obrazovka s naším jackpotovým serverem?", a: "Naše obrazovky pracují s jackpotovými servery EGT, Apex, Novomatic a dalších výrobců. Kompatibilitu s vaším systémem potvrzujeme u každého projektu předem." },
+      { q: "Může obrazovka zobrazovat i jiný obsah než jackpot?", a: "Ano. Kromě aktuálních hodnot jackpotu může ukazovat vlastní značku provozovny, promo akce, výsledky rulety nebo živý sportovní přenos." },
+      { q: "Jsou to originální díly výrobců automatů?", a: "Ne. Jde o naši vlastní výrobu. Názvy značek používáme jen k popisu velikosti nebo systému, se kterým má obrazovka pracovat." },
+      { q: "Pomůžete s instalací v Česku?", a: "Ano. Sídlíme v Praze; obrazovku vyrobíme, dodáme a pomůžeme s instalací ve vašem kasinu nebo herně." },
+    ],
   },
 };
 

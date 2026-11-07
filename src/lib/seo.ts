@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LOCALES, OG_LOCALE, isLocalized, localePath, type Locale } from "@/lib/i18n";
+import { OG_LOCALE, isLocalized, localePath, localesFor, type Locale } from "@/lib/i18n";
 
 export const SITE_URL = "https://castecheq.com";
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
@@ -13,7 +13,7 @@ export function pageMeta(title: string, description: string, path: string, local
   const fullTitle = `${title} | CasTech EQ`;
   const languages = isLocalized(path)
     ? Object.fromEntries([
-        ...LOCALES.map((l) => [l, `${SITE_URL}${localePath(l, path)}`]),
+        ...localesFor(path).map((l) => [l, `${SITE_URL}${localePath(l, path)}`]),
         ["x-default", `${SITE_URL}${localePath("en", path)}`],
       ])
     : undefined;
