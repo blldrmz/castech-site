@@ -1,6 +1,6 @@
 # CLAUDE.md — castecheq.com (CasTech EQ)
 
-Casino equipment website for **CasTech EQ by Virexa**. Owner: Bilal Durmaz. He talks to you in Turkish or English; site copy is in English, German, Czech and Russian.
+Casino equipment website for **CasTech EQ by Virexa**. Owner: Bilal Durmaz. He talks to you in Turkish or English; site copy is in English, German, French, Czech and Russian.
 
 ## Working rules
 
@@ -23,17 +23,17 @@ Commands: `npm run dev` · `npm run build` (writes `out/`) · `npm run lint` · 
 
 - `src/content/` holds all copy and data. Edit content here, not inside components.
   - `site.ts`: brand, contact details, company/legal data, footer.
-  - `locales.ts`: per-language packs (meta titles/descriptions + page content); text lives in `src/content/{de,cs,ru}/`.
+  - `locales.ts`: per-language packs (meta titles/descriptions + page content); text lives in `src/content/{de,fr,cs,ru}/`.
   - `catalogueData.ts`, `inventory.ts`, `liveGames.ts`, `accessoriesContent.ts`, `jackpotScreens.ts`, `installations.ts`.
   - `searchIndex.ts`: site search. Add new pages and products here too.
-- `src/app/(en)/` holds the English pages at the root URL. `src/app/[locale]/` holds the `/de/`, `/cs/` and `/ru/` versions.
+- `src/app/(en)/` holds the English pages at the root URL. `src/app/[locale]/` holds the `/de/`, `/fr/`, `/cs/` and `/ru/` versions.
 - `src/lib/i18n.ts`: `LOCALES`, `LOCALIZED_PATHS`. `src/app/sitemap.ts` has its own `paths` list.
 - `src/views/` and `src/components/` hold layout and UI.
 
 ### Adding a page
 
 1. Add the English page under `src/app/(en)/`.
-2. If it is translated, add the `[locale]` page, add the path to `LOCALIZED_PATHS`, and add the copy to all three locale packs.
+2. If it is translated, add the `[locale]` page, add the path to `LOCALIZED_PATHS`, and add the copy to all four locale packs.
 3. Add it to `paths` in `sitemap.ts` and to `searchIndex.ts`.
 4. Add a meta title and description (SEO) for every language.
 

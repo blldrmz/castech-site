@@ -7,6 +7,8 @@ import * as csG from "./cs/groups";
 import * as csM from "./cs/main";
 import * as deG from "./de/groups";
 import * as deM from "./de/main";
+import * as frG from "./fr/groups";
+import * as frM from "./fr/main";
 import * as ruG from "./ru/groups";
 import * as ruM from "./ru/main";
 
@@ -72,6 +74,28 @@ export const packs: Record<PrefixedLocale, LocalePack> = {
     accessories: { hero: deG.deAccessoriesHero, groups: deG.deAccessoryGroups, cta: deG.deAccessoriesCta },
     about: { c: deM.deAbout, b: deM.deAboutBackground, cta: deM.deAboutCta },
     contactTitle: "Kontakt CasTech EQ",
+  },
+  fr: {
+    htmlTitle: "Équipement de casino | CasTech EQ",
+    htmlDescription:
+      "Fournisseur d’équipements de casino basé à Prague et Batoumi : tables de jeu, jetons, tapis et accessoires neufs, machines à sous d’occasion et écrans jackpot LED sur mesure.",
+    meta: {
+      home: { title: "Fournisseur d’équipements de casino | Machines à sous, tables de jeu, jetons & écrans jackpot", description: "Fournisseur d’équipements de casino basé à Prague et Batoumi. Tables de jeu, chaises, jetons, tapis et accessoires neufs, ainsi que machines à sous d’occasion, mélangeurs de cartes reconditionnés et écrans jackpot LED sur mesure." },
+      jackpot: { title: "Écrans jackpot pour casinos | Écran jackpot LED sur mesure", description: "Écrans jackpot LED pour casinos, dans toutes les tailles. Compatibles avec les serveurs jackpot EGT, Apex, Novomatic et d’autres. Conçus et livrés par CasTech EQ by Virexa." },
+      slots: { title: "Machines à sous d’occasion à vendre | EGT, Novomatic, Apex et plus", description: "Machines à sous d’occasion d’EGT, Novomatic, Apex et d’autres grands fabricants. État, configuration et disponibilité confirmés avant la vente, avec aide au transport et à l’installation." },
+      live: { title: "Tables de jeu de casino | Roulette, blackjack, poker et baccara", description: "Tables de jeu de casino pour la roulette, le blackjack, le poker et le baccara, ainsi que cylindres de roulette, tapis, jetons, chaises de casino, accessoires de table et mélangeurs de cartes reconditionnés." },
+      signs: { title: "Écrans de table pour casinos | Écrans de limites et de résultats de roulette", description: "Écrans de table pour casinos, conçus et assemblés par CasTech EQ : écrans de limites et de résultats de roulette, de 11 à 21 pouces ou de toute taille sur demande." },
+      accessories: { title: "Accessoires et consommables de casino | Jetons, cartes, tapis", description: "Accessoires et consommables de casino : jetons, cartes à jouer, accessoires de croupier, tapis, racks à jetons et fournitures de salle, livrés par CasTech EQ." },
+      about: { title: "À propos de CasTech EQ | 22 ans d’expérience internationale en casino", description: "CasTech EQ, une marque de Virexa AI Technologies s.r.o. : 22 ans d’expérience dans l’ouverture de casinos, production propre d’écrans jackpot LED, machines à sous d’occasion et mélangeurs de cartes." },
+      contact: { title: "Contact | Demander un devis d’équipement de casino", description: "Demandez un devis d’équipement de casino à CasTech EQ. Bureaux à Prague (République tchèque) et à Batoumi (Géorgie)." },
+    },
+    jackpot: frM.frJackpot,
+    tableSigns: frM.frTableSigns,
+    slots: { hero: frM.frSlotHero, cta: frM.frSlotCta },
+    live: { hero: frG.frLiveHero, groups: frG.frLiveGroups, cta: frG.frLiveCta, signsPre: "Besoin d’écrans de limites et de résultats pour vos tables ? Voir nos", signsLink: "écrans de table et de roulette" },
+    accessories: { hero: frG.frAccessoriesHero, groups: frG.frAccessoryGroups, cta: frG.frAccessoriesCta },
+    about: { c: frM.frAbout, b: frM.frAboutBackground, cta: frM.frAboutCta },
+    contactTitle: "Contact CasTech EQ",
   },
   cs: {
     htmlTitle: "Vybavení pro kasina | CasTech EQ",

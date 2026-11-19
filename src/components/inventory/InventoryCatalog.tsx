@@ -76,6 +76,36 @@ const DE_VALUES: Record<string, string> = {
   "New": "Neu",
 };
 
+const FR_VALUES: Record<string, string> = {
+  "On request": "Sur demande",
+  "Included": "Inclus",
+  "Choice of games": "Jeux au choix",
+  "Choice of game": "Jeu au choix",
+  "Choice of multigames": "Multijeux au choix",
+  "Choice of games, jackpot option": "Jeux au choix, option jackpot",
+  "Any game choice, including jackpot": "Tous jeux au choix, jackpot inclus",
+  "Multigame": "Multijeux",
+  "Multigame and single game": "Multijeux et jeu unique",
+  "New U-Switch multigame": "Nouveau multijeux U-Switch",
+  "130-game multigame": "Multijeux de 130 jeux",
+  "Premium games": "Jeux Premium",
+  "Premium S games": "Jeux Premium S",
+  "Multi Win games": "Jeux Multi Win",
+  "Selexion multigame": "Multijeux Selexion",
+  "Electronic roulette": "Roulette électronique",
+  "Superia Cash Connection 2, linked multigame mix": "Superia Cash Connection 2, multijeux en réseau",
+  "Hot & Wild progressive, incl. sign and controller": "Progressif Hot & Wild, avec afficheur et contrôleur",
+  "VIP lounge cabinet with integrated seat.": "Meuble VIP lounge avec siège intégré.",
+  "Upright": "Upright",
+  "Slant Top": "Slant Top",
+  "Dual Screen": "Double écran",
+  "VIP Lounge": "VIP Lounge",
+  "Electronic Roulette": "Roulette électronique",
+  "All": "Tous",
+  "Pre-owned": "Occasion",
+  "New": "Neuf",
+};
+
 const CS_VALUES: Record<string, string> = {
   "On request": "Na vyžádání",
   "Included": "Součástí",
@@ -106,7 +136,7 @@ const CS_VALUES: Record<string, string> = {
   "New": "Nové",
 };
 
-const VALUES: Record<Exclude<Locale, "en">, Record<string, string>> = { de: DE_VALUES, cs: CS_VALUES, ru: RU_VALUES };
+const VALUES: Record<Exclude<Locale, "en">, Record<string, string>> = { de: DE_VALUES, fr: FR_VALUES, cs: CS_VALUES, ru: RU_VALUES };
 
 const TEXT = {
   en: {
@@ -167,6 +197,35 @@ const TEXT = {
     tellUsText: "Nennen Sie Hersteller, Modell, Gehäusetyp oder Spielemix. Wir suchen ihn über unser Lieferantennetzwerk für Sie.",
     find: "Automaten für mich finden",
     close: "Schließen",
+  },
+  fr: {
+    heading: "Machines à sous",
+    intro: (
+      <>
+        Toutes les machines sont <strong className="text-zinc-200">d’occasion</strong>, sauf mention contraire. Les jeux, monnayeurs et années sont indiqués
+        pour chaque modèle ; l’état, la disponibilité, le prix et le délai sont confirmés pour chaque machine sur demande. CasTech EQ n’est le revendeur ni le distributeur agréé d’aucune des marques présentées ; les noms des fabricants servent uniquement à identifier les modèles de meubles.
+      </>
+    ),
+    brand: "Fabricant",
+    brandFilter: "Filtrer par fabricant",
+    format: "Meuble",
+    formatFilter: "Filtrer par type de meuble",
+    showing: "Affichés :",
+    models: (n: number) => (n === 1 ? "modèle" : "modèles"),
+    enlarge: "Agrandir la photo",
+    photoOnRequest: "Photo sur demande",
+    gamePack: "Jeux",
+    billValidator: "Monnayeur",
+    year: "Année",
+    printer: "Imprimante",
+    details: "Détails",
+    detailsOnRequest: "Jeux et année sur demande",
+    request: "Demander les détails ↗",
+    notListed: "Pas dans la liste ?",
+    tellUs: "Dites-nous quelle machine vous recherchez.",
+    tellUsText: "Indiquez la marque, le modèle, le type de meuble ou les jeux souhaités. Nous la trouverons pour vous dans notre réseau de fournisseurs.",
+    find: "Trouver une machine",
+    close: "Fermer",
   },
   cs: {
     heading: "Výherní automaty",

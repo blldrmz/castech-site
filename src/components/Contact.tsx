@@ -57,6 +57,31 @@ const DE = {
   findMachineRest: "\nGehäusetyp (Upright, Slant Top, VIP...):\nSpielemix oder Jackpot:\nMenge:\nLieferland:\n",
 };
 
+const FR = {
+  eyebrow: "Demandes professionnelles",
+  title: "Décrivez l’équipement dont vous avez besoin.",
+  description:
+    "Dites-nous ce dont votre casino a besoin – des écrans jackpot LED aux tables de jeu, machines à sous et accessoires. Nous discuterons des spécifications, de la disponibilité et des exigences du projet.",
+  formTitle: "Demande d’équipement",
+  formNote: "Décrivez ce dont vous avez besoin. Nous répondons par e-mail, généralement avec quelques questions sur les quantités, les dimensions et le pays de livraison.",
+  fields: { name: "Nom", company: "Société", email: "E-mail", phone: "Téléphone / WhatsApp", message: "Équipement et exigences du projet" },
+  submit: "Envoyer la demande",
+  sending: "Envoi…",
+  sent: "Merci. Votre demande a été envoyée, nous vous répondrons par e-mail.",
+  fallback: "L’envoi a échoué. Votre logiciel de messagerie va s’ouvrir avec la demande – veuillez l’envoyer depuis celui-ci.",
+  businessEmail: "E-mail professionnel",
+  batumi: "Géorgie · Batoumi",
+  prague: "République tchèque · Prague (siège social)",
+  company: "Informations sur la société",
+  sister: "société sœur, Géorgie, depuis",
+  website: "Site web",
+  consentA: "J’accepte que CasTech EQ utilise ces informations pour répondre à ma demande. Voir la",
+  privacy: "Privacy Policy",
+  inquiryAbout: "Demande concernant : ",
+  findMachine: "Merci de me trouver cette machine :\n\nMarque / modèle : ",
+  findMachineRest: "\nType de meuble (upright, slant top, VIP...) :\nJeux ou jackpot :\nQuantité :\nPays de livraison :\n",
+};
+
 const CS = {
   eyebrow: "Obchodní poptávky",
   title: "Popište, jaké vybavení potřebujete.",
@@ -82,7 +107,7 @@ const CS = {
   findMachineRest: "\nTyp kabinetu (upright, slant top, VIP...):\nSada her nebo jackpot:\nMnožství:\nZemě dodání:\n",
 };
 
-const LOCAL = { de: DE, cs: CS, ru: RU };
+const LOCAL = { de: DE, fr: FR, cs: CS, ru: RU };
 
 export function Contact({ locale = "en" }: { locale?: Locale }) {
   const L = locale === "en" ? null : LOCAL[locale];

@@ -1,11 +1,11 @@
-export const LOCALES = ["en", "de", "cs", "ru"] as const;
+export const LOCALES = ["en", "de", "fr", "cs", "ru"] as const;
 export type Locale = (typeof LOCALES)[number];
-/** Languages with their own folder (/de/, /cs/, /ru/). English lives at the root. */
-export const PREFIXED = ["de", "cs", "ru"] as const;
+/** Languages with their own folder (/de/, /fr/, /cs/, /ru/). English lives at the root. */
+export const PREFIXED = ["de", "fr", "cs", "ru"] as const;
 export type PrefixedLocale = (typeof PREFIXED)[number];
 
-export const LANG_NAMES: Record<Locale, string> = { en: "English", de: "Deutsch", cs: "Čeština", ru: "Русский" };
-export const OG_LOCALE: Record<Locale, string> = { en: "en_US", de: "de_DE", cs: "cs_CZ", ru: "ru_RU" };
+export const LANG_NAMES: Record<Locale, string> = { en: "English", de: "Deutsch", fr: "Français", cs: "Čeština", ru: "Русский" };
+export const OG_LOCALE: Record<Locale, string> = { en: "en_US", de: "de_DE", fr: "fr_FR", cs: "cs_CZ", ru: "ru_RU" };
 
 /** English paths that also exist in every other language. */
 export const LOCALIZED_PATHS = [
@@ -211,6 +211,72 @@ export const ui = {
       item: "POSITION",
       ask: "Zu dieser Position anfragen ↗",
       note: "Spezifikationen, Fotos und Lieferzeiten werden je Anfrage bestätigt. Shuffler werden generalüberholt geliefert; andere Ausstattung wird über unsere direkten Herstellerbeziehungen auf Bestellung gefertigt. CasTech EQ ist kein autorisierter Händler oder Distributor einer Marke.",
+    },
+  },
+  fr: {
+    tagline: "Équipement de casino",
+    nav: [
+      { href: "/jackpot-screens", label: "Écrans jackpot" },
+      { href: "/slot-machines", label: "Machines à sous" },
+      { href: "/live-games", label: "Tables de jeu" },
+      { href: "/about", label: "À propos" },
+      { href: "/contact", label: "Contact" },
+    ],
+    quote: "Demander un devis",
+    search: "Recherche",
+    searchSite: "Rechercher sur le site",
+    searchPlaceholder: "Rechercher…",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    mainNav: "Menu principal",
+    mobileNav: "Menu mobile",
+    langLabel: "Langue",
+    breadcrumbHome: "Accueil",
+    breadcrumbEquipment: "Équipement",
+    heroTagline: "Sélection · spécification · demande",
+    footer: {
+      claim: "ÉQUIPEMENT PROFESSIONNEL POUR CASINOS",
+      sister: "Société sœur en Géorgie :",
+      about: "Équipement de casino et écrans jackpot LED de notre propre production pour les opérateurs de casino – avec 22 ans d’expérience en salle de jeu.",
+      productsTitle: "Produits",
+      companyTitle: "Entreprise",
+      contactTitle: "Contact",
+      products: [
+        { href: "/jackpot-screens", label: "Écrans jackpot" },
+        { href: "/slot-machines", label: "Machines à sous" },
+        { href: "/live-games", label: "Tables de jeu" },
+        { href: "/table-signs", label: "Écrans de table" },
+        { href: "/accessories", label: "Accessoires" },
+      ],
+      companyLinks: [
+        { href: "/about", label: "À propos" },
+        { href: "/contact", label: "Demander un devis" },
+      ],
+      led: "Écrans LED : CasTech LED",
+      pragueOffice: "Bureau de Prague",
+      batumiOffice: "Bureau de Batoumi",
+      privacy: "Confidentialité (EN)",
+      terms: "Conditions générales (EN)",
+      follow: "Suivez-nous",
+      prague: "Prague",
+      batumi: "Batoumi",
+      batumiFirst: false,
+      copyright: "© 2026 CasTech EQ, une marque de Virexa AI Technologies s.r.o., IČO 29716055. Tous droits réservés.",
+      company: "UNE SOCIÉTÉ VIREXA AI TECHNOLOGIES ↗",
+    },
+    cta: {
+      eyebrow: "Demandes de projet",
+      title: "Vous préparez un projet d’équipement de casino ?",
+      text: "Présentez-nous le périmètre et les exigences de votre projet. Nous discuterons des formats, des spécifications et des options d’approvisionnement.",
+      quote: "Demander un devis",
+      email: "Écrire à CasTech",
+    },
+    gallery: { close: "Fermer", prev: "Précédent", next: "Suivant", open: "Ouvrir la photo" },
+    groups: {
+      explore: "Rubriques",
+      item: "ARTICLE",
+      ask: "Se renseigner sur cet article ↗",
+      note: "Les spécifications, photos et délais de livraison sont confirmés pour chaque demande. Les mélangeurs de cartes sont livrés reconditionnés ; les autres équipements sont fabriqués sur commande grâce à nos relations directes avec les fabricants. CasTech EQ n’est le revendeur ni le distributeur agréé d’aucune marque.",
     },
   },
   cs: {

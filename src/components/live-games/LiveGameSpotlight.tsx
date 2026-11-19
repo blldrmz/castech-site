@@ -51,10 +51,18 @@ const tilesCs = [
   { href: "#cards", title: "Karty a formuláře", subtitle: "Balíčky, řezací karty, formuláře", image: media.cards },
 ] as const;
 
-const TILES = { en: tilesEn, de: tilesDe, cs: tilesCs, ru: tilesRu };
+const tilesFr = [
+  { href: "#roulette", title: "Tables & tapis", subtitle: "Roulette, blackjack, baccara, poker", image: media.blackjack },
+  { href: "#seating", title: "Sièges", subtitle: "Joueurs, croupiers, pit", image: media.seating },
+  { href: "#chips", title: "Jetons & caisse", subtitle: "Plaques, racks, drop boxes", image: media.chips },
+  { href: "#cards", title: "Cartes & formulaires", subtitle: "Jeux, cartes de coupe, formulaires", image: media.cards },
+] as const;
+
+const TILES = { en: tilesEn, de: tilesDe, fr: tilesFr, cs: tilesCs, ru: tilesRu };
 
 const TEXT = {
   en: { aria: "Live game essentials", eyebrow: "At a glance", title: "Tables, chairs, chips, cards—organized the way the pit runs", view: "View section ↓" },
+  fr: { aria: "Équipement de base pour les jeux en direct", eyebrow: "En un coup d’œil", title: "Tables, chaises, jetons, cartes – organisés comme fonctionne le pit", view: "Voir la rubrique ↓" },
   de: { aria: "Grundausstattung für Live-Spiele", eyebrow: "Auf einen Blick", title: "Tische, Stühle, Chips, Karten – organisiert, wie der Pit arbeitet", view: "Zum Bereich ↓" },
   cs: { aria: "Základní vybavení pro živé hry", eyebrow: "Přehled", title: "Stoly, židle, žetony, karty – uspořádané podle provozu pitu", view: "Přejít na sekci ↓" },
   ru: { aria: "Основное оборудование для живых игр", eyebrow: "Коротко", title: "Столы, кресла, фишки, карты — всё, что нужно игровому залу", view: "Перейти к разделу ↓" },
