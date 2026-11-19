@@ -69,6 +69,35 @@ const TEXT = {
     ctaText: "Produktdetails, Verfügbarkeit und Spezifikationen auf Anfrage.",
     ctaButton: "Informationen anfordern ↗",
   },
+  fr: {
+    eyebrow: "CASTECH / ÉQUIPEMENT DE CASINO",
+    h1a: "Équipement de casino",
+    h1b: "pour la salle de jeu moderne.",
+    lead: (lk: LK) => (
+      <>
+        CasTech EQ by Virexa fournit aux casinos des {lk("/live-games", "tables de jeu")} neuves, des chaises de casino, des jetons, des tapis de jeu et des{" "}
+        {lk("/accessories", "accessoires")}, directement auprès des fabricants. Nous proposons aussi des {lk("/slot-machines", "machines à sous d’occasion")} de qualité, des
+        mélangeurs de cartes reconditionnés et nos propres {lk("/jackpot-screens", "écrans jackpot LED sur mesure")}. Forts de 22 ans d’expérience en casino et
+        d’ouvertures de casinos sur trois continents et sur des navires de croisière, nous aidons les casinos à choisir, approvisionner et installer le bon équipement.
+      </>
+    ),
+    explore: "Écrans jackpot ↗",
+    sales: "Contacter le service commercial",
+    supplyTitle: "CE QUE NOUS FOURNISSONS",
+    supply: [
+      ["Écrans jackpot LED", "Notre propre production, à vos dimensions"],
+      ["Machines à sous d’occasion", "État confirmé pour chaque machine"],
+      ["Mélangeurs de cartes reconditionnés", "Ainsi que tables et équipements de salle directement auprès des fabricants"],
+    ],
+    deptEyebrow: "RUBRIQUES",
+    deptTitle: "Trouvez votre équipement.",
+    allCategories: "Nous contacter ↗",
+    collection: "RUBRIQUE",
+    ctaEyebrow: "DEMANDES PROFESSIONNELLES",
+    ctaTitle: "Parlons de votre projet.",
+    ctaText: "Détails produits, disponibilité et spécifications sur demande.",
+    ctaButton: "Demander des informations ↗",
+  },
   cs: {
     eyebrow: "CASTECH / VYBAVENÍ PRO KASINA",
     h1a: "Vybavení pro kasina",
@@ -144,8 +173,9 @@ const CATEGORY_PATHS: Record<string, string> = {
 };
 
 /** Category titles for the home grid outside English (English uses the catalogue titles). */
-const CATEGORY_TITLES: Record<"de" | "cs" | "ru", Record<string, string>> = {
+const CATEGORY_TITLES: Record<"de" | "fr" | "cs" | "ru", Record<string, string>> = {
   de: { led: "LED-Jackpot-Bildschirme", machines: "Spielautomaten", tables: "Spieltische", chairs: "Casino-Stühle", shufflers: "Shuffler", chips: "Casino-Chips", cards: "Spielkarten", layouts: "Tischtücher", "table-signs": "Tischanzeigen", accessories: "Zubehör" },
+  fr: { led: "Écrans jackpot LED", machines: "Machines à sous", tables: "Tables de jeu", chairs: "Chaises de casino", shufflers: "Mélangeurs de cartes", chips: "Jetons de casino", cards: "Cartes à jouer", layouts: "Tapis de jeu", "table-signs": "Écrans de table", accessories: "Accessoires" },
   cs: { led: "LED jackpotové obrazovky", machines: "Výherní automaty", tables: "Herní stoly", chairs: "Kasinové židle", shufflers: "Míchačky karet", chips: "Kasinové žetony", cards: "Hrací karty", layouts: "Herní sukna", "table-signs": "Stolní displeje", accessories: "Příslušenství" },
   ru: { led: "LED-табло джекпота", machines: "Игровые автоматы", tables: "Игровые столы", chairs: "Кресла для казино", shufflers: "Шафлеры", chips: "Фишки для казино", cards: "Игральные карты", layouts: "Сукно для столов", "table-signs": "Табло для столов", accessories: "Аксессуары" },
 };

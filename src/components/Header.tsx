@@ -18,7 +18,7 @@ function navLinkClassName(active: boolean) {
 function isActiveLink(pathname: string, href: string) {
   const p = pathname.replace(/\/$/, "") || "/";
   const h = href.replace(/\/$/, "") || "/";
-  if (/^\/(de|cs|ru)?$/.test(h)) return p === h;
+  if (/^\/(de|fr|cs|ru)?$/.test(h)) return p === h;
   return p === h || p.startsWith(`${h}/`);
 }
 
