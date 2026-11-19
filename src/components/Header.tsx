@@ -128,7 +128,12 @@ export function Header() {
                   href={langHref(l)}
                   hrefLang={l}
                   lang={l}
-                  onClick={() => langRef.current?.removeAttribute("open")}
+                  onClick={() => {
+                    langRef.current?.removeAttribute("open");
+                    try {
+                      localStorage.setItem("lang", l);
+                    } catch {}
+                  }}
                   className={`flex items-center justify-between px-4 py-2.5 text-[13px] transition hover:bg-white/[0.05] ${l === locale ? "font-semibold text-gold" : "text-zinc-200"}`}
                 >
                   {LANG_NAMES[l]}
