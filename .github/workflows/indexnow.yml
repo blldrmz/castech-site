@@ -1,0 +1,28 @@
+name: Notify search engines (IndexNow)
+
+# After each deploy, send every URL in the sitemap to IndexNow (Bing, Yandex, Seznam, Naver).
+on:
+  workflow_run:
+    workflows: ["Build and publish CasTech EQ"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for the new version to be live
+        run: |
+          for i in $(seq 1 30); do
+            curl -fsS "https://castecheq.com/e27c1cd856ddb837465a3d0f9242c2f6.txt" | grep -q "e27c1cd856ddb837465a3d0f9242c2f6" && exit 0
+            sleep 20
+          done
+          echo "Key file not live yet" && exit 1
+      - name: Submit sitemap URLs
+        run: |
+          urls=$(curl -fsS "https://castecheq.com/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's/<[^>]*>//g' | sort -u | jq -R . | jq -s -c .)
+          echo "Submitting $(echo "$urls" | jq length) URLs"
+          jq -n --argjson u "$urls" '{host:"castecheq.com",key:"e27c1cd856ddb837465a3d0f9242c2f6",keyLocation:"https://castecheq.com/e27c1cd856ddb837465a3d0f9242c2f6.txt",urlList:$u}' \
+            | curl -sS -w "\nHTTP %{http_code}\n" -H "Content-Type: application/json; charset=utf-8" -d @- https://api.indexnow.org/indexnow
