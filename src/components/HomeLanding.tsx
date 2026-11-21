@@ -12,8 +12,8 @@ type LK = (path: string, label: string) => React.ReactNode;
 const TEXT = {
   en: {
     eyebrow: "CASTECH / EQUIPMENT COLLECTION",
-    h1a: "Casino equipment",
-    h1b: "for the modern casino floor.",
+    h1a: "Casino equipment supplier:",
+    h1b: "slot machines, gaming tables and jackpot screens.",
     lead: (lk: LK) => (
       <>
         CasTech EQ by Virexa supplies casinos with new {lk("/live-games", "gaming tables")}, casino chairs, chips, layouts and{" "}
@@ -42,8 +42,8 @@ const TEXT = {
   },
   de: {
     eyebrow: "CASTECH / CASINO-AUSSTATTUNG",
-    h1a: "Casino-Ausstattung",
-    h1b: "für den modernen Spielsaal.",
+    h1a: "Casino-Ausstatter:",
+    h1b: "Spielautomaten, Spieltische und Jackpot-Bildschirme.",
     lead: (lk: LK) => (
       <>
         CasTech EQ by Virexa liefert Casinos neue {lk("/live-games", "Spieltische")}, Casino-Stühle, Chips, Tischtücher und {lk("/accessories", "Zubehör")} direkt
@@ -71,8 +71,8 @@ const TEXT = {
   },
   fr: {
     eyebrow: "CASTECH / ÉQUIPEMENT DE CASINO",
-    h1a: "Équipement de casino",
-    h1b: "pour la salle de jeu moderne.",
+    h1a: "Fournisseur d’équipement de casino :",
+    h1b: "machines à sous, tables de jeu et écrans jackpot.",
     lead: (lk: LK) => (
       <>
         CasTech EQ by Virexa fournit aux casinos des {lk("/live-games", "tables de jeu")} neuves, des chaises de casino, des jetons, des tapis de jeu et des{" "}
@@ -100,8 +100,8 @@ const TEXT = {
   },
   cs: {
     eyebrow: "CASTECH / VYBAVENÍ PRO KASINA",
-    h1a: "Vybavení pro kasina",
-    h1b: "od automatů po LED obrazovky.",
+    h1a: "Dodavatel vybavení pro kasina:",
+    h1b: "výherní automaty, herní stoly a jackpotové obrazovky.",
     lead: (lk: LK) => (
       <>
         CasTech EQ by Virexa dodává kasinům nové {lk("/live-games", "herní stoly")}, kasinové židle, žetony, sukna a {lk("/accessories", "příslušenství")} přímo od
@@ -129,8 +129,8 @@ const TEXT = {
   },
   ru: {
     eyebrow: "CASTECH / ОБОРУДОВАНИЕ ДЛЯ КАЗИНО",
-    h1a: "Оборудование для казино",
-    h1b: "от автоматов до джекпот-табло.",
+    h1a: "Поставщик оборудования для казино:",
+    h1b: "игровые автоматы, игровые столы и джекпот-табло.",
     lead: (lk: LK) => (
       <>
         CasTech EQ by Virexa поставляет казино новые {lk("/live-games", "игровые столы")}, кресла, фишки, сукно и{" "}
