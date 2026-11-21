@@ -15,7 +15,7 @@ Casino equipment website for **CasTech EQ by Virexa**. Owner: Bilal Durmaz. He t
 - **Static export** (`output: "export"`, `trailingSlash: true`) to GitHub Pages via `.github/workflows/deploy-pages.yml`. No server: no API routes, no server actions, no `next/image` optimisation, no middleware.
 - Domain set by `public/CNAME` (castecheq.com). Do not touch it.
 - Font: **Inter** only (`src/components/RootHtml.tsx`), same as virexa-tech.com. Do not add other fonts.
-- Forms post to FormSubmit → `sales@virexa-tech.com` (`contactContent.formEndpoint` in `src/content/site.ts`). Never change the recipient.
+- Forms post to FormSubmit → `info@castecheq.com` (`contactContent.formEndpoint` in `src/content/site.ts`). Never change the recipient. Use only info@castecheq.com on this site, never sales@virexa-tech.com.
 
 Commands: `npm run dev` · `npm run build` (writes `out/`) · `npm run lint` · `npm run images`.
 

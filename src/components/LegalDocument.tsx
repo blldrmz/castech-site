@@ -1,6 +1,6 @@
 import type { LegalSection } from "@/content/legal";
 
-const MAIL = "sales@virexa-tech.com";
+const MAIL = "info@castecheq.com";
 
 function withLinks(text: string) {
   const parts = text.split(new RegExp(`(${MAIL}|uoou\\.gov\\.cz|/\\.well-known/security\\.txt)`, "g"));

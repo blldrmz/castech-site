@@ -5,7 +5,7 @@ export const privacySections: LegalSection[] = [
   {
     "title": "1. Who is responsible",
     "paragraphs": [
-      "Virexa AI Technologies s.r.o., registered office Cihlářská 782/10a, Prosek, 190 00 Praha 9, Czech Republic, company ID (IČO) 29716055. Commercial Register kept by the Municipal Court in Prague, file C 451241. The company operates the CasTech EQ brand and this website (castecheq.com). Contact for all privacy matters: sales@virexa-tech.com."
+      "Virexa AI Technologies s.r.o., registered office Cihlářská 782/10a, Prosek, 190 00 Praha 9, Czech Republic, company ID (IČO) 29716055. Commercial Register kept by the Municipal Court in Prague, file C 451241. The company operates the CasTech EQ brand and this website (castecheq.com). Contact for all privacy matters: info@castecheq.com."
     ],
     "bullets": []
   },
@@ -50,7 +50,7 @@ export const privacySections: LegalSection[] = [
   {
     "title": "6. Your rights",
     "paragraphs": [
-      "You may request access, correction, deletion, restriction or portability of your data, withdraw consent given earlier, and object to processing based on legitimate interest. Write to sales@virexa-tech.com. You may also complain to the Czech data protection authority, Úřad pro ochranu osobních údajů (uoou.gov.cz)."
+      "You may request access, correction, deletion, restriction or portability of your data, withdraw consent given earlier, and object to processing based on legitimate interest. Write to info@castecheq.com. You may also complain to the Czech data protection authority, Úřad pro ochranu osobních údajů (uoou.gov.cz)."
     ],
     "bullets": []
   },
@@ -61,7 +61,7 @@ export const privacySections: LegalSection[] = [
       "This website is served over HTTPS and forms are transmitted over encrypted connections.",
       "We do not collect payment card data or government identification through this website.",
       "Messages and inquiries are accessible only to authorised staff of Virexa AI Technologies s.r.o. and of our sister company Deniz Trade LLC in Batumi, Georgia.",
-      "If you believe you have found a security issue on this website, please report it to sales@virexa-tech.com. Our contact details for this purpose are also published in the file /.well-known/security.txt."
+      "If you believe you have found a security issue on this website, please report it to info@castecheq.com. Our contact details for this purpose are also published in the file /.well-known/security.txt."
     ]
   },
   {
@@ -83,7 +83,7 @@ export const termsSections: LegalSection[] = [
   {
     "title": "1. Operator and scope",
     "paragraphs": [
-      "This website (castecheq.com) is operated by Virexa AI Technologies s.r.o., Cihlářská 782/10a, Prosek, 190 00 Praha 9, Czech Republic, company ID (IČO) 29716055, under the CasTech EQ brand. These terms govern the use of this website. Contact: sales@virexa-tech.com."
+      "This website (castecheq.com) is operated by Virexa AI Technologies s.r.o., Cihlářská 782/10a, Prosek, 190 00 Praha 9, Czech Republic, company ID (IČO) 29716055, under the CasTech EQ brand. These terms govern the use of this website. Contact: info@castecheq.com."
     ],
     "bullets": []
   },

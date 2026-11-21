@@ -18,8 +18,8 @@ export const contactContent = {
   praguePhone: "+420 704 481 975",
   praguePhoneTel: "+420704481975",
   georgiaPhoneTel: "+995555481975",
-  inquiryEmail: "sales@virexa-tech.com", // where website inquiries are delivered (FormSubmit)
-  formEndpoint: "https://formsubmit.co/ajax/sales@virexa-tech.com",
+  inquiryEmail: "info@castecheq.com", // where website inquiries are delivered (FormSubmit)
+  formEndpoint: "https://formsubmit.co/ajax/info@castecheq.com",
   formTitle: "Equipment inquiry",
   formNote:
     "Tell us what you need. We reply by email, usually with follow-up questions on quantities, sizes and delivery country.",
