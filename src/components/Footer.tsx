@@ -1,6 +1,10 @@
 import { companyContent, contactContent } from "@/content/site";
 import { href, ui, type Locale } from "@/lib/i18n";
 import Link from "next/link";
+import { CookieSettingsButton } from "@/components/CookieSettingsButton";
+import { adsEnabled } from "@/lib/ads";
+
+const COOKIE_SETTINGS: Record<string, string> = { en: "Cookie settings", de: "Cookie-Einstellungen", fr: "Paramètres des cookies", cs: "Nastavení cookies", ru: "Настройки cookie" };
 
 const SOCIAL = [
   {
@@ -111,6 +115,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 lg:justify-end">
             <Link href="/privacy" className="transition hover:text-gold">{t.privacy}</Link>
             <Link href="/terms" className="transition hover:text-gold">{t.terms}</Link>
+            {adsEnabled && <CookieSettingsButton label={COOKIE_SETTINGS[locale] ?? COOKIE_SETTINGS.en} />}
             <a href="https://virexa-tech.com" target="_blank" rel="noopener noreferrer" className="font-semibold tracking-[.08em] text-gold hover:underline">
               {t.company}
             </a>

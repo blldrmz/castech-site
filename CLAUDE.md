@@ -17,6 +17,8 @@ Casino equipment website for **CasTech EQ by Virexa**. Owner: Bilal Durmaz. He t
 - Font: **Inter** only (`src/components/RootHtml.tsx`), same as virexa-tech.com. Do not add other fonts.
 - Forms post to FormSubmit → `info@castecheq.com` (`contactContent.formEndpoint` in `src/content/site.ts`). Never change the recipient. Use only info@castecheq.com on this site, never sales@virexa-tech.com.
 
+- Google Ads conversion tracking: `adsConversion` (id + label) in `src/content/site.ts`. Empty id = tracking and cookie banner off. The tag loads only after the visitor accepts the cookie banner (`src/lib/ads.ts`, `ConsentBanner.tsx`); the privacy policy describes this. Never load Google tags without consent.
+
 Commands: `npm run dev` · `npm run build` (writes `out/`) · `npm run lint` · `npm run images`.
 
 ## Where things live

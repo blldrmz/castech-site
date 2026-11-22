@@ -3,6 +3,7 @@
 import { companyContent, contactContent } from "@/content/site";
 import { href, type Locale } from "@/lib/i18n";
 import Link from "next/link";
+import { trackConversion } from "@/lib/ads";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
 type Status = "idle" | "sending" | "sent" | "fallback";
@@ -167,6 +168,7 @@ export function Contact({ locale = "en" }: { locale?: Locale }) {
       if (result.success !== true && result.success !== "true") throw new Error(result.message || "Not accepted");
       form.reset();
       setStatus("sent");
+      trackConversion();
     } catch {
       setStatus("fallback");
       window.location.href =
