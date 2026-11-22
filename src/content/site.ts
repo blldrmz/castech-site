@@ -6,7 +6,7 @@ export const brand = {
 // Google Ads conversion tracking. Leave id empty to switch tracking (and the cookie banner) off.
 // id looks like "AW-123456789", label like "AbCdEfGhIjk" (Google Ads > Goals > Conversions > tag setup).
 export const adsConversion = {
-  id: "",
+  id: "AW-17358410532",
   label: "",
 };
 
