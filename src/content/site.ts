@@ -7,7 +7,7 @@ export const brand = {
 // id looks like "AW-123456789", label like "AbCdEfGhIjk" (Google Ads > Goals > Conversions > tag setup).
 export const adsConversion = {
   id: "AW-17358410532",
-  label: "",
+  label: "ZKvHCImumr0dEKSmkdVA",
 };
 
 export const contactContent = {
