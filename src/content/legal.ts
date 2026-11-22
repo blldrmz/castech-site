@@ -1,6 +1,6 @@
 // Generated from the shared Virexa AI Technologies legal text (privacy + terms). Edit with care.
 export type LegalSection = { title: string; paragraphs: string[]; bullets: string[] };
-export const legalUpdated = "October 2026";
+export const legalUpdated = "November 2026";
 export const privacySections: LegalSection[] = [
   {
     "title": "1. Who is responsible",
@@ -21,8 +21,8 @@ export const privacySections: LegalSection[] = [
   {
     "title": "3. Cookies and third-party content",
     "paragraphs": [
-      "This website does not set advertising or analytics cookies and does not use tracking pixels.",
-      "Fonts are bundled with the site and served from our own domain; no fonts, scripts or images are loaded from third-party servers.",
+      "With your consent, this website uses Google Ads conversion tracking (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) to measure whether our ads lead to enquiries. Advertising cookies are set only after you accept them in the cookie banner, and you can change your choice at any time via \u201cCookie settings\u201d in the footer. Without your consent, no advertising or analytics cookies are set and no tracking pixels are used.",
+      "Fonts are bundled with the site and served from our own domain. Apart from the Google Ads script, which loads only after your consent, no fonts, scripts or images are loaded from third-party servers.",
       "Our public contact details link to external services (for example email and telephone links); those services handle your data under their own policies once you leave this site."
     ],
     "bullets": []
@@ -36,6 +36,7 @@ export const privacySections: LegalSection[] = [
       "Our email provider, which receives the messages sent to our contact addresses.",
       "FormSubmit (formsubmit.co), the form-processing service that receives website form submissions and forwards them to us by email.",
       "GitHub Pages, which hosts this website.",
+      "Google Ireland Limited (Google Ads), only if you accept advertising cookies; Google may also process this data outside the European Economic Area.",
       "Deniz Trade LLC (ID 445613480, Khakhuli Str. No. 3, Batumi, Georgia), our sister company, which handles inquiries and projects for customers in Georgia and the CIS. Georgia is outside the European Economic Area; we transfer only the data needed for your inquiry.",
       "Where needed for your project, manufacturers, logistics and installation partners, and only for that purpose."
     ]

@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import type { Locale } from "@/lib/i18n";
+import { ConsentBanner } from "@/components/ConsentBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,6 +46,7 @@ export function RootHtml({ lang, children }: { lang: Locale; children: React.Rea
       <body className={`${inter.variable} font-sans antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         {children}
+        <ConsentBanner lang={lang} />
       </body>
     </html>
   );
