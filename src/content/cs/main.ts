@@ -96,10 +96,10 @@ export const csTableSigns: TableSignsContent = {
     eyebrow: "Stolní displeje",
     title: "Displeje pro každý živý herní stůl.",
     lead:
-      "Displeje limitů a displeje výsledků rulety, navržené a sestavené CasTech EQ. Obrazovky od 11 do 21 palců nebo v jakékoli jiné velikosti na vyžádání, na stojanech přizpůsobených vašemu stolu.",
+      "Oboustranné displeje limitů, navržené a sestavené CasTech EQ. Obrazovky od 11 do 21 palců nebo v jakékoli jiné velikosti na vyžádání, na stojanech přizpůsobených vašemu stolu.",
   },
   galleryEyebrow: "Naše stolní displeje",
-  galleryTitle: "Displeje limitů a výsledků rulety.",
+  galleryTitle: "Displeje limitů pro živé hrací stoly.",
   gallery: tableSigns.items.map((i) => {
     const caption = signTitles[i.image.split("/").pop()!.slice(0, 2)] ?? i.title;
     return { src: i.image, alt: `${caption}: displej limitů pro kasinové herní stoly`, caption };
@@ -109,9 +109,51 @@ export const csTableSigns: TableSignsContent = {
   brief: [
     "Které hry: ruleta, blackjack, poker, baccarat nebo jiné",
     "Počet stolů, požadovanou velikost obrazovky a způsob montáže",
-    "Co zobrazovat: limity, výsledky rulety, statistiky nebo promo akce",
+    "Co zobrazovat: pouze limity, nebo limity s videem či živým videem",
     "Zemi dodání a požadovaný termín",
   ],
+  info: {
+    "eyebrow": "Displeje limitů",
+    "title": "Vytvořeno pro živé hrací stoly.",
+    "paragraphs": [
+      "Přehledný stolní displej odpoví hráči na první otázku ještě předtím, než si sedne: jaké jsou tu limity? Naše oboustranné displeje limitů ukazují minimální a maximální sázky pro každou hru velkým, dobře čitelným písmem. Hráči tak rychle najdou správný stůl a krupiéři nemusejí limity tolik vysvětlovat.",
+      "Každý displej navrhuje a sestavuje CasTech EQ. Vybereme obrazovku, vyrobíme stojan a navrhneme grafiku podle vašich stolů a vzhledu vašeho kasina."
+    ],
+    "lists": [
+      {
+        "title": "Velikosti obrazovek a montáž",
+        "items": [
+          "Oboustranné, čitelné z obou stran stolu",
+          "Nejčastější velikosti jsou 13″ a 21″; jakákoli velikost od 11″ do 21″ nebo velikost na míru na vyžádání",
+          "Stojany navržené podle uspořádání vašich stolů"
+        ]
+      },
+      {
+        "title": "Co mohou obrazovky zobrazovat",
+        "items": [
+          "Minimální a maximální limity stolu pro každou hru",
+          "Volitelně video nebo živé video vedle limitů"
+        ]
+      }
+    ]
+  },
+  faq: {
+    "title": "Časté dotazy ke stolním displejům.",
+    "items": [
+      {
+        "q": "Kdo mění limity?",
+        "a": "Limity aktualizuje pit boss, kdykoli stůl změní hru nebo úroveň limitu."
+      },
+      {
+        "q": "Dodáváte i mimo Evropu?",
+        "a": "Ano. Dodáváme po celém světě z našich kanceláří v Praze a Batumi."
+      },
+      {
+        "q": "Jak získáme nabídku?",
+        "a": "Pošlete nám své hry, počet stolů, požadovanou velikost obrazovky a způsob montáže každého displeje. Ozveme se s konfigurací a nabídkou."
+      }
+    ]
+  },
   quote: "Poptat stolní displeje",
   pitPre: "Vybavujete celý pit? Podívejte se na naše",
   pitLink: "kasinové herní stoly a vybavení pro živé hry",

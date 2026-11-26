@@ -86,10 +86,10 @@ export const frTableSigns: TableSignsContent = {
     eyebrow: "Écrans de table",
     title: "Des écrans pour chaque table de jeu.",
     lead:
-      "Écrans de limites de table et écrans de résultats de roulette, conçus et assemblés par CasTech EQ. Écrans de 11 à 21 pouces ou de toute autre taille sur demande, sur des pieds adaptés à votre table.",
+      "Écrans de limites de table double face, conçus et assemblés par CasTech EQ. Écrans de 11 à 21 pouces ou de toute autre taille sur demande, sur des pieds adaptés à votre table.",
   },
   galleryEyebrow: "Nos écrans de table",
-  galleryTitle: "Écrans de limites et de résultats de roulette.",
+  galleryTitle: "Écrans de limites pour tables de jeu en direct.",
   gallery: tableSigns.items.map((i) => {
     const caption = signTitles[i.image.split("/").pop()!.slice(0, 2)] ?? i.title;
     return { src: i.image, alt: `${caption} : écran de limites pour tables de jeu de casino`, caption };
@@ -99,9 +99,51 @@ export const frTableSigns: TableSignsContent = {
   brief: [
     "Les jeux : roulette, blackjack, poker, baccara ou autres",
     "Le nombre de tables, la taille d’écran souhaitée et le mode de fixation",
-    "Ce qu’il faut afficher : limites, résultats de roulette, statistiques ou promotions",
+    "Ce qu’il faut afficher : uniquement les limites, ou les limites avec vidéo ou vidéo en direct",
     "Le pays de livraison et la date souhaitée",
   ],
+  info: {
+    "eyebrow": "Écrans de limites",
+    "title": "Conçus pour les tables de jeu en direct.",
+    "paragraphs": [
+      "Un écran de table clair répond à la première question du joueur avant même qu’il s’assoie : quelles sont les limites ici ? Nos écrans de limites double face affichent les mises minimales et maximales de chaque jeu en grands caractères lisibles. Les joueurs trouvent ainsi rapidement la bonne table, et les croupiers ont moins de limites à expliquer.",
+      "Chaque écran est conçu et assemblé par CasTech EQ. Nous choisissons l’écran, fabriquons le pied et créons la mise en page selon vos tables et l’identité de votre casino."
+    ],
+    "lists": [
+      {
+        "title": "Tailles d’écran et fixation",
+        "items": [
+          "Double face, lisible des deux côtés de la table",
+          "Les tailles les plus courantes sont 13″ et 21″ ; toute taille de 11″ à 21″, ou une taille sur mesure, sur demande",
+          "Pieds conçus selon la disposition de vos tables"
+        ]
+      },
+      {
+        "title": "Ce que les écrans peuvent afficher",
+        "items": [
+          "Limites minimales et maximales de la table, par jeu",
+          "En option, vidéo ou vidéo en direct à côté des limites"
+        ]
+      }
+    ]
+  },
+  faq: {
+    "title": "Questions sur les écrans de table.",
+    "items": [
+      {
+        "q": "Qui modifie les limites ?",
+        "a": "Le pit boss met à jour les limites dès qu’une table change de jeu ou de niveau de limite."
+      },
+      {
+        "q": "Livrez-vous hors d’Europe ?",
+        "a": "Oui. Nous livrons dans le monde entier depuis nos bureaux de Prague et de Batoumi."
+      },
+      {
+        "q": "Comment obtenir un devis ?",
+        "a": "Indiquez-nous vos jeux, le nombre de tables, la taille d’écran souhaitée et le mode de fixation de chaque écran. Nous revenons vers vous avec une configuration et une offre."
+      }
+    ]
+  },
   quote: "Demander un devis d’écrans de table",
   pitPre: "Vous équipez tout un pit ? Voir nos",
   pitLink: "tables de jeu de casino et équipements de jeux en direct",

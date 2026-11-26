@@ -52,7 +52,8 @@ Commands: `npm run dev` · `npm run build` (writes `out/`) · `npm run lint` · 
 - CasTech EQ is **not an authorised dealer or distributor** of any brand. Other manufactured items are sourced through direct relationships with manufacturers.
 - **Jackpot screens are our own production** (CasTech EQ by Virexa). They are compatible with the jackpot servers of any brand and model (EGT, Apex, Novomatic…) and are made in any size or in sizes similar to the original EGT/Apex/Novomatic displays. They can show jackpot values or other content (e.g. a sports broadcast). Showing EGT/Novomatic logos on those screens in photos is fine.
 - "Bell Link" and "Clover Twist" are EGT and other makers' jackpot systems, **not our products**.
-- **Table signs** (limit signs, roulette result displays): screens are bought in, usually 21″ or 13″ (11–21″ or custom on request). Stands and design are ours. Say **"designed and assembled"**, never "own production".
+- **Table signs** (table limit signs): double-sided; show table limits (changed by the pit boss) and, optionally, video or live video. Screens are bought in, usually 21″ or 13″ (11–21″ or custom on request). Stands and design are ours. Say **"designed and assembled"**, never "own production".
+- **Roulette result screens are not our product**: they come with the roulette wheel. Do not offer them.
 - **No CCTV** on the site (no partnerships).
 - Say "LED screen", not "LED display".
 - SEO main keyword for the jackpot page: **"jackpot screen"**.
