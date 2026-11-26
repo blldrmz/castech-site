@@ -59,9 +59,16 @@ export function localePath(locale: Locale, enPath: string) {
  * otherwise they fall back to the English page. Query strings and hashes are kept.
  */
 export function href(locale: Locale, path: string) {
-  if (locale === "en" || !isLocalized(path, locale)) return path;
   const suffix = path.slice(path.split(/[?#]/)[0].length);
+  if (locale === "en" || !isLocalized(path, locale)) return withSlash(path);
   return localePath(locale, path) + suffix;
+}
+
+/** Internal page paths always end in "/" (trailingSlash export), so Google never sees a redirecting URL. */
+export function withSlash(path: string) {
+  const clean = path.split(/[?#]/)[0];
+  if (!clean.startsWith("/") || clean.endsWith("/") || /\.[a-z0-9]+$/i.test(clean)) return path;
+  return `${clean}/${path.slice(clean.length)}`;
 }
 
 export function localeFromPath(pathname: string): Locale {

@@ -68,7 +68,7 @@ export function ConsentBanner({ lang }: { lang: Locale }) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="leading-6">
           {t.text}{" "}
-          <Link href="/privacy" className="text-gold underline-offset-4 hover:underline">
+          <Link href="/privacy/" className="text-gold underline-offset-4 hover:underline">
             {t.privacy}
           </Link>
         </p>

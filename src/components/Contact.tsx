@@ -268,7 +268,7 @@ export function Contact({ locale = "en" }: { locale?: Locale }) {
                 <input type="checkbox" name="consent" required className="mt-1.5 shrink-0" />
                 <span>
                   {L ? L.consentA : "I agree that CasTech EQ may use these details to reply to my inquiry. See the"}{" "}
-                  <Link href="/privacy" className="text-gold underline underline-offset-4">Privacy Policy</Link>. *
+                  <Link href="/privacy/" className="text-gold underline underline-offset-4">Privacy Policy</Link>. *
                 </span>
               </label>
               <button type="submit" disabled={status === "sending"} className="castech-btn-primary mt-1 w-full sm:w-auto">
