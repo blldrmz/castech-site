@@ -86,10 +86,10 @@ export const deTableSigns: TableSignsContent = {
     eyebrow: "Tischanzeigen",
     title: "Tischanzeigen für jeden Live-Spieltisch.",
     lead:
-      "Limitanzeigen und Roulette-Ergebnisanzeigen, entwickelt und montiert von CasTech EQ. Bildschirmgrößen von 11 bis 21 Zoll oder jede andere Größe auf Anfrage, auf Ständern passend zu Ihrem Tischlayout.",
+      "Doppelseitige Limitanzeigen, entwickelt und montiert von CasTech EQ. Bildschirmgrößen von 11 bis 21 Zoll oder jede andere Größe auf Anfrage, auf Ständern passend zu Ihrem Tischlayout.",
   },
   galleryEyebrow: "Unsere Tischanzeigen",
-  galleryTitle: "Limitanzeigen und Roulette-Ergebnisanzeigen.",
+  galleryTitle: "Limitanzeigen für Live-Spieltische.",
   gallery: tableSigns.items.map((i) => {
     const caption = signTitles[i.image.split("/").pop()!.slice(0, 2)] ?? i.title;
     return { src: i.image, alt: `${caption}: Limitanzeige für Casino-Spieltische`, caption };
@@ -99,9 +99,51 @@ export const deTableSigns: TableSignsContent = {
   brief: [
     "Welche Spiele: Roulette, Blackjack, Poker, Baccara oder andere",
     "Anzahl der Tische, gewünschte Bildschirmgröße und Montageart",
-    "Was angezeigt werden soll: Limits, Roulette-Ergebnisse, Statistiken oder Promotions",
+    "Was angezeigt werden soll: nur Limits oder Limits mit Video bzw. Live-Video",
     "Lieferland und Wunschtermin",
   ],
+  info: {
+    "eyebrow": "Limitanzeigen",
+    "title": "Gebaut für den Live-Spielbereich.",
+    "paragraphs": [
+      "Eine klare Tischanzeige beantwortet die erste Frage des Spielers, noch bevor er Platz nimmt: Welche Limits gelten hier? Unsere doppelseitigen Limitanzeigen zeigen die Mindest- und Höchsteinsätze für jedes Spiel in großer, gut lesbarer Schrift. So finden Spieler schnell den richtigen Tisch, und Dealer müssen Limits seltener erklären.",
+      "Jede Anzeige wird von CasTech EQ entwickelt und montiert. Wir wählen den Bildschirm aus, bauen den Ständer und gestalten das Layout passend zu Ihren Tischen und zum Erscheinungsbild Ihres Casinos."
+    ],
+    "lists": [
+      {
+        "title": "Bildschirmgrößen und Montage",
+        "items": [
+          "Doppelseitig, von beiden Seiten des Tisches lesbar",
+          "13″ und 21″ sind die gängigsten Größen; jede Größe von 11″ bis 21″ oder eine Sondergröße auf Anfrage",
+          "Ständer passend zu Ihrem Tischlayout"
+        ]
+      },
+      {
+        "title": "Was die Bildschirme zeigen können",
+        "items": [
+          "Mindest- und Höchstlimits des Tisches, je Spiel",
+          "Optional Video oder Live-Video neben den Limits"
+        ]
+      }
+    ]
+  },
+  faq: {
+    "title": "Häufige Fragen zu Tischanzeigen.",
+    "items": [
+      {
+        "q": "Wer ändert die Limits?",
+        "a": "Der Pit Boss aktualisiert die Limits, sobald ein Tisch das Spiel oder die Limitstufe wechselt."
+      },
+      {
+        "q": "Liefern Sie auch außerhalb Europas?",
+        "a": "Ja. Wir liefern weltweit von unseren Büros in Prag und Batumi aus."
+      },
+      {
+        "q": "Wie erhalten wir ein Angebot?",
+        "a": "Nennen Sie uns Ihre Spiele, die Anzahl der Tische, die gewünschte Bildschirmgröße und die Montageart. Wir melden uns mit Konfiguration und Angebot."
+      }
+    ]
+  },
   quote: "Angebot für Tischanzeigen anfordern",
   pitPre: "Sie statten einen ganzen Pit aus? Siehe unsere",
   pitLink: "Casino-Spieltische und Ausstattung für Live-Spiele",

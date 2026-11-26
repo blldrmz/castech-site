@@ -82,6 +82,13 @@ export type TableSignsContent = {
   briefEyebrow: string;
   briefTitle: string;
   brief: readonly string[];
+  info?: {
+    eyebrow: string;
+    title: string;
+    paragraphs: readonly string[];
+    lists: readonly { title: string; items: readonly string[] }[];
+  };
+  faq?: { title: string; items: readonly { q: string; a: string }[] };
   quote: string;
   pitPre: string;
   pitLink: string;
@@ -97,6 +104,57 @@ export function TableSignsView({ c, locale = "en" }: { c: TableSignsContent; loc
           <p className="castech-eyebrow">{c.galleryEyebrow}</p>
           <h2 className="castech-h2 castech-h2-gap">{c.galleryTitle}</h2>
           <JackpotGallery items={c.gallery} locale={locale} />
+
+          {c.info && (
+            <div className="mt-20 max-w-3xl">
+              <p className="castech-eyebrow">{c.info.eyebrow}</p>
+              <h2 className="castech-h2 castech-h2-gap">{c.info.title}</h2>
+              {c.info.paragraphs.map((p) => (
+                <p key={p} className="castech-body mt-6 text-zinc-300">{p}</p>
+              ))}
+              {c.info.lists.map((l) => (
+                <div key={l.title} className="mt-10">
+                  <h3 className="font-heading text-lg font-semibold text-white">{l.title}</h3>
+                  <ul className="mt-4 space-y-3">
+                    {l.items.map((b) => (
+                      <li key={b} className="castech-body flex gap-3 text-zinc-200">
+                        <span aria-hidden="true" className="mt-1 text-gold">•</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {c.faq && (
+            <div className="mt-20 max-w-3xl">
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    mainEntity: c.faq.items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+                  }),
+                }}
+              />
+              <p className="castech-eyebrow">FAQ</p>
+              <h2 className="castech-h2 castech-h2-gap">{c.faq.title}</h2>
+              <div className="mt-8 divide-y divide-white/10 border-y border-white/10">
+                {c.faq.items.map((f) => (
+                  <details key={f.q} className="group py-5">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-heading text-base font-semibold text-white [&::-webkit-details-marker]:hidden">
+                      {f.q}
+                      <span aria-hidden="true" className="text-gold transition group-open:rotate-45">+</span>
+                    </summary>
+                    <p className="castech-body mt-3 text-zinc-300">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-20 max-w-3xl">
             <p className="castech-eyebrow">{c.briefEyebrow}</p>

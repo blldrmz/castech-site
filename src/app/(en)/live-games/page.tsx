@@ -13,8 +13,8 @@ export default function LiveGamesPage() {
     <LiveGamesView
       hero={liveGamesPageHero}
       groups={liveGameGroups}
-      signsPre="Need limit and result displays for your tables? See our"
-      signsLink="table signs and roulette displays"
+      signsPre="Need limit signs for your tables? See our"
+      signsLink="table limit signs"
       cta={{
         title: "Specifying a new pit or refit?",
         text: "We can align brands, spares, and lead times with your opening date—get in touch with your floor plan and game mix.",
