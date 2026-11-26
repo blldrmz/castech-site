@@ -212,7 +212,7 @@ export function HomeLanding({ locale = "en" }: { locale?: Locale }) {
             <p className="mt-6 max-w-2xl text-base leading-[1.85] text-slate-300">{t.lead(lk)}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href={locale === "en" ? "/catalog" : href(locale, "/jackpot-screens")}
+                href={locale === "en" ? "/catalog/" : href(locale, "/jackpot-screens")}
                 className="inline-flex min-h-12 items-center rounded-md bg-gold px-7 text-sm font-bold text-[#0b1420] hover:bg-gold-light"
               >
                 {t.explore}

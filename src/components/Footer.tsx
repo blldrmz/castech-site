@@ -113,8 +113,8 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
             </span>
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 lg:justify-end">
-            <Link href="/privacy" className="transition hover:text-gold">{t.privacy}</Link>
-            <Link href="/terms" className="transition hover:text-gold">{t.terms}</Link>
+            <Link href="/privacy/" className="transition hover:text-gold">{t.privacy}</Link>
+            <Link href="/terms/" className="transition hover:text-gold">{t.terms}</Link>
             {adsEnabled && <CookieSettingsButton label={COOKIE_SETTINGS[locale] ?? COOKIE_SETTINGS.en} />}
             <a href="https://virexa-tech.com" target="_blank" rel="noopener noreferrer" className="font-semibold tracking-[.08em] text-gold hover:underline">
               {t.company}
